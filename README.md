@@ -2,12 +2,38 @@
 
 Static website for **4DS Solutions** — CRM, operations platform, websites, and custom software.
 
-## Deploy
+## Deploy on GitHub Pages
 
-This is a plain HTML/CSS/JS site. Host on any static host (GitHub Pages, Cloudflare Pages, Netlify, etc.).
+### 1. Enable Pages (one-time, in GitHub)
 
-- Entry point: `index.html`
-- No build step required
+1. Open [4DS-NEXUS-WEBSITE → Settings → Pages](https://github.com/4dssolutions/4DS-NEXUS-WEBSITE/settings/pages)
+2. Under **Build and deployment** → **Source**, choose **GitHub Actions**
+3. Push to `main` — the **Deploy GitHub Pages** workflow runs automatically
+
+Default URL (before custom domain):  
+`https://4dssolutions.github.io/4DS-NEXUS-WEBSITE/`
+
+### 2. Custom domain
+
+Add a `CNAME` file in the repo root with your domain (e.g. `www.yourdomain.com`), then configure DNS at your registrar:
+
+| Type | Name | Value |
+|------|------|--------|
+| `CNAME` | `www` | `4dssolutions.github.io` |
+| `A` | `@` | `185.199.108.153` |
+| `A` | `@` | `185.199.109.153` |
+| `A` | `@` | `185.199.110.153` |
+| `A` | `@` | `185.199.111.153` |
+
+Use **only CNAME** if your domain is a subdomain (e.g. `nexus.example.com` → `4dssolutions.github.io`).
+
+In GitHub **Pages** settings, enter the same domain and enable **Enforce HTTPS** once DNS has propagated.
+
+### 3. After going live
+
+- Add the live URL to [Cloudflare Turnstile](https://dash.cloudflare.com/?to=/:account/turnstile) allowed hostnames
+- Add `googleAnalyticsId` in `js/config.js` when ready
+
 
 ## Configuration
 
