@@ -23,7 +23,7 @@
   ];
 
   const MAJOR_CITIES = [
-    'Sandton', 'Johannesburg', 'Pretoria', 'Centurion', 'Midrand', 'Menlyn',
+    'Pretoria', 'Johannesburg', 'Midrand', 'Centurion', 'Sandton', 'Menlyn',
     'Cape Town', 'Stellenbosch', 'Durban', 'Umhlanga', 'Musgrave', 'Ballito',
     'Pietermaritzburg', 'Greytown', 'Hillcrest',
     'Mbombela', 'Nelspruit', 'White River', 'Secunda', 'eMalahleni', 'Middelburg',
