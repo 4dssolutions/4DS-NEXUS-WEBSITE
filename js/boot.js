@@ -15,11 +15,10 @@
   document.documentElement.classList.add('is-loading');
 
   const storedTheme = localStorage.getItem('4ds-theme');
-  if (storedTheme === 'dark' || storedTheme === 'light') {
-    document.documentElement.setAttribute('data-theme', storedTheme);
-  } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    document.documentElement.setAttribute('data-theme', 'dark');
-  }
+  document.documentElement.setAttribute(
+    'data-theme',
+    storedTheme === 'dark' ? 'dark' : 'light'
+  );
 
   function mount() {
     if (document.getElementById('pageLoader')) return;
