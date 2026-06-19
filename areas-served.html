@@ -8,132 +8,248 @@
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/boot.js" defer></script>
 </head>
-<body>
+<body class="page-areas">
   <div id="header-placeholder"></div>
 
-  <section class="page-hero ph-forest">
+  <section class="page-hero ph-forest areas-hero">
     <div class="container">
       <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Areas We Serve</span></nav>
-      <h1>Serving businesses across South Africa</h1>
-      <p>4DS Nexus is a connected operations platform. We also build websites, mobile apps, and custom software — delivered remotely with clear scope and onboarding.</p>
-      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-        <a href="contact.html?interest=demo#contact-form" class="btn btn-primary btn-lg">Book a Demo</a>
-        <a href="pricing.html" class="btn btn-outline btn-lg">View Pricing</a>
+      <div class="areas-hero-grid">
+        <div class="areas-hero-copy">
+          <p class="section-label label-forest">South Africa</p>
+          <h1>Serving businesses across South Africa</h1>
+          <p>4DS Nexus is your connected operations platform. We also build websites, mobile apps, and custom software — delivered remotely with clear scope and structured onboarding.</p>
+          <nav class="hero-blueprint-nav reveal" aria-label="Regions on this page">
+            <a href="#overview">Overview</a>
+            <a href="#gauteng">Gauteng</a>
+            <a href="#kwazulu-natal">KZN</a>
+            <a href="#mpumalanga">Mpumalanga</a>
+            <a href="#western-cape">Western Cape</a>
+          </nav>
+          <div class="areas-hero-actions">
+            <a href="contact.html?interest=demo#contact-form" class="btn btn-primary btn-lg">Book a Demo</a>
+            <a href="pricing.html" class="btn btn-ghost btn-lg">View Pricing</a>
+          </div>
+        </div>
+        <aside class="areas-hero-panel reveal" aria-label="Coverage highlights">
+          <div class="areas-hero-stat">
+            <span class="areas-hero-stat-icon" data-icon="globe"></span>
+            <div>
+              <strong>Remote nationwide</strong>
+              <span>Video, WhatsApp &amp; structured onboarding</span>
+            </div>
+          </div>
+          <div class="areas-hero-stat">
+            <span class="areas-hero-stat-icon" data-icon="building"></span>
+            <div>
+              <strong>9 provinces</strong>
+              <span>Gauteng, KZN, WC, MP &amp; more</span>
+            </div>
+          </div>
+          <div class="areas-hero-stat">
+            <span class="areas-hero-stat-icon" data-icon="users"></span>
+            <div>
+              <strong>77+ users</strong>
+              <span>Across client teams · May 2026</span>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   </section>
 
-  <section class="content-section">
+  <section class="content-section areas-overview" id="overview">
     <div class="container">
-      <p class="section-label label-forest reveal">Nationwide</p>
-      <h2 class="section-title reveal">Remote delivery, local understanding</h2>
-      <p class="section-intro reveal">We support clients across <strong>Gauteng</strong>, <strong>KwaZulu-Natal</strong>, <strong>Western Cape</strong>, <strong>Mpumalanga</strong>, <strong>Eastern Cape</strong>, and beyond. You do not need to be in a major city — if you have a clear brief and internet access, we can scope and deliver properly.</p>
-
-      <div class="areas-popular reveal">
-        <h3>Popular service areas</h3>
-        <ul class="areas-popular-list">
-          <li><a href="#kwazulu-natal">Durban &amp; Umhlanga</a></li>
-          <li><a href="#gauteng">Johannesburg &amp; Sandton</a></li>
-          <li><a href="#gauteng">Pretoria &amp; Centurion</a></li>
-          <li><a href="#western-cape">Cape Town</a></li>
-          <li><a href="#kwazulu-natal">Ballito &amp; North Coast</a></li>
-        </ul>
-        <p class="areas-popular-note">Plus Mbombela, Port Elizabeth, Bloemfontein, Polokwane, and smaller towns — <a href="contact.html#contact-form">ask about your area</a>.</p>
+      <div class="areas-overview-grid reveal">
+        <div class="areas-overview-copy">
+          <p class="section-label label-forest">Nationwide</p>
+          <h2 class="section-title">Remote delivery, local understanding</h2>
+          <p class="section-intro">We support clients across <strong>Gauteng</strong>, <strong>KwaZulu-Natal</strong>, <strong>Western Cape</strong>, <strong>Mpumalanga</strong>, <strong>Eastern Cape</strong>, and beyond. You do not need to be in a major city — if you have a clear brief and internet access, we can scope and deliver properly.</p>
+        </div>
+        <div class="areas-popular-card">
+          <p class="areas-popular-label">Popular service areas</p>
+          <div class="areas-region-links">
+            <a href="#kwazulu-natal" class="areas-region-link">
+              <span class="areas-region-link-icon" data-icon="pin"></span>
+              <span>
+                <strong>Durban &amp; Umhlanga</strong>
+                <small>KwaZulu-Natal coast</small>
+              </span>
+            </a>
+            <a href="#gauteng" class="areas-region-link">
+              <span class="areas-region-link-icon" data-icon="building"></span>
+              <span>
+                <strong>Johannesburg &amp; Sandton</strong>
+                <small>Gauteng metro</small>
+              </span>
+            </a>
+            <a href="#gauteng" class="areas-region-link">
+              <span class="areas-region-link-icon" data-icon="briefcase"></span>
+              <span>
+                <strong>Pretoria &amp; Centurion</strong>
+                <small>N1 corridor</small>
+              </span>
+            </a>
+            <a href="#western-cape" class="areas-region-link">
+              <span class="areas-region-link-icon" data-icon="pin"></span>
+              <span>
+                <strong>Cape Town</strong>
+                <small>Western Cape</small>
+              </span>
+            </a>
+            <a href="#kwazulu-natal" class="areas-region-link">
+              <span class="areas-region-link-icon" data-icon="pin"></span>
+              <span>
+                <strong>Ballito &amp; North Coast</strong>
+                <small>KZN north coast</small>
+              </span>
+            </a>
+          </div>
+          <p class="areas-popular-foot">Plus Mbombela, Gqeberha, Bloemfontein, Polokwane &amp; smaller towns — <a href="contact.html#contact-form">ask about your area</a>.</p>
+        </div>
       </div>
 
-      <div class="areas-highlight-grid reveal-stagger" style="margin-top:40px">
-        <a href="solutions/nexus.html" class="areas-highlight-card">
+      <div class="areas-offer-grid reveal-stagger">
+        <a href="solutions/nexus.html" class="areas-offer-card">
+          <span class="areas-offer-icon" data-icon="bolt"></span>
           <h3>4DS Nexus platform</h3>
           <p>CRM, inventory, portals, reporting, and mobile access — modular plans from R1,299/month.</p>
+          <span class="card-link">Explore platform →</span>
         </a>
-        <a href="consulting.html#web" class="areas-highlight-card">
+        <a href="consulting.html#web" class="areas-offer-card">
+          <span class="areas-offer-icon" data-icon="monitor"></span>
           <h3>Website development</h3>
           <p>Company sites, upgrades, landing pages, and e-commerce — scoped before we build.</p>
+          <span class="card-link">Web services →</span>
         </a>
-        <a href="custom-solutions.html" class="areas-highlight-card">
+        <a href="custom-solutions.html" class="areas-offer-card">
+          <span class="areas-offer-icon" data-icon="puzzle"></span>
           <h3>Custom software</h3>
           <p>Fleet, dispatch, security operations, and industry-specific systems.</p>
+          <span class="card-link">Custom solutions →</span>
         </a>
       </div>
     </div>
   </section>
 
-  <section class="content-section alt" id="gauteng">
+  <section class="content-section alt areas-region-section" id="gauteng">
     <div class="container">
-      <p class="section-label label-amber reveal">Gauteng</p>
-      <h2 class="section-title reveal">Johannesburg, Pretoria &amp; the N1 corridor</h2>
-
-      <article class="areas-story reveal">
-        <h3>CRM software for businesses in Sandton &amp; Johannesburg</h3>
-        <p>4DS Nexus helps professional services firms, security companies, logistics operators, and retailers across Sandton and greater Johannesburg manage customers, job cards, inventory, and reporting from one platform — instead of spreadsheets and disconnected tools.</p>
-        <p><a href="services/crm.html">Explore CRM →</a> · <a href="contact.html?interest=demo#contact-form">Book a demo</a></p>
-      </article>
-
-      <article class="areas-story reveal">
-        <h3>Business software in Pretoria, Centurion &amp; Midrand</h3>
-        <p>Growing businesses along the N1 — from Pretoria East and Menlyn to Centurion office parks and Midrand logistics hubs — use 4DS Nexus for employee management, stock control, client portals, and operational dashboards. We onboard remotely with the same structure as on-site clients.</p>
-        <p><a href="solutions/nexus.html">View the platform →</a> · <a href="pricing.html#plans">Compare plans</a></p>
-      </article>
-
-      <article class="areas-story reveal">
-        <h3>Website development in Gauteng</h3>
-        <p>We design and build business websites, upgrades, and e-commerce stores for Gauteng companies that need a professional presence connected to their operations — not a template that sits apart from how they work.</p>
-        <p><a href="consulting.html#web">Website services →</a> · <a href="contact.html?service=website#contact-form">Request a quote</a></p>
-      </article>
+      <header class="areas-region-head reveal">
+        <span class="areas-region-badge areas-region-badge--amber">Gauteng</span>
+        <h2 class="section-title">Johannesburg, Pretoria &amp; the N1 corridor</h2>
+        <p class="section-intro">Professional services, logistics, security, and retail along Africa's busiest economic corridor.</p>
+      </header>
+      <div class="areas-story-grid reveal-stagger">
+        <article class="areas-story-card">
+          <span class="areas-story-icon" data-icon="users"></span>
+          <h3>CRM software in Sandton &amp; Johannesburg</h3>
+          <p>4DS Nexus helps professional services firms, security companies, logistics operators, and retailers manage customers, job cards, inventory, and reporting from one platform.</p>
+          <div class="areas-story-links">
+            <a href="services/crm.html">Explore CRM</a>
+            <a href="contact.html?interest=demo#contact-form">Book a demo</a>
+          </div>
+        </article>
+        <article class="areas-story-card">
+          <span class="areas-story-icon" data-icon="chart"></span>
+          <h3>Business software in Pretoria, Centurion &amp; Midrand</h3>
+          <p>From Pretoria East and Menlyn to Centurion office parks and Midrand logistics hubs — employee management, stock control, client portals, and operational dashboards.</p>
+          <div class="areas-story-links">
+            <a href="solutions/nexus.html">View platform</a>
+            <a href="pricing.html#plans">Compare plans</a>
+          </div>
+        </article>
+        <article class="areas-story-card">
+          <span class="areas-story-icon" data-icon="monitor"></span>
+          <h3>Website development in Gauteng</h3>
+          <p>Business websites, upgrades, and e-commerce for companies that need a professional presence connected to how they actually operate.</p>
+          <div class="areas-story-links">
+            <a href="consulting.html#web">Website services</a>
+            <a href="contact.html?service=website#contact-form">Get a quote</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="content-section" id="kwazulu-natal">
+  <section class="content-section areas-region-section" id="kwazulu-natal">
     <div class="container">
-      <p class="section-label label-teal reveal">KwaZulu-Natal</p>
-      <h2 class="section-title reveal">Durban, the North Coast &amp; the Midlands</h2>
-
-      <article class="areas-story reveal">
-        <h3>Website development in Umhlanga &amp; Durban</h3>
-        <p>We build modern websites and connected business systems for growing companies in Umhlanga, Durban North, Gateway, and surrounding areas — retail, hospitality, professional services, and logistics.</p>
-        <p><a href="consulting.html#web">Web development →</a> · <a href="contact.html?service=website#contact-form">Get a quote</a></p>
-      </article>
-
-      <article class="areas-story reveal">
-        <h3>CRM &amp; operations software in KZN</h3>
-        <p>From coastal retail and security operations to inland distribution in Pietermaritzburg and the Midlands, 4DS Nexus brings leads, customers, inventory, and field teams into one system. Dispatch-heavy and security-focused work can be scoped as <a href="custom-solutions.html">custom solutions</a>.</p>
-        <p><a href="services/crm.html">CRM module →</a> · <a href="contact.html?interest=demo#contact-form">Book a demo</a></p>
-      </article>
+      <header class="areas-region-head reveal">
+        <span class="areas-region-badge areas-region-badge--teal">KwaZulu-Natal</span>
+        <h2 class="section-title">Durban, the North Coast &amp; the Midlands</h2>
+        <p class="section-intro">Coastal retail and hospitality, inland distribution, and security operations across KZN.</p>
+      </header>
+      <div class="areas-story-grid areas-story-grid--two reveal-stagger">
+        <article class="areas-story-card">
+          <span class="areas-story-icon" data-icon="monitor"></span>
+          <h3>Website development in Umhlanga &amp; Durban</h3>
+          <p>Modern websites and connected business systems for companies in Umhlanga, Durban North, Gateway, and surrounding areas.</p>
+          <div class="areas-story-links">
+            <a href="consulting.html#web">Web development</a>
+            <a href="contact.html?service=website#contact-form">Get a quote</a>
+          </div>
+        </article>
+        <article class="areas-story-card">
+          <span class="areas-story-icon" data-icon="shield"></span>
+          <h3>CRM &amp; operations software in KZN</h3>
+          <p>Leads, customers, inventory, and field teams in one system. Dispatch and security-heavy work scoped as <a href="custom-solutions.html">custom solutions</a>.</p>
+          <div class="areas-story-links">
+            <a href="services/crm.html">CRM module</a>
+            <a href="contact.html?interest=demo#contact-form">Book a demo</a>
+          </div>
+        </article>
+      </div>
     </div>
   </section>
 
-  <section class="content-section alt" id="mpumalanga">
+  <section class="content-section alt areas-region-section" id="mpumalanga">
     <div class="container">
-      <p class="section-label label-forest reveal">Mpumalanga</p>
-      <h2 class="section-title reveal">Lowveld &amp; Highveld operations</h2>
-
-      <article class="areas-story reveal">
+      <header class="areas-region-head reveal">
+        <span class="areas-region-badge areas-region-badge--forest">Mpumalanga</span>
+        <h2 class="section-title">Lowveld &amp; Highveld operations</h2>
+        <p class="section-intro">Tourism, logistics, retail along the N4, and professional services in Mbombela, White River, Secunda, and Witbank.</p>
+      </header>
+      <article class="areas-story-card areas-story-card--featured reveal">
+        <span class="areas-story-icon" data-icon="bolt"></span>
         <h3>Business software for Mpumalanga</h3>
-        <p>Tourism operators, logistics firms, retail along the N4, and professional services in Mbombela (Nelspruit), White River, Secunda, and Witbank use 4DS Nexus for bookings, CRM, inventory, POS, and field-team mobile access — with remote onboarding and WhatsApp support throughout implementation.</p>
-        <p><a href="solutions/nexus.html">4DS Nexus →</a> · <a href="contact.html#contact-form">Discuss your project</a></p>
+        <p>Tourism operators, logistics firms, and retail businesses use 4DS Nexus for bookings, CRM, inventory, POS, and field-team mobile access — with remote onboarding and WhatsApp support throughout implementation.</p>
+        <div class="areas-story-links">
+          <a href="solutions/nexus.html">4DS Nexus</a>
+          <a href="contact.html#contact-form">Discuss your project</a>
+        </div>
       </article>
     </div>
   </section>
 
-  <section class="content-section" id="western-cape">
+  <section class="content-section areas-region-section" id="western-cape">
     <div class="container">
-      <p class="section-label label-blue reveal">Western Cape</p>
-      <h2 class="section-title reveal">Cape Town &amp; the winelands</h2>
-
-      <article class="areas-story reveal">
+      <header class="areas-region-head reveal">
+        <span class="areas-region-badge areas-region-badge--blue">Western Cape</span>
+        <h2 class="section-title">Cape Town &amp; the winelands</h2>
+        <p class="section-intro">Hospitality, retail, and professional services that need systems built for seasonal demand.</p>
+      </header>
+      <article class="areas-story-card areas-story-card--featured reveal">
+        <span class="areas-story-icon" data-icon="bag"></span>
         <h3>Websites &amp; business systems in Cape Town</h3>
-        <p>We support Cape Town and winelands businesses with e-commerce sites, client portals, POS and inventory modules, and reporting — built for hospitality, retail, and professional services that need systems that keep up with seasonal demand.</p>
-        <p><a href="consulting.html#web">Our web services →</a> · <a href="pricing.html#professional-services">Project pricing</a></p>
+        <p>E-commerce sites, client portals, POS and inventory modules, and reporting — for Cape Town and winelands businesses that need more than a brochure website.</p>
+        <div class="areas-story-links">
+          <a href="consulting.html#web">Our web services</a>
+          <a href="pricing.html#professional-services">Project pricing</a>
+        </div>
       </article>
     </div>
   </section>
 
   <section class="content-section alt">
     <div class="container">
-      <p class="section-label label-purple reveal">Growing our reach</p>
-      <h2 class="section-title reveal">Dedicated location pages</h2>
-      <p class="section-intro reveal">We are building focused pages for specific services and cities — for example, website development in Durban and CRM software in Johannesburg — so you can find exactly what applies to your business. Until those are live, this page and our <a href="consulting.html">services overview</a> are the best place to start.</p>
-      <p class="reveal"><a href="contact.html#contact-form" class="btn btn-outline">Tell us your city &amp; requirements</a></p>
+      <div class="areas-roadmap reveal">
+        <div class="areas-roadmap-icon" data-icon="search"></div>
+        <div>
+          <p class="section-label label-purple">Growing our reach</p>
+          <h2 class="section-title">Dedicated location pages coming</h2>
+          <p>We're building focused pages for specific services and cities — website development in Durban, CRM software in Johannesburg, and more. Until those are live, <a href="consulting.html">our services overview</a> is the best place to start.</p>
+          <a href="contact.html#contact-form" class="btn btn-outline" style="margin-top:20px">Tell us your city &amp; requirements</a>
+        </div>
+      </div>
     </div>
   </section>
 
