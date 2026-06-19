@@ -1659,49 +1659,14 @@ function showPageLoader(status = 'Loading…') {
 }
 
 function initPageLoader() {
-  pageLoaderMinUntil = Date.now() + 650;
-  const done = () => hidePageLoader();
-  if (document.readyState === 'complete') done();
-  else window.addEventListener('load', done, { once: true });
-  window.setTimeout(done, 3500);
-  window.addEventListener('pageshow', (e) => {
-    if (e.persisted) hidePageLoader();
-  });
-}
-
-function shouldSkipLoaderLink(link) {
-  if (!link || link.target === '_blank' || link.hasAttribute('download')) return true;
-  const href = link.getAttribute('href');
-  if (!href || href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:') || href.startsWith('javascript:')) return true;
-  try {
-    const url = new URL(link.href, location.href);
-    if (url.origin !== location.origin) return true;
-    if (url.pathname === location.pathname && url.hash) return true;
-  } catch { return true; }
-  return false;
+  document.documentElement.classList.add('is-page-ready');
+  document.documentElement.classList.remove('is-loading', 'is-page-leaving');
+  const loader = document.getElementById('pageLoader');
+  if (loader) loader.remove();
 }
 
 function initNavigationLoader() {
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const navDelay = reducedMotion ? 0 : 340;
-
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest('a[href]');
-    if (shouldSkipLoaderLink(link)) return;
-    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-
-    e.preventDefault();
-    const href = link.href;
-    const root = document.documentElement;
-    root.classList.add('is-page-leaving');
-    root.classList.remove('is-page-ready');
-    setPageLoaderStatus('Loading…');
-    showPageLoader();
-
-    window.setTimeout(() => {
-      window.location.href = href;
-    }, navDelay);
-  });
+  /* Native navigation — no artificial delay or full-screen overlay */
 }
 
 function wrapButtonLabel(btn) {
