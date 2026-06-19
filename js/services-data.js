@@ -2,6 +2,7 @@
 const SERVICE_PAGES = {
   crm: {
     title: 'CRM',
+    seoTitle: 'CRM Development South Africa',
     icon: 'users',
     subtitle: 'Customer Relationship Management',
     seoDescription: 'CRM software for South African businesses — manage leads, customers, quotes, and invoices in Sandton, Pretoria, Cape Town, Durban, and nationwide. Part of 4DS Nexus.',
@@ -23,6 +24,7 @@ const SERVICE_PAGES = {
   },
   inventory: {
     title: 'Inventory Management',
+    seoTitle: 'Inventory Management Software South Africa',
     icon: 'box',
     subtitle: 'Real-Time Stock Control',
     seoDescription: 'Inventory management software for SA businesses — real-time stock tracking across locations in Johannesburg, Cape Town, Durban, Pretoria, and beyond.',
@@ -42,6 +44,7 @@ const SERVICE_PAGES = {
   },
   pos: {
     title: 'Point of Sale',
+    seoTitle: 'POS Systems South Africa',
     icon: 'cart',
     subtitle: 'Retail Sales Processing',
     seoDescription: 'POS systems for South African retail — offline sales, inventory sync, and reporting for shops in Sandton, Cape Town, Durban, Pretoria, and nationwide.',
@@ -60,9 +63,11 @@ const SERVICE_PAGES = {
   },
   dispatch: {
     title: 'Dispatch & Logistics',
+    seoTitle: 'Dispatch & Logistics Software South Africa',
     icon: 'truck',
     subtitle: 'Custom Solution',
     customScoped: true,
+    seoDescription: 'Dispatch and logistics software for SA businesses — delivery scheduling, routes, and proof of delivery. Custom-scoped by 4DS Solutions.',
     description: 'Delivery scheduling, route planning, and proof of delivery, scoped as a custom solution based on your operation, hardware, and integrations.',
     features: [
       'Delivery scheduling', 'Route planning', 'Driver allocation', 'Proof of delivery',
@@ -77,9 +82,11 @@ const SERVICE_PAGES = {
   },
   fleet: {
     title: 'Fleet Tracking',
+    seoTitle: 'Fleet Tracking Software South Africa',
     icon: 'pin',
     subtitle: 'Custom Solution',
     customScoped: true,
+    seoDescription: 'Fleet tracking software for South African operations — vehicle monitoring, trips, and maintenance. Custom-scoped by 4DS Solutions.',
     description: 'Vehicle tracking, maintenance records, and fleet reporting, delivered as a custom solution when your operation requires GPS hardware or deep integrations.',
     features: [
       'Live vehicle tracking', 'Vehicle status monitoring', 'Trip history',
@@ -94,6 +101,7 @@ const SERVICE_PAGES = {
   },
   mobile: {
     title: 'Mobile Applications',
+    seoTitle: 'Mobile App Development South Africa',
     icon: 'phone',
     subtitle: 'Field & Workforce Apps',
     seoDescription: 'Mobile app development South Africa — Android, iOS, and PWA apps for field teams in Gauteng, Western Cape, KZN, and across SA.',
@@ -112,8 +120,10 @@ const SERVICE_PAGES = {
   },
   kiosks: {
     title: 'Self-Service Kiosks',
+    seoTitle: 'Self-Service Kiosk Systems South Africa',
     icon: 'monitor',
     subtitle: 'Customer Self-Service',
+    seoDescription: 'Self-service kiosk systems for South African retail and service businesses — ordering, queues, and digital payments.',
     description: 'Reduce queues and improve customer experience with self-service ordering, payments, and queue management.',
     features: [
       'Customer ordering', 'Service requests', 'Product browsing',
@@ -127,9 +137,11 @@ const SERVICE_PAGES = {
   },
   'ai-assistant': {
     title: 'AI Business Assistant',
+    seoTitle: 'AI Business Assistant South Africa',
     icon: 'robot',
     subtitle: 'Coming Soon',
     comingSoon: true,
+    seoDescription: 'AI business assistant for South African companies — on the 4DS Nexus roadmap. Join the waitlist for plain-language operational insights.',
     description: 'An AI assistant for plain-language queries, operational insights, and automated workflows, currently on our roadmap, not yet available as a live module.',
     features: [
       'Natural language reporting', 'Business performance summaries', 'Operational alerts',
@@ -264,7 +276,7 @@ function renderServicePage() {
 
   const theme = SERVICE_THEMES[slug] || { hero: 'ph-blue', bp: 'bp-blue', label: 'label-blue', chips: [], showcase: '', introClass: '' };
 
-  document.title = `${data.title} – 4DS`;
+  document.title = `${data.seoTitle || data.title} | 4DS Nexus`;
   if (data.seoDescription) {
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) {
