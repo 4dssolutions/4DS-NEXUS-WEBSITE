@@ -2833,6 +2833,83 @@ a.card:focus-visible {
   flex-wrap: wrap;
 }
 
+.pricing-clarity {
+  margin: 24px 0 8px;
+  padding: 20px 24px;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.pricing-clarity-steps {
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 8px;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+.pricing-limits {
+  margin-bottom: 20px;
+}
+
+.pricing-limits li {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+}
+
+.pricing-limits--inline {
+  margin: 12px 0 20px;
+}
+
+.pricing-disclaimer-list {
+  margin: 12px 0 16px;
+  padding-left: 1.25rem;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.6;
+}
+
+.pricing-proof {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.pricing-proof-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin: 28px 0;
+}
+
+.pricing-proof-stat {
+  padding: 20px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  border: 1px solid var(--gray-200);
+}
+
+.pricing-proof-stat strong {
+  display: block;
+  font-size: 1.75rem;
+  margin-bottom: 6px;
+}
+
+.pricing-proof-stat span {
+  font-size: 0.8125rem;
+  color: var(--gray-600);
+  line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+  .pricing-proof-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
 .pricing-bridge {
   margin-top: 32px;
   text-align: center;

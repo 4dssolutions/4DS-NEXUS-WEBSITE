@@ -126,7 +126,7 @@
         image: DEFAULT_IMAGE,
         telephone: PHONE,
         email: EMAIL,
-        priceRange: 'R499–R15000+',
+        priceRange: 'R1299–R25000+',
         parentOrganization: { '@id': `${SITE_URL}/#organization` },
         areaServed,
         serviceType: SERVICE_KEYWORDS,

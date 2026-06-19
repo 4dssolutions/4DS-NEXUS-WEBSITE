@@ -428,7 +428,7 @@ function renderHeader() {
           </button>
           <div class="header-actions">
             <a href="${base}solutions/nexus.html" class="btn btn-outline">Explore Nexus</a>
-            <a href="${base}contact.html" class="btn btn-primary">Contact</a>
+            <a href="${base}contact.html?interest=demo#contact-form" class="btn btn-primary">Book a Demo</a>
           </div>
           <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
             <span class="mobile-toggle-box" aria-hidden="true">
@@ -1251,14 +1251,14 @@ function setSelectValue(select, value) {
 }
 
 const PLAN_LABELS = {
-  core: '4DS Nexus Core Platform',
-  'starter-operations': 'Starter Operations Bundle',
-  'business-operations': 'Business Operations Bundle',
-  'enterprise-operations': 'Enterprise Operations Bundle',
+  core: '4DS Nexus Core Platform (build your own)',
+  starter: 'Starter Plan',
+  professional: 'Professional Plan',
+  enterprise: 'Enterprise Plan',
+  'starter-operations': 'Starter Plan',
+  'business-operations': 'Professional Plan',
+  'enterprise-operations': 'Enterprise Plan',
   setup: 'Setup & Onboarding',
-  starter: 'Starter Operations Bundle',
-  professional: 'Business Operations Bundle',
-  enterprise: 'Enterprise Operations Bundle',
 };
 
 const MODULE_LABELS = {
@@ -1311,6 +1311,12 @@ function initContactPrefill() {
 
     if (message && !message.value.trim()) {
       message.value = "Hi, I'm interested in a custom website for my business. Please get in touch to discuss.";
+    }
+  } else if (interestParam === 'demo') {
+    if (!setSelectValue(interest, 'demo')) return;
+
+    if (message && !message.value.trim()) {
+      message.value = "Hi, I'd like to book a demo of 4DS Nexus. Please let me know your available times.";
     }
   } else {
     return;
