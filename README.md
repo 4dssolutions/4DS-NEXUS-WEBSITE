@@ -13,21 +13,24 @@ Static website for **4DS Solutions** — CRM, operations platform, websites, and
 Default URL (before custom domain):  
 `https://4dssolutions.github.io/4DS-NEXUS-WEBSITE/`
 
-### 2. Custom domain
+### 2. Custom domain (`4dsnexus.co.za`)
 
-Add a `CNAME` file in the repo root with your domain (e.g. `www.yourdomain.com`), then configure DNS at your registrar:
+The repo includes a `CNAME` file for **4dsnexus.co.za**. Configure DNS at your registrar:
 
-| Type | Name | Value |
-|------|------|--------|
-| `CNAME` | `www` | `4dssolutions.github.io` |
-| `A` | `@` | `185.199.108.153` |
+| Type | Name / Host | Value |
+|------|-------------|--------|
+| `A` | `@` (apex / root) | `185.199.108.153` |
 | `A` | `@` | `185.199.109.153` |
 | `A` | `@` | `185.199.110.153` |
 | `A` | `@` | `185.199.111.153` |
 
-Use **only CNAME** if your domain is a subdomain (e.g. `nexus.example.com` → `4dssolutions.github.io`).
+Optional — if you also want **www**:
 
-In GitHub **Pages** settings, enter the same domain and enable **Enforce HTTPS** once DNS has propagated.
+| Type | Name / Host | Value |
+|------|-------------|--------|
+| `CNAME` | `www` | `4dssolutions.github.io` |
+
+In GitHub **Pages** settings, enter `4dsnexus.co.za` under **Custom domain** and enable **Enforce HTTPS** once DNS has propagated (can take up to 24 hours).
 
 ### 3. After going live
 
