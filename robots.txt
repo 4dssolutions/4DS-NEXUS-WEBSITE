@@ -2,3 +2,5 @@ User-agent: *
 Allow: /
 
 Sitemap: https://4dsnexus.co.za/sitemap.xml
+
+# Social preview image: /assets/4ds-og.png

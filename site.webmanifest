@@ -1,0 +1,25 @@
+{
+  "name": "4DS Nexus — CRM, Websites & Business Software",
+  "short_name": "4DS Nexus",
+  "description": "CRM, business websites, and custom software for South African businesses. Remote delivery nationwide.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#0b0d10",
+  "theme_color": "#2f4848",
+  "lang": "en-ZA",
+  "icons": [
+    {
+      "src": "/assets/4ds-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/assets/4ds-og.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

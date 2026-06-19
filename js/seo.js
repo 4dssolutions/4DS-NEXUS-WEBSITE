@@ -3,7 +3,7 @@
   const SITE_URL = 'https://4dsnexus.co.za';
   const SITE_NAME = '4DS Nexus';
   const COMPANY = '4DS Solutions (Pty) Ltd';
-  const DEFAULT_IMAGE = `${SITE_URL}/assets/4ds-logo-wordmark.png`;
+  const DEFAULT_IMAGE = `${SITE_URL}/assets/4ds-og.png`;
   const PHONE = '+27646552995';
   const EMAIL = window.CONTACT_EMAIL || '4dssolutions@gmail.com';
 
@@ -86,6 +86,7 @@
   upsertMeta('property', 'og:description', description);
   upsertMeta('property', 'og:url', canonical);
   upsertMeta('property', 'og:image', DEFAULT_IMAGE);
+  upsertMeta('property', 'og:image:alt', '4DS Nexus logo');
   upsertMeta('property', 'og:locale', 'en_ZA');
 
   upsertMeta('name', 'twitter:card', 'summary_large_image');
