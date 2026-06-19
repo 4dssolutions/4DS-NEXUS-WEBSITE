@@ -1,0 +1,25 @@
+# Dependencies
+node_modules/
+
+# Local secrets & overrides (never commit)
+.env
+.env.*
+.env.local
+js/config.local.js
+*.pem
+*.key
+credentials.json
+secrets.json
+
+# OS & editor
+.DS_Store
+Thumbs.db
+*.log
+.cursor/
+.vscode/
+*.swp
+*~
+
+# Build / cache
+dist/
+.cache/

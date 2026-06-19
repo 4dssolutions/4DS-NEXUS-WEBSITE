@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – 4DS</title>
+  <meta name="description" content="Contact 4DS Nexus | request a demo, get pricing, discuss custom websites or website upgrades, or speak to our team about your business requirements.">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/boot.js" defer></script>
+</head>
+<body>
+  <div id="header-placeholder"></div>
+
+  <section class="page-hero ph-blue">
+    <div class="container">
+      <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Contact</span></nav>
+      <h1>Let's talk about your business</h1>
+      <p>Request a platform demo, get pricing, ask about a new website or upgrade, or speak to our team about how we can help.</p>
+      <nav class="hero-blueprint-nav reveal" aria-label="Contact sections">
+        <a href="#contact-form">Contact Form</a>
+      </nav>
+    </div>
+  </section>
+
+  <section class="content-section" id="contact-form">
+    <div class="container">
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <h3>Get in touch</h3>
+          <div class="contact-item">
+            <div class="contact-item-icon" data-icon="mail"></div>
+            <div>
+              <h4>Email</h4>
+              <p><a href="mailto:4dssolutions@gmail.com">4dssolutions@gmail.com</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" data-icon="phone"></div>
+            <div>
+              <h4>Phone / WhatsApp</h4>
+              <p><a href="https://wa.me/27646552995" target="_blank" rel="noopener noreferrer">+27 64 655 2995</a></p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" data-icon="pin"></div>
+            <div>
+              <h4>Location</h4>
+              <p>South Africa, serving businesses across Africa</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon" data-icon="clock"></div>
+            <div>
+              <h4>Response Time</h4>
+              <p>We typically respond within 1 business day. Custom and enterprise enquiries are reviewed individually.</p>
+            </div>
+          </div>
+
+          <div style="margin-top:40px">
+            <h3 style="margin-bottom:16px">What can we help with?</h3>
+            <ul class="feature-list">
+              <li>Business website design, development, and upgrades</li>
+              <li>Platform demos and walkthroughs</li>
+              <li>Pricing and module selection</li>
+              <li>Custom software and industry-specific builds</li>
+              <li>Partnership and collaboration enquiries</li>
+              <li>Contract work with our specialist partners (AI, IT consulting &amp; QA)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="contact-form" id="contactFormWrapper">
+          <form id="contactForm">
+            <p class="form-priority-note"><span aria-hidden="true">*</span> Fields marked required are needed so we can respond to you.</p>
+
+            <fieldset class="form-priority-block">
+              <legend class="form-legend">Your details</legend>
+              <div class="form-row">
+                <div class="form-group form-priority">
+                  <label for="firstName">First Name <span class="req-badge">Required</span></label>
+                  <input type="text" id="firstName" name="firstName" required autocomplete="given-name" aria-required="true">
+                  <span class="form-field-error" id="firstNameError">Please enter your first name.</span>
+                </div>
+                <div class="form-group form-priority">
+                  <label for="lastName">Last Name <span class="req-badge">Required</span></label>
+                  <input type="text" id="lastName" name="lastName" required autocomplete="family-name" aria-required="true">
+                  <span class="form-field-error" id="lastNameError">Please enter your last name.</span>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group form-priority">
+                  <label for="email">Email Address <span class="req-badge">Required</span></label>
+                  <input type="email" id="email" name="email" required autocomplete="email" aria-required="true" inputmode="email">
+                  <span class="form-field-error" id="emailError">Please enter a valid email address.</span>
+                </div>
+                <div class="form-group">
+                  <label for="phone">Phone Number <span class="opt-badge">Optional</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="+27 ..." autocomplete="tel">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-optional-block">
+              <legend class="form-legend">More about your enquiry <span class="form-legend-tag form-legend-tag--muted">Optional</span></legend>
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input type="text" id="company" name="company">
+            </div>
+            <div class="form-group">
+              <label for="interest">I'm interested in</label>
+              <select id="interest" name="interest">
+                <option value="">Select an option</option>
+                <option value="demo">Platform Demo</option>
+                <option value="pricing">Pricing Information</option>
+                <option value="core">Core Platform (R599/month)</option>
+                <option value="starter-operations">Starter Operations Bundle</option>
+                <option value="business-operations">Business Operations Bundle</option>
+                <option value="enterprise-operations">Enterprise Operations Bundle</option>
+                <option value="setup">Setup &amp; Onboarding</option>
+                <option value="starter">Starter Operations Bundle</option>
+                <option value="professional">Business Operations Bundle</option>
+                <option value="enterprise">Enterprise Operations Bundle</option>
+                <option value="partnership">Partnership / Collaboration</option>
+                <option value="website">Custom Website / Upgrade</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactMethod">Preferred contact method</label>
+                <select id="contactMethod" name="contactMethod">
+                  <option value="">Select an option</option>
+                  <option value="email">Email</option>
+                  <option value="phone">Phone call</option>
+                  <option value="whatsapp">WhatsApp</option>
+                  <option value="any">No preference</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="priority">Priority</label>
+                <select id="priority" name="priority">
+                  <option value="">Select an option</option>
+                  <option value="exploring">Just exploring</option>
+                  <option value="planning">Planning, within a month</option>
+                  <option value="urgent">Urgent, need this soon</option>
+                  <option value="enterprise">Large / multi-site project</option>
+                </select>
+              </div>
+            </div>
+            </fieldset>
+            <!-- Honeypot hidden from users, catches bots -->
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="website">Website</label>
+              <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="Tell us about your business and what you're looking for..."></textarea>
+            </div>
+            <div class="form-group captcha-group">
+              <div id="turnstileWidget" class="cf-turnstile" data-theme="light"></div>
+              <p class="captcha-error" id="captchaError" role="alert">Please complete the security check before submitting.</p>
+              <button type="button" class="btn btn-outline btn-sm reload-btn" data-reload id="captchaReload">Reload security check</button>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" style="width:100%">Send Message</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <h3>Thank you!</h3>
+            <p>Your message has been received. Our team will be in touch shortly.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-placeholder"></div>
+  <script src="js/config.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
