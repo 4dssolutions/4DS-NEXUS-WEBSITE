@@ -513,6 +513,7 @@ function renderFooter() {
             <a href="${base}solutions/nexus.html">Platform</a>
             <a href="${base}${PRICING_URL}">Pricing</a>
             <a href="${base}industries.html">Industries</a>
+            <a href="${base}areas-served.html">Areas We Serve</a>
             <a href="${base}contact.html">Contact</a>
           </div>
           <div class="footer-col">

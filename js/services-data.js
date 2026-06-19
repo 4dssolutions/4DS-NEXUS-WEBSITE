@@ -4,6 +4,7 @@ const SERVICE_PAGES = {
     title: 'CRM',
     icon: 'users',
     subtitle: 'Customer Relationship Management',
+    seoDescription: 'CRM software for South African businesses — manage leads, customers, quotes, and invoices in Sandton, Pretoria, Cape Town, Durban, and nationwide. Part of 4DS Nexus.',
     description: 'Manage leads, customers, quotations, invoices, and support tickets from one connected system, with the visibility growing businesses need today.',
     features: [
       'Customer database management', 'Lead management', 'Sales pipeline tracking',
@@ -24,6 +25,7 @@ const SERVICE_PAGES = {
     title: 'Inventory Management',
     icon: 'box',
     subtitle: 'Real-Time Stock Control',
+    seoDescription: 'Inventory management software for SA businesses — real-time stock tracking across locations in Johannesburg, Cape Town, Durban, Pretoria, and beyond.',
     description: 'Track stock across multiple locations in real time with low-stock alerts, movement tracking, and clear reporting.',
     features: [
       'Real-time stock tracking', 'Inventory movement tracking', 'Low stock alerts',
@@ -42,6 +44,7 @@ const SERVICE_PAGES = {
     title: 'Point of Sale',
     icon: 'cart',
     subtitle: 'Retail Sales Processing',
+    seoDescription: 'POS systems for South African retail — offline sales, inventory sync, and reporting for shops in Sandton, Cape Town, Durban, Pretoria, and nationwide.',
     description: 'Fast, reliable point of sale with offline support, integrated inventory updates, and full sales reporting.',
     features: [
       'Retail sales processing', 'Offline transaction support', 'Integrated inventory updates',
@@ -93,6 +96,7 @@ const SERVICE_PAGES = {
     title: 'Mobile Applications',
     icon: 'phone',
     subtitle: 'Field & Workforce Apps',
+    seoDescription: 'Mobile app development South Africa — Android, iOS, and PWA apps for field teams in Gauteng, Western Cape, KZN, and across SA.',
     description: 'Purpose-built mobile apps for field staff, drivers, and managers, with offline mode, GPS, and digital forms.',
     features: [
       'Field staff applications', 'Driver applications', 'Manager dashboards',
@@ -261,6 +265,15 @@ function renderServicePage() {
   const theme = SERVICE_THEMES[slug] || { hero: 'ph-blue', bp: 'bp-blue', label: 'label-blue', chips: [], showcase: '', introClass: '' };
 
   document.title = `${data.title} – 4DS`;
+  if (data.seoDescription) {
+    let meta = document.querySelector('meta[name="description"]');
+    if (!meta) {
+      meta = document.createElement('meta');
+      meta.name = 'description';
+      document.head.appendChild(meta);
+    }
+    meta.content = data.seoDescription;
+  }
   document.body.classList.add('service-page', `service-${slug}`);
 
   const base = '../';

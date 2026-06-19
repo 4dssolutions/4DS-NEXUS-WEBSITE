@@ -58,15 +58,29 @@
       document.head.appendChild(cookies);
     };
 
+    const loadSeo = () => {
+      if (document.querySelector('script[src*="seo.js"]')) return;
+      const seo = document.createElement('script');
+      seo.src = `${base}js/seo.js`;
+      document.head.appendChild(seo);
+    };
+
     if (window.__4DS_CONFIG_LOADED) {
+      loadSeo();
       loadCookies();
       return;
     }
 
     const config = document.createElement('script');
     config.src = `${base}js/config.js`;
-    config.onload = loadCookies;
-    config.onerror = loadCookies;
+    config.onload = () => {
+      loadSeo();
+      loadCookies();
+    };
+    config.onerror = () => {
+      loadSeo();
+      loadCookies();
+    };
     document.head.appendChild(config);
   }
 

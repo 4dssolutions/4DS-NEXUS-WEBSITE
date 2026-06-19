@@ -7617,3 +7617,171 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
     justify-content: center;
   }
 }
+
+/* ── SEO / Areas served ── */
+.areas-city-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.areas-city-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--surface-muted);
+  border: 1px solid var(--gray-200);
+  transition: border-color 0.2s, background 0.2s, transform 0.2s;
+}
+
+.areas-city-chip:hover {
+  border-color: var(--accent);
+  background: var(--surface-raised);
+  transform: translateY(-1px);
+}
+
+.areas-city-chip--more {
+  border-style: dashed;
+  color: var(--accent);
+}
+
+.areas-highlight-grid,
+.areas-provinces-grid,
+.areas-search-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.areas-highlight-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  margin-top: 32px;
+}
+
+.areas-highlight-card {
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  border: 1px solid var(--gray-200);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.areas-highlight-card:hover {
+  border-color: var(--accent);
+  box-shadow: var(--shadow-sm);
+}
+
+.areas-highlight-card h3 {
+  font-size: 1.0625rem;
+  margin-bottom: 8px;
+}
+
+.areas-highlight-card p {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin: 0;
+  line-height: 1.55;
+}
+
+.areas-region {
+  margin-top: 24px;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  border: 1px solid var(--gray-200);
+}
+
+.areas-region h3 {
+  font-size: 1rem;
+  margin-bottom: 16px;
+}
+
+.areas-city-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.areas-city-list li a,
+.areas-city-list--compact li {
+  display: inline-flex;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: var(--surface-muted);
+  border: 1px solid var(--gray-200);
+  color: var(--text-primary);
+}
+
+.areas-city-list li a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.areas-city-list--compact li {
+  list-style: none;
+}
+
+.areas-region-note {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin: 0;
+  line-height: 1.6;
+}
+
+.areas-provinces-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  margin-top: 28px;
+}
+
+.areas-province-card {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  border: 1px solid var(--gray-200);
+}
+
+.areas-province-card h3 {
+  font-size: 1rem;
+  margin-bottom: 14px;
+}
+
+.areas-search-grid {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  margin-top: 28px;
+}
+
+.areas-search-item {
+  padding: 22px;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--gray-200);
+  background: var(--surface-raised);
+}
+
+.areas-search-item h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.areas-search-item p {
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  margin: 0;
+  line-height: 1.55;
+}
+
+[data-theme="dark"] .areas-highlight-card,
+[data-theme="dark"] .areas-region,
+[data-theme="dark"] .areas-province-card,
+[data-theme="dark"] .areas-search-item {
+  background: var(--surface-muted);
+  border-color: var(--gray-200);
+}
+
