@@ -283,12 +283,12 @@ function renderServicePage() {
   const relatedCards = (data.related || []).map(key => {
     if (relatedMeta[key]) {
       const r = relatedMeta[key];
-      return `<a href="${r.href}" class="card"><div class="card-icon">${iconSvg(r.icon)}</div><h3>${r.title}</h3><p>${r.subtitle}</p><span class="card-link">Learn more →</span></a>`;
+      return `<a href="${r.href}" class="card"><div class="card-icon">${iconSvg(r.icon)}</div><h3>${r.title}</h3><p>${r.subtitle}</p><span class="card-link">Learn more</span></a>`;
     }
     const r = SERVICE_PAGES[key];
     if (!r) return '';
     const href = key === 'ai-assistant' ? 'ai-assistant.html' : `${key}.html`;
-    return `<a href="${href}" class="card"><div class="card-icon">${iconSvg(r.icon)}</div><h3>${r.title}</h3><p>${r.subtitle}</p><span class="card-link">Learn more →</span></a>`;
+    return `<a href="${href}" class="card"><div class="card-icon">${iconSvg(r.icon)}</div><h3>${r.title}</h3><p>${r.subtitle}</p><span class="card-link">Learn more</span></a>`;
   }).join('');
 
   const featuresHtml = data.features.map(f => `<li>${f}</li>`).join('');

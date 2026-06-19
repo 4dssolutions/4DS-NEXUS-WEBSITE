@@ -9,7 +9,7 @@
   /*
    * Cookie & analytics — fill in when you go live
    * --------------------------------------------
-   * googleAnalyticsId: https://analytics.google.com → Admin → Data Streams → Web
+   * googleAnalyticsId: https://analytics.google.com Admin Data Streams Web
    *   Copy the Measurement ID (starts with G-). Leave empty until ready.
    *
    * metaPixelId: Optional Meta Pixel ID for Facebook/Instagram ads.

@@ -2222,9 +2222,16 @@ a.card:focus-visible {
   font-size: 0.8125rem;
   font-weight: 600;
   color: var(--red);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.35em;
+  white-space: normal;
+}
+
+.card-link::after {
+  content: '\2192';
+  flex-shrink: 0;
+  line-height: 1;
 }
 
 /* ─── STATS BAND ─── */
@@ -3437,10 +3444,30 @@ a.card:focus-visible {
   }
   .pricing-pro-row-meta,
   .pricing-pos-actions {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    gap: 12px;
+  }
+
+  .pricing-pos-actions .pricing-pro-price {
+    align-self: flex-start;
+  }
+
+  .pricing-pos-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-pos-actions .card-link {
+    align-self: flex-start;
+  }
+
+  .pricing-pro-row-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
   }
   .pricing-ai-grid { grid-template-columns: 1fr; max-width: none; }
 }
@@ -6175,6 +6202,10 @@ a.service-meta-item:focus-visible {
   color: var(--red);
 }
 
+.story-card--link .date::after {
+  content: ' \2192';
+}
+
 .module-panel-title-link {
   color: inherit;
   text-decoration: none;
@@ -7487,10 +7518,30 @@ body > section {
 
   .pricing-pro-row-meta,
   .pricing-pos-actions {
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     width: 100%;
+    gap: 12px;
+  }
+
+  .pricing-pos-actions .pricing-pro-price {
+    align-self: flex-start;
+  }
+
+  .pricing-pos-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .pricing-pos-actions .card-link {
+    align-self: flex-start;
+  }
+
+  .pricing-pro-row-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
   }
 
   .pricing-ai-grid { grid-template-columns: 1fr; max-width: none; }

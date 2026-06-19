@@ -331,9 +331,9 @@ function renderHeader() {
             <div class="mega-menu">
               <div class="mega-menu-categories">${servicesMega}</div>
               <div class="mega-menu-footer">
-                <a href="${base}consulting.html#web">Website development →</a>
-                <a href="${base}solutions/nexus.html">View all modules on 4DS Nexus →</a>
-                <a href="${base}${PRICING_URL}">View pricing →</a>
+                <a href="${base}consulting.html#web">Website development</a>
+                <a href="${base}solutions/nexus.html">View all modules on 4DS Nexus</a>
+                <a href="${base}${PRICING_URL}">View pricing</a>
               </div>
             </div>
             <template class="nav-overflow-template">
@@ -1111,14 +1111,14 @@ function renderHomeModuleExplorer() {
           <h4>Key Outcomes</h4>
           <ul>${outcomes}</ul>
         </div>
-        <a href="${base}${m.href}" class="card-link module-explorer-link">Full ${m.tab} details →</a>
+        <a href="${base}${m.href}" class="card-link module-explorer-link">Full ${m.tab} details</a>
       </div>`;
   }).join('');
 
   root.innerHTML = `
     <div class="module-nav reveal">${tabs}</div>
     <div class="module-explorer-panels reveal">${panels}</div>
-    <p class="module-explorer-pricing reveal"><a href="${base}${PRICING_URL}" class="btn btn-outline">View modular pricing →</a></p>`;
+    <p class="module-explorer-pricing reveal"><a href="${base}${PRICING_URL}" class="btn btn-outline">View modular pricing</a></p>`;
 
   initIcons();
 }
@@ -1468,7 +1468,7 @@ function initCapabilities() {
         <h3>${c.title}</h3>
         <p>${c.desc}</p>
         <div class="cap-preview-tags">${tags}</div>
-        <a href="${base}${c.href}" class="card-link" style="margin-top:18px;display:inline-flex">Explore capability →</a>
+        <a href="${base}${c.href}" class="card-link" style="margin-top:18px;display:inline-flex">Explore capability</a>
       </div>
     `;
   }
