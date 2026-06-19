@@ -78,7 +78,7 @@
   upsertMeta('name', 'author', COMPANY);
   upsertMeta('name', 'geo.region', 'ZA');
   upsertMeta('name', 'geo.placename', 'South Africa');
-  upsertMeta('name', 'keywords', [...SERVICE_KEYWORDS, ...MAJOR_CITIES.map((c) => `${c} business software`)].join(', '));
+  upsertMeta('name', 'keywords', SERVICE_KEYWORDS.join(', '));
 
   upsertMeta('property', 'og:type', 'website');
   upsertMeta('property', 'og:site_name', SITE_NAME);

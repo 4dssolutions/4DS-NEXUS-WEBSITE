@@ -7898,8 +7898,103 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   line-height: 1.55;
 }
 
+.areas-home--compact {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.areas-popular {
+  margin-top: 28px;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  background: var(--surface-muted);
+  border: 1px solid var(--gray-200);
+}
+
+.areas-popular--inline {
+  max-width: 520px;
+}
+
+.areas-popular h3,
+.areas-popular-label {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin: 0 0 14px;
+}
+
+.areas-popular-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 10px;
+}
+
+.areas-popular-list li {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.areas-popular-list a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.areas-popular-list a:hover {
+  color: var(--accent);
+}
+
+.areas-popular-note {
+  margin: 16px 0 0;
+  font-size: 0.875rem;
+  color: var(--gray-600);
+  line-height: 1.55;
+}
+
+.areas-story {
+  padding: 28px 0;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.areas-story:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.areas-story h3 {
+  font-size: 1.125rem;
+  margin-bottom: 12px;
+}
+
+.areas-story p {
+  font-size: 0.9375rem;
+  color: var(--gray-600);
+  line-height: 1.65;
+  margin: 0 0 12px;
+  max-width: 68ch;
+}
+
+.areas-story p:last-child {
+  margin-bottom: 0;
+  font-size: 0.875rem;
+}
+
+.areas-story a {
+  font-weight: 600;
+}
+
+[data-theme="dark"] .areas-popular {
+  background: var(--surface-muted);
+  border-color: var(--gray-200);
+}
+
 [data-theme="dark"] .areas-highlight-card,
 [data-theme="dark"] .areas-hub-card,
+[data-theme="dark"] .areas-story,
 [data-theme="dark"] .areas-region,
 [data-theme="dark"] .areas-province-card,
 [data-theme="dark"] .areas-search-item {
