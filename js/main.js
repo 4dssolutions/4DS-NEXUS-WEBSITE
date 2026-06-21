@@ -4,7 +4,7 @@
   const stored = localStorage.getItem('4ds-theme');
   document.documentElement.setAttribute(
     'data-theme',
-    stored === 'dark' ? 'dark' : 'light'
+    stored === 'light' ? 'light' : 'dark'
   );
 })();
 
@@ -187,11 +187,38 @@ function renderCapDiagram(theme) {
 const WHATSAPP_URL = 'https://wa.me/27646552995';
 const MOBILE_NAV_BREAKPOINT = 768;
 const LINKEDIN_URL = 'https://www.linkedin.com/in/4ds-solutions-33ab62417';
+const INSTAGRAM_URL = 'https://www.instagram.com/4dssolutions/';
 const SITE_CONTACT_EMAIL = '4dssolutions@gmail.com';
+
+const LINKEDIN_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>';
+const INSTAGRAM_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm5.75-3.1a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>';
+const WHATSAPP_ICON = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 2C6.477 2 2 6.477 2 12c0 1.77.463 3.43 1.274 4.873L2 22l5.27-1.382A9.953 9.953 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.182a8.18 8.18 0 0 1-4.177-1.144l-.3-.178-3.126.82.834-3.047-.195-.312A8.176 8.176 0 0 1 3.818 12c0-4.516 3.666-8.182 8.182-8.182S20.182 7.484 20.182 12 16.516 20.182 12 20.182z"/></svg>';
+
+function renderSocialLinks() {
+  return `
+    <a href="${LINKEDIN_URL}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="4DS Nexus on LinkedIn">
+      ${LINKEDIN_ICON}
+    </a>
+    <a href="${INSTAGRAM_URL}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="4DS Nexus on Instagram">
+      ${INSTAGRAM_ICON}
+    </a>
+    <a href="${WHATSAPP_URL}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Chat with 4DS Nexus on WhatsApp">
+      ${WHATSAPP_ICON}
+    </a>
+  `;
+}
+
+function initSocialLinks() {
+  document.querySelectorAll('[data-social-links]').forEach((el) => {
+    el.innerHTML = renderSocialLinks();
+  });
+}
 const PRICING_URL = '/pricing';
 const NEXUS_URL = '/solutions/nexus';
 const CUSTOM_SOLUTIONS_URL = '/custom-solutions';
 const HOME_URL = '/';
+const LOGO_LIGHT_URL = '/assets/4ds-logo-wordmark.png';
+const LOGO_DARK_URL = '/assets/4ds-logo-black-nav.png';
 
 const SERVICE_CATEGORIES = [
   { label: 'Software Solutions', links: [
@@ -315,7 +342,7 @@ function renderHeader() {
         <div class="header-inner">
         <a href="${HOME_URL}" class="logo" aria-label="4DS Nexus home">
           <span class="logo-mark-wrap">
-            <img class="logo-mark" src="/assets/4ds-logo-wordmark.png" width="847" height="334" alt="4DS">
+            <img class="logo-mark" src="${LOGO_LIGHT_URL}" width="847" height="334" alt="4DS">
           </span>
           <span class="logo-text">
             <span class="logo-suffix">Nexus</span>
@@ -428,7 +455,7 @@ function renderHeader() {
           </div>
         </nav>
         <div class="header-tools">
-          <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to dark mode" title="Toggle theme">
+          <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Light mode">
             <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
             <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           </button>
@@ -554,14 +581,7 @@ function renderFooter() {
             <a href="/contact">Contact Form</a>
             <p class="footer-meta">Mon–Fri, 08:00–17:00 SAST</p>
             <p class="footer-meta">Quotes based on your modules and operation</p>
-            <div class="footer-socials">
-              <a href="${LINKEDIN_URL}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="4DS Nexus on LinkedIn">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
-              </a>
-              <a href="${WHATSAPP_URL}" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Chat with 4DS Nexus on WhatsApp">
-                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.16a11.87 11.87 0 0 1-1.59-5.95C.15 5.32 5.5 0 12.06 0a11.82 11.82 0 0 1 8.41 3.49 11.76 11.76 0 0 1 3.48 8.4c0 6.55-5.35 11.88-11.93 11.88a11.95 11.95 0 0 1-5.7-1.45L.06 24zm6.6-3.81c1.68.99 3.28 1.59 5.4 1.59 5.45 0 9.89-4.42 9.89-9.87 0-2.64-1.03-5.12-2.9-6.99a9.82 9.82 0 0 0-6.98-2.9c-5.46 0-9.9 4.43-9.9 9.88 0 2.22.65 3.89 1.74 5.62l-.99 3.62 3.74-.95zm11.3-5.49c-.07-.12-.27-.2-.56-.34-.29-.15-1.71-.85-1.98-.94-.27-.1-.46-.15-.65.14-.19.29-.74.94-.91 1.13-.17.19-.34.22-.62.07-.29-.14-1.22-.45-2.33-1.43-.86-.77-1.44-1.72-1.61-2-.17-.29-.02-.45.12-.59.13-.13.29-.34.43-.51.15-.17.19-.29.29-.48.1-.19.05-.36-.02-.51-.07-.14-.65-1.57-.89-2.15-.24-.56-.47-.48-.65-.49l-.55-.01c-.19 0-.5.07-.76.36-.26.29-1 .98-1 2.38 0 1.41 1.02 2.77 1.17 2.96.14.19 2.01 3.07 4.88 4.3.68.29 1.21.47 1.63.6.68.22 1.31.19 1.8.12.55-.08 1.71-.7 1.95-1.37.24-.67.24-1.25.17-1.37z"/></svg>
-              </a>
-            </div>
+            <div class="footer-socials">${renderSocialLinks()}</div>
           </div>
         </div>
         <div class="footer-bottom">
@@ -605,9 +625,31 @@ function getTheme() {
   return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
 }
 
+function updateHeaderLogo(theme = getTheme()) {
+  const logo = document.querySelector('.header-inner .logo-mark');
+  if (!logo) return;
+  const spec = theme === 'dark'
+    ? { src: LOGO_DARK_URL, width: 842, height: 334 }
+    : { src: LOGO_LIGHT_URL, width: 847, height: 334 };
+  if (logo.getAttribute('src') !== spec.src) logo.src = spec.src;
+  logo.width = spec.width;
+  logo.height = spec.height;
+}
+
 function applyTheme(theme) {
   document.documentElement.setAttribute('data-theme', theme);
   localStorage.setItem('4ds-theme', theme);
+  updateHeaderLogo(theme);
+  const hcaptchaWidget = document.getElementById('hcaptchaWidget');
+  if (hcaptchaWidget && typeof hcaptcha !== 'undefined' && window.__hcaptchaWidgetId != null) {
+    hcaptcha.remove(window.__hcaptchaWidgetId);
+    window.__hcaptchaWidgetId = null;
+    hcaptchaWidget.dataset.rendered = '';
+    hcaptchaWidget.innerHTML = '';
+    initContactHCaptcha();
+  } else if (hcaptchaWidget) {
+    hcaptchaWidget.setAttribute('data-theme', theme === 'dark' ? 'dark' : 'light');
+  }
   const toggle = document.getElementById('themeToggle');
   if (toggle) {
     toggle.setAttribute('aria-label', theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
@@ -626,10 +668,8 @@ function initTheme() {
   const stored = localStorage.getItem('4ds-theme');
   if (stored === 'dark' || stored === 'light') {
     applyTheme(stored);
-  } else if (document.documentElement.getAttribute('data-theme') === 'dark') {
-    applyTheme('dark');
   } else {
-    applyTheme('light');
+    applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
   }
 
   if (document._themeBound) return;
@@ -648,6 +688,7 @@ function initLayout() {
   if (headerEl) {
     headerEl.innerHTML = renderHeader();
     document.body.appendChild(headerEl);
+    updateHeaderLogo();
   }
   if (footerEl) footerEl.innerHTML = renderFooter();
 }
@@ -1176,7 +1217,76 @@ function hasAutomaticFormDelivery() {
   return Boolean(window.WEB3FORMS_ACCESS_KEY);
 }
 
+function usesWeb3FormsHCaptcha() {
+  return hasAutomaticFormDelivery() && window.WEB3FORMS_HCAPTCHA !== false;
+}
+
+function isContactHoneypotClean(form) {
+  if (form.querySelector('[name="website"]')?.value) return false;
+  if (form.querySelector('[name="company_url"]')?.value) return false;
+  if (form.querySelector('[name="botcheck"]')?.checked) return false;
+  return true;
+}
+
+function getHCaptchaResponse(form) {
+  return form.querySelector('textarea[name="h-captcha-response"]')?.value?.trim() || '';
+}
+
+function getHCaptchaSiteKey() {
+  return window.WEB3FORMS_HCAPTCHA_SITEKEY || '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
+}
+
+function initContactHCaptcha() {
+  if (!usesWeb3FormsHCaptcha() || typeof hcaptcha === 'undefined') return;
+  const container = document.getElementById('hcaptchaWidget');
+  if (!container || container.dataset.rendered === '1') return;
+
+  window.__hcaptchaWidgetId = hcaptcha.render(container, {
+    sitekey: getHCaptchaSiteKey(),
+    theme: getTheme() === 'dark' ? 'dark' : 'light',
+    size: 'normal',
+    callback: () => document.getElementById('captchaError')?.classList.remove('show'),
+    'expired-callback': () => resetHCaptchaWidget(),
+    'error-callback': () => {
+      const err = document.getElementById('captchaError');
+      if (err) {
+        err.textContent = 'Security check failed to load. Please refresh the page and try again.';
+        err.classList.add('show');
+      }
+    },
+  });
+  container.dataset.rendered = '1';
+}
+
+function resetHCaptchaWidget() {
+  if (typeof hcaptcha === 'undefined' || window.__hcaptchaWidgetId == null) return;
+  hcaptcha.reset(window.__hcaptchaWidgetId);
+}
+
+function waitForHCaptcha(callback, attempts = 50) {
+  if (typeof hcaptcha !== 'undefined') {
+    callback();
+  } else if (attempts > 0) {
+    setTimeout(() => waitForHCaptcha(callback, attempts - 1), 100);
+  } else {
+    const err = document.getElementById('captchaError');
+    if (err) {
+      err.textContent = 'Security check could not load. Please refresh the page or email us directly.';
+      err.classList.add('show');
+    }
+  }
+}
+
+function validateHCaptcha(form) {
+  if (!usesWeb3FormsHCaptcha()) return { ok: true };
+  if (!getHCaptchaResponse(form)) {
+    return { ok: false, message: 'Please complete the security check before submitting.' };
+  }
+  return { ok: true };
+}
+
 function captchaRequiredForContact() {
+  if (hasAutomaticFormDelivery()) return false;
   return Boolean(window.TURNSTILE_SITE_KEY) && !turnstileUnavailable;
 }
 
@@ -1186,7 +1296,7 @@ function isContactCaptchaReady(form) {
   return captchaVerified && Boolean(token);
 }
 
-function buildContactPayload(form, token) {
+function buildContactPayload(form) {
   const fd = new FormData(form);
   const interest = fd.get('interest') || 'General enquiry';
   const payload = {
@@ -1202,15 +1312,18 @@ function buildContactPayload(form, token) {
     timeline: fd.get('priority') || 'Not specified',
     message: fd.get('message') || '',
   };
-  if (token) payload['cf-turnstile-response'] = token;
+  const hCaptchaToken = getHCaptchaResponse(form);
+  if (usesWeb3FormsHCaptcha() && hCaptchaToken) {
+    payload['h-captcha-response'] = hCaptchaToken;
+  }
   return payload;
 }
 
-async function submitContactForm(form, token) {
+async function submitContactForm(form) {
   const res = await fetch('https://api.web3forms.com/submit', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-    body: JSON.stringify(buildContactPayload(form, token)),
+    body: JSON.stringify(buildContactPayload(form)),
   });
   const data = await res.json().catch(() => ({}));
   if (!res.ok || !data.success) {
@@ -1234,6 +1347,7 @@ function resetContactCaptcha() {
     turnstile.reset(turnstileWidgetId);
   }
   captchaVerified = false;
+  resetHCaptchaWidget();
   const btn = document.getElementById('submitBtn');
   if (btn && captchaRequiredForContact()) btn.disabled = true;
 }
@@ -1410,21 +1524,15 @@ function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
-  const captchaGroup = document.querySelector('.captcha-group');
-  if (captchaGroup && !window.TURNSTILE_SITE_KEY) {
+  const captchaGroup = document.getElementById('contactCaptcha');
+  if (captchaGroup && !usesWeb3FormsHCaptcha()) {
     captchaGroup.hidden = true;
     captchaGroup.setAttribute('aria-hidden', 'true');
   }
 
   const submitBtn = document.getElementById('submitBtn');
   if (submitBtn) {
-    if (hasAutomaticFormDelivery() && !window.TURNSTILE_SITE_KEY) {
-      submitBtn.disabled = false;
-    } else if (!window.TURNSTILE_SITE_KEY && !hasAutomaticFormDelivery()) {
-      submitBtn.disabled = false;
-    } else {
-      submitBtn.disabled = true;
-    }
+    submitBtn.disabled = false;
   }
 
   const priorityFields = form.querySelectorAll('.form-priority input[required]');
@@ -1450,7 +1558,11 @@ function initContactForm() {
     });
   });
 
-  waitForTurnstile(initTurnstile);
+  if (!hasAutomaticFormDelivery()) {
+    waitForTurnstile(initTurnstile);
+  } else if (usesWeb3FormsHCaptcha()) {
+    waitForHCaptcha(initContactHCaptcha);
+  }
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -1463,11 +1575,18 @@ function initContactForm() {
       return;
     }
 
-    const honeypot = form.querySelector('[name="website"]');
-    if (honeypot?.value) return;
+    if (!isContactHoneypotClean(form)) return;
 
-    const token = form.querySelector('[name="cf-turnstile-response"]')?.value;
     const captchaError = document.getElementById('captchaError');
+    const hCaptchaCheck = validateHCaptcha(form);
+
+    if (!hCaptchaCheck.ok) {
+      if (captchaError) {
+        captchaError.textContent = hCaptchaCheck.message;
+        captchaError.classList.add('show');
+      }
+      return;
+    }
 
     if (!isContactCaptchaReady(form)) {
       if (captchaError) {
@@ -1482,7 +1601,7 @@ function initContactForm() {
 
     try {
       if (hasAutomaticFormDelivery()) {
-        await submitContactForm(form, token);
+        await submitContactForm(form);
         showContactFormSuccess('Your message has been sent. Our team will be in touch shortly.');
         return;
       }
@@ -1848,6 +1967,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initContactForm();
   initCustomSelects();
   initContactPrefill();
+  initSocialLinks();
   initCounterAnimation();
   initReloadControls();
 });

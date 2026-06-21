@@ -3,7 +3,8 @@
   const SITE_URL = 'https://4dsnexus.co.za';
   const SITE_NAME = '4DS Nexus';
   const COMPANY = '4DS Solutions (Pty) Ltd';
-  const DEFAULT_IMAGE = `${SITE_URL}/assets/4ds-og.png`;
+  const DEFAULT_IMAGE = `${SITE_URL}/assets/og-share.png`;
+  const LOGO_IMAGE = `${SITE_URL}/assets/4ds-og.png`;
   const PHONE = '+27646552995';
   const EMAIL = window.CONTACT_EMAIL || '4dssolutions@gmail.com';
 
@@ -86,7 +87,11 @@
   upsertMeta('property', 'og:description', description);
   upsertMeta('property', 'og:url', canonical);
   upsertMeta('property', 'og:image', DEFAULT_IMAGE);
-  upsertMeta('property', 'og:image:alt', '4DS Nexus logo');
+  upsertMeta('property', 'og:image:secure_url', DEFAULT_IMAGE);
+  upsertMeta('property', 'og:image:width', '1200');
+  upsertMeta('property', 'og:image:height', '630');
+  upsertMeta('property', 'og:image:type', 'image/png');
+  upsertMeta('property', 'og:image:alt', '4DS Nexus — CRM, websites and business software for South Africa');
   upsertMeta('property', 'og:locale', 'en_ZA');
 
   upsertMeta('name', 'twitter:card', 'summary_large_image');
@@ -109,7 +114,7 @@
         name: COMPANY,
         alternateName: SITE_NAME,
         url: SITE_URL,
-        logo: DEFAULT_IMAGE,
+        logo: LOGO_IMAGE,
         email: EMAIL,
         telephone: PHONE,
         sameAs: [

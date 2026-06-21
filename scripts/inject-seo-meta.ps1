@@ -1,6 +1,6 @@
 # Injects static Open Graph / Twitter meta for WhatsApp and social crawlers.
 $SiteUrl = 'https://4dsnexus.co.za'
-$OgImage = "$SiteUrl/assets/4ds-og.png"
+$OgImage = "$SiteUrl/assets/og-share.png"
 $Root = Split-Path -Parent $PSScriptRoot
 
 function Get-CanonicalPath([string]$RelativePath) {
@@ -51,7 +51,11 @@ Get-ChildItem -Path $Root -Recurse -Filter '*.html' | ForEach-Object {
   <meta property="og:description" content="$description">
   <meta property="og:url" content="$canonical">
   <meta property="og:image" content="$OgImage">
-  <meta property="og:image:alt" content="4DS Nexus logo">
+  <meta property="og:image:secure_url" content="$OgImage">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:alt" content="4DS Nexus — CRM, websites and business software for South Africa">
   <meta property="og:locale" content="en_ZA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="$title">

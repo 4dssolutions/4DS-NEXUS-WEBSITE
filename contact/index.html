@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,13 +16,17 @@
   <meta property="og:title" content="Contact – CRM &amp; Website Quotes South Africa – 4DS">
   <meta property="og:description" content="Contact 4DS Solutions for CRM demos, website quotes, and custom software in Sandton, Pretoria, Cape Town, Durban, and across South Africa. WhatsApp +27 64 655 2995.">
   <meta property="og:url" content="https://4dsnexus.co.za/contact">
-  <meta property="og:image" content="https://4dsnexus.co.za/assets/4ds-og.png">
-  <meta property="og:image:alt" content="4DS Nexus logo">
+  <meta property="og:image" content="https://4dsnexus.co.za/assets/og-share.png">
+  <meta property="og:image:alt" content="4DS Nexus — CRM, websites and business software for South Africa">
+  <meta property="og:image:secure_url" content="https://4dsnexus.co.za/assets/og-share.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/png">
   <meta property="og:locale" content="en_ZA">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Contact – CRM &amp; Website Quotes South Africa – 4DS">
   <meta name="twitter:description" content="Contact 4DS Solutions for CRM demos, website quotes, and custom software in Sandton, Pretoria, Cape Town, Durban, and across South Africa. WhatsApp +27 64 655 2995.">
-  <meta name="twitter:image" content="https://4dsnexus.co.za/assets/4ds-og.png">
+  <meta name="twitter:image" content="https://4dsnexus.co.za/assets/og-share.png">
   <link rel="preload" href="/css/styles.css" as="style">
   <link rel="stylesheet" href="/css/styles.css">
   <script src="/js/boot.js" defer></script>
@@ -59,6 +63,7 @@
             <div>
               <h4>Phone / WhatsApp</h4>
               <p><a href="https://wa.me/27646552995" target="_blank" rel="noopener noreferrer">+27 64 655 2995</a></p>
+              <div class="contact-socials" data-social-links></div>
             </div>
           </div>
           <div class="contact-item">
@@ -165,19 +170,25 @@
               </div>
             </div>
             </fieldset>
-            <!-- Honeypot hidden from users, catches bots -->
+            <!-- Honeypot fields — hidden from users, catch bots -->
             <div class="form-honeypot" aria-hidden="true">
               <label for="website">Website</label>
               <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
             </div>
+            <div class="form-honeypot" aria-hidden="true">
+              <label for="company_url">Company URL</label>
+              <input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
             <div class="form-group">
               <label for="message">Message</label>
               <textarea id="message" name="message" placeholder="Tell us about your business and what you're looking for..."></textarea>
             </div>
-            <div class="form-group captcha-group">
-              <div id="turnstileWidget" class="cf-turnstile" data-theme="light"></div>
-              <p class="captcha-error" id="captchaError" role="alert">Please complete the security check before submitting.</p>
-              <button type="button" class="btn btn-outline reload-btn" data-reload id="captchaReload" aria-label="Reload security check" title="Reload security check"></button>
+            <div class="form-group captcha-group" id="contactCaptcha">
+              <label>Security check <span class="req-badge">Required</span></label>
+              <p class="captcha-hint">Protected by hCaptcha.</p>
+              <div class="h-captcha" id="hcaptchaWidget" data-theme="dark"></div>
+              <p class="captcha-error" id="captchaError" role="alert"></p>
             </div>
             <button type="submit" class="btn btn-primary btn-lg" id="submitBtn" style="width:100%">Send Message</button>
           </form>
@@ -192,6 +203,6 @@
 
   <div id="footer-placeholder"></div>
   <script src="/js/config.js"></script>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit" async defer></script>
+  <script src="https://js.hcaptcha.com/1/api.js?render=explicit" async defer></script>
 </body>
 </html>

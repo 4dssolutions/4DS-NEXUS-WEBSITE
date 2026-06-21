@@ -3,7 +3,7 @@
   const storedTheme = localStorage.getItem('4ds-theme');
   document.documentElement.setAttribute(
     'data-theme',
-    storedTheme === 'dark' ? 'dark' : 'light'
+    storedTheme === 'light' ? 'light' : 'dark'
   );
   document.documentElement.classList.add('is-page-ready');
 

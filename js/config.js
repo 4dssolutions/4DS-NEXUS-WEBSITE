@@ -4,17 +4,19 @@
   window.__4DS_CONFIG_LOADED = true;
 
   /*
-   * Cloudflare Turnstile — widget name: turnstile4dssolutions
-   * https://dash.cloudflare.com → Turnstile → Add widget
-   * Hostnames: 4dsnexus.co.za, www.4dsnexus.co.za, localhost
-   * Paste your new Site Key below (public — safe in client code)
+   * Cloudflare Turnstile — optional fallback only (Web3Forms + Turnstile needs Web3Forms Pro).
+   * Contact form uses Web3Forms hCaptcha (free) + honeypots when WEB3FORMS_HCAPTCHA is true.
    */
-  window.TURNSTILE_SITE_KEY = '0x4AAAAAADoom-w3pZl7_Jyz';
+  window.TURNSTILE_SITE_KEY = '';
 
   window.CONTACT_EMAIL = '4dssolutions@gmail.com';
 
-  /* Paste your Web3Forms access key here — https://web3forms.com (free, delivers to Gmail) */
+  /* Web3Forms — free delivery to Gmail: https://web3forms.com */
   window.WEB3FORMS_ACCESS_KEY = '4c826155-7721-4766-99e4-4f16ba4f13af';
+
+  /* hCaptcha via Web3Forms free sitekey — enable hCaptcha in Web3Forms dashboard */
+  window.WEB3FORMS_HCAPTCHA = true;
+  window.WEB3FORMS_HCAPTCHA_SITEKEY = '50b2fe65-b00b-4b9e-ad62-3ba471098be2';
 
   /*
    * Cookie & analytics — fill in when you go live
