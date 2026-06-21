@@ -1410,6 +1410,12 @@ function initContactForm() {
   const form = document.getElementById('contactForm');
   if (!form) return;
 
+  const captchaGroup = document.querySelector('.captcha-group');
+  if (captchaGroup && !window.TURNSTILE_SITE_KEY) {
+    captchaGroup.hidden = true;
+    captchaGroup.setAttribute('aria-hidden', 'true');
+  }
+
   const submitBtn = document.getElementById('submitBtn');
   if (submitBtn) {
     if (hasAutomaticFormDelivery() && !window.TURNSTILE_SITE_KEY) {

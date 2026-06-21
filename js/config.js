@@ -9,7 +9,7 @@
    * Hostnames: 4dsnexus.co.za, www.4dsnexus.co.za, localhost
    * Paste your new Site Key below (public — safe in client code)
    */
-  window.TURNSTILE_SITE_KEY = '';
+  window.TURNSTILE_SITE_KEY = '0x4AAAAAADoom-w3pZl7_Jyz';
 
   window.CONTACT_EMAIL = '4dssolutions@gmail.com';
 
