@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>4DS Nexus Pricing – Starter, Professional &amp; Enterprise – 4DS</title>
   <meta name="description" content="4DS Nexus plans from R1,299/month. Starter, Professional, and Enterprise subscriptions with clear user limits. Websites from R5,999, e-commerce from R12,999. Book a demo.">
-  <script>if(location.hostname==='www.4dsnexus.co.za')location.replace('https://4dsnexus.co.za'+location.pathname+location.search+location.hash);</script>
-  <link rel="canonical" href="https://4dsnexus.co.za/pricing.html">
+  <script src="/js/redirect.js"></script>
+  <link rel="canonical" href="https://4dsnexus.co.za/pricing">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="icon" type="image/png" href="/assets/4ds-icon.png">
   <link rel="apple-touch-icon" href="/assets/4ds-og.png">
@@ -15,7 +15,7 @@
   <meta property="og:site_name" content="4DS Nexus">
   <meta property="og:title" content="4DS Nexus Pricing – Starter, Professional &amp; Enterprise – 4DS">
   <meta property="og:description" content="4DS Nexus plans from R1,299/month. Starter, Professional, and Enterprise subscriptions with clear user limits. Websites from R5,999, e-commerce from R12,999. Book a demo.">
-  <meta property="og:url" content="https://4dsnexus.co.za/pricing.html">
+  <meta property="og:url" content="https://4dsnexus.co.za/pricing">
   <meta property="og:image" content="https://4dsnexus.co.za/assets/4ds-og.png">
   <meta property="og:image:alt" content="4DS Nexus logo">
   <meta property="og:locale" content="en_ZA">
@@ -23,17 +23,17 @@
   <meta name="twitter:title" content="4DS Nexus Pricing – Starter, Professional &amp; Enterprise – 4DS">
   <meta name="twitter:description" content="4DS Nexus plans from R1,299/month. Starter, Professional, and Enterprise subscriptions with clear user limits. Websites from R5,999, e-commerce from R12,999. Book a demo.">
   <meta name="twitter:image" content="https://4dsnexus.co.za/assets/4ds-og.png">
-  <link rel="preload" href="css/styles.css" as="style">
-  <link rel="stylesheet" href="css/styles.css">
-  <script src="js/boot.js" defer></script>
-  <script src="js/main.js" defer></script>
+  <link rel="preload" href="/css/styles.css" as="style">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="/js/boot.js" defer></script>
+  <script src="/js/main.js" defer></script>
 </head>
 <body class="page-pricing">
   <div id="header-placeholder"></div>
 
   <section class="page-hero ph-slate">
     <div class="container">
-      <nav class="breadcrumb"><a href="index.html">Home</a> / <span>Pricing</span></nav>
+      <nav class="breadcrumb"><a href="/">Home</a> / <span>Pricing</span></nav>
       <h1>Simple pricing for 4DS Nexus</h1>
       <p>Three platform plans. Optional modules if you build your own. Websites and apps quoted separately — no confusion.</p>
       <div class="pricing-clarity reveal">
@@ -45,15 +45,15 @@
         </ol>
       </div>
       <div class="pricing-hero-stats reveal">
-        <a href="#plans" class="pricing-stat">
+        <a href="#starter" class="pricing-stat">
           <strong>From R1,299</strong>
           <span>Starter / month</span>
         </a>
-        <a href="#plans" class="pricing-stat">
+        <a href="#professional" class="pricing-stat">
           <strong>R2,499</strong>
           <span>Professional / month</span>
         </a>
-        <a href="#plans" class="pricing-stat">
+        <a href="#enterprise" class="pricing-stat">
           <strong>R4,999+</strong>
           <span>Enterprise / month</span>
         </a>
@@ -70,7 +70,7 @@
         <a href="#professional-services">Websites &amp; Apps</a>
       </nav>
       <div class="pricing-hero-actions reveal">
-        <a href="contact.html?interest=demo#contact-form" class="btn btn-primary btn-lg">Book a Demo</a>
+        <a href="/contact?interest=demo#contact-form" class="btn btn-primary btn-lg">Book a Demo</a>
         <a href="#plans" class="btn btn-ghost btn-lg">Compare Plans</a>
       </div>
     </div>
@@ -87,7 +87,8 @@
         <p><strong>Save up to 20%</strong> versus buying Core and modules separately.</p>
       </div>
       <div class="pricing-grid pricing-grid--bundles reveal">
-        <div class="pricing-bundle-card">
+        <article class="pricing-bundle-card pricing-plan-card" id="starter" tabindex="-1">
+          <a href="#starter" class="pricing-plan-card-link" aria-label="Starter plan — right-click to copy link"></a>
           <h3>Starter</h3>
           <div class="price">R1,299 <span>/ month</span></div>
           <p class="desc">Growing small businesses getting off spreadsheets.</p>
@@ -103,9 +104,10 @@
             <li><strong>1 branch</strong> / location</li>
             <li><strong>10 GB</strong> storage</li>
           </ul>
-          <a href="contact.html?plan=starter#contact-form" class="btn btn-outline">Get Started</a>
-        </div>
-        <div class="pricing-bundle-card featured">
+          <a href="/contact?plan=starter#contact-form" class="btn btn-outline">Get Started</a>
+        </article>
+        <article class="pricing-bundle-card pricing-plan-card featured" id="professional" tabindex="-1">
+          <a href="#professional" class="pricing-plan-card-link" aria-label="Professional plan — right-click to copy link"></a>
           <span class="pricing-bundle-badge">Most popular</span>
           <h3>Professional</h3>
           <div class="price">R2,499 <span>/ month</span></div>
@@ -122,9 +124,10 @@
             <li><strong>3 branches</strong> / locations</li>
             <li><strong>50 GB</strong> storage</li>
           </ul>
-          <a href="contact.html?plan=professional#contact-form" class="btn btn-primary">Book a Demo</a>
-        </div>
-        <div class="pricing-bundle-card">
+          <a href="/contact?plan=professional#contact-form" class="btn btn-primary">Book a Demo</a>
+        </article>
+        <article class="pricing-bundle-card pricing-plan-card" id="enterprise" tabindex="-1">
+          <a href="#enterprise" class="pricing-plan-card-link" aria-label="Enterprise plan — right-click to copy link"></a>
           <h3>Enterprise</h3>
           <div class="price">R4,999+ <span>/ month</span></div>
           <p class="desc">Multi-site organisations and advanced requirements.</p>
@@ -141,8 +144,8 @@
             <li><strong>Unlimited branches</strong></li>
             <li><strong>Custom storage</strong></li>
           </ul>
-          <a href="contact.html?plan=enterprise#contact-form" class="btn btn-outline">Contact Sales</a>
-        </div>
+          <a href="/contact?plan=enterprise#contact-form" class="btn btn-outline">Contact Sales</a>
+        </article>
       </div>
     </div>
   </section>
@@ -155,7 +158,8 @@
         <p class="section-intro">Prefer à la carte? Subscribe to Core, then activate only the modules you need. Best when you want a minimal starting point.</p>
       </div>
       <div class="pricing-core-spotlight reveal">
-        <div class="pricing-card featured pricing-core-card">
+        <article class="pricing-card featured pricing-core-card pricing-plan-card" id="core" tabindex="-1">
+          <a href="#core" class="pricing-plan-card-link" aria-label="4DS Nexus Core plan — right-click to copy link"></a>
           <div class="pricing-core-main">
             <p class="pricing-core-eyebrow">Required base plan</p>
             <h3>4DS Nexus Core</h3>
@@ -167,7 +171,7 @@
               <li><strong>1 branch</strong></li>
               <li><strong>5 GB</strong> storage</li>
             </ul>
-            <a href="contact.html?plan=core#contact-form" class="btn btn-primary">Get Started</a>
+            <a href="/contact?plan=core#contact-form" class="btn btn-primary">Get Started</a>
           </div>
           <div class="pricing-core-includes">
             <p class="pricing-list-label">Includes</p>
@@ -183,7 +187,7 @@
               <li>SSL Security</li>
             </ul>
           </div>
-        </div>
+        </article>
       </div>
       <p class="pricing-bridge reveal"><a href="#modules">Browse add-on modules below</a> or <a href="#plans">compare bundled plans above</a>.</p>
     </div>
@@ -197,55 +201,55 @@
         <p class="section-intro">Each module connects to the same 4DS Nexus platform. Priced per month on top of Core (included in Starter, Professional, and Enterprise plans above).</p>
       </div>
       <div class="pricing-addon-grid reveal">
-        <div class="pricing-addon-card">
+        <a href="/contact?module=asset-management#contact-form" class="pricing-addon-card">
           <span class="pricing-addon-tier pricing-addon-tier--essential">Essential</span>
           <h4>Asset Management</h4>
           <div class="price">R399 <span>/ month</span></div>
           <p class="pricing-addon-desc">Track and manage company assets, equipment, and resources.</p>
-          <a href="contact.html?module=asset-management#contact-form" class="card-link">Add module</a>
-        </div>
-        <div class="pricing-addon-card">
+          <span class="card-link">Add module</span>
+        </a>
+        <a href="/contact?module=inventory#contact-form" class="pricing-addon-card">
           <span class="pricing-addon-tier pricing-addon-tier--operations">Operations</span>
           <h4>Inventory Management</h4>
           <div class="price">R499 <span>/ month</span></div>
           <p class="pricing-addon-desc">Monitor stock levels, movements, procurement, and inventory reporting.</p>
-          <a href="contact.html?module=inventory#contact-form" class="card-link">Add module</a>
-        </div>
-        <div class="pricing-addon-card">
+          <span class="card-link">Add module</span>
+        </a>
+        <a href="/contact?module=employee#contact-form" class="pricing-addon-card">
           <span class="pricing-addon-tier pricing-addon-tier--operations">Operations</span>
           <h4>Employee Management</h4>
           <div class="price">R499 <span>/ month</span></div>
           <p class="pricing-addon-desc">Employee records, attendance, leave management, and workforce administration.</p>
-          <a href="contact.html?module=employee#contact-form" class="card-link">Add module</a>
-        </div>
-        <div class="pricing-addon-card">
+          <span class="card-link">Add module</span>
+        </a>
+        <a href="/contact?module=customer-portal#contact-form" class="pricing-addon-card">
           <span class="pricing-addon-tier pricing-addon-tier--operations">Operations</span>
           <h4>Customer Portal</h4>
           <div class="price">R499 <span>/ month</span></div>
           <p class="pricing-addon-desc">Give customers secure access to information, requests, and support services.</p>
-          <a href="contact.html?module=customer-portal#contact-form" class="card-link">Add module</a>
-        </div>
-        <div class="pricing-addon-card">
+          <span class="card-link">Add module</span>
+        </a>
+        <a href="/contact?module=visitor#contact-form" class="pricing-addon-card">
           <span class="pricing-addon-tier pricing-addon-tier--operations">Operations</span>
           <h4>Visitor Management</h4>
           <div class="price">R599 <span>/ month</span></div>
           <p class="pricing-addon-desc">Digital visitor registration, check-in processes, and visitor reporting.</p>
-          <a href="contact.html?module=visitor#contact-form" class="card-link">Add module</a>
-        </div>
-        <div class="pricing-addon-card">
+          <span class="card-link">Add module</span>
+        </a>
+        <a href="/contact?module=fleet#contact-form" class="pricing-addon-card">
           <span class="pricing-addon-tier pricing-addon-tier--automation">Advanced</span>
           <h4>Fleet Tracking</h4>
           <div class="price">R899 <span>/ month</span></div>
           <p class="pricing-addon-desc">Vehicle tracking, route monitoring, driver management, and fleet reporting.</p>
-          <a href="contact.html?module=fleet#contact-form" class="card-link">Add module</a>
-        </div>
-        <div class="pricing-addon-card">
+          <span class="card-link">Add module</span>
+        </a>
+        <a href="/contact?module=ai-automation#contact-form" class="pricing-addon-card">
           <span class="pricing-addon-tier pricing-addon-tier--automation">Advanced</span>
           <h4>AI Automation</h4>
           <div class="price">R899 <span>/ month</span></div>
           <p class="pricing-addon-desc">Workflow automation, intelligent notifications, process optimization, and AI-powered business assistance.</p>
-          <a href="contact.html?module=ai-automation#contact-form" class="card-link">Add module</a>
-        </div>
+          <span class="card-link">Add module</span>
+        </a>
       </div>
     </div>
   </section>
@@ -270,7 +274,7 @@
           </ul>
         </div>
         <div class="pricing-setup-actions">
-          <a href="contact.html?plan=setup#contact-form" class="btn btn-primary">Request Setup Quote</a>
+          <a href="/contact?plan=setup#contact-form" class="btn btn-primary">Request Setup Quote</a>
         </div>
       </div>
       <div class="pricing-fine-print reveal">
@@ -299,47 +303,47 @@
       <div class="pricing-section-head reveal">
         <p class="section-label label-blue">Professional Services</p>
         <h2 class="section-title">Websites, apps &amp; custom software</h2>
-        <p class="section-intro">One-off project pricing — <strong>separate from monthly Nexus subscriptions</strong>. Scoped and quoted before work begins. <a href="consulting.html">View all services</a></p>
+        <p class="section-intro">One-off project pricing — <strong>separate from monthly Nexus subscriptions</strong>. Scoped and quoted before work begins. <a href="/consulting">View all services</a></p>
       </div>
       <div class="pricing-pro-card reveal">
         <div class="pricing-pro-row">
-          <a href="consulting.html#web" class="pricing-pro-row-main pricing-pro-row-link">
+          <a href="/consulting#web" class="pricing-pro-row-main pricing-pro-row-link">
             <h3>Website Development</h3>
             <p>Business websites, upgrades, corporate sites, landing pages, and SEO setup.</p>
           </a>
           <div class="pricing-pro-row-meta">
             <span class="pricing-pro-price">From R5,999</span>
-            <a href="contact.html?service=website#contact-form" class="btn btn-outline btn-sm">Get Quote</a>
+            <a href="/contact?service=website#contact-form" class="btn btn-outline btn-sm">Get Quote</a>
           </div>
         </div>
         <div class="pricing-pro-row">
-          <a href="consulting.html#web" class="pricing-pro-row-main pricing-pro-row-link">
+          <a href="/consulting#web" class="pricing-pro-row-main pricing-pro-row-link">
             <h3>E-Commerce Stores</h3>
             <p>Online stores, payments, inventory, and order management.</p>
           </a>
           <div class="pricing-pro-row-meta">
             <span class="pricing-pro-price">From R12,999</span>
-            <a href="contact.html?service=ecommerce#contact-form" class="btn btn-outline btn-sm">Get Quote</a>
+            <a href="/contact?service=ecommerce#contact-form" class="btn btn-outline btn-sm">Get Quote</a>
           </div>
         </div>
         <div class="pricing-pro-row">
-          <a href="services/mobile.html" class="pricing-pro-row-main pricing-pro-row-link" id="mobile-apps">
+          <a href="/services/mobile" class="pricing-pro-row-main pricing-pro-row-link" id="mobile-apps">
             <h3>Mobile Apps</h3>
             <p>Android, iOS, and cross-platform applications.</p>
           </a>
           <div class="pricing-pro-row-meta">
             <span class="pricing-pro-price">From R25,000</span>
-            <a href="contact.html?service=mobile-app#contact-form" class="btn btn-outline btn-sm">Get Quote</a>
+            <a href="/contact?service=mobile-app#contact-form" class="btn btn-outline btn-sm">Get Quote</a>
           </div>
         </div>
         <div class="pricing-pro-row pricing-pro-row--last">
-          <a href="consulting.html#software" class="pricing-pro-row-main pricing-pro-row-link">
+          <a href="/consulting#software" class="pricing-pro-row-main pricing-pro-row-link">
             <h3>Custom Software</h3>
             <p>CRM, ERP, fleet, asset tracking, and internal business platforms.</p>
           </a>
           <div class="pricing-pro-row-meta">
             <span class="pricing-pro-price">Custom Quote</span>
-            <a href="contact.html?service=custom-software#contact-form" class="btn btn-primary btn-sm">Discuss Project</a>
+            <a href="/contact?service=custom-software#contact-form" class="btn btn-primary btn-sm">Discuss Project</a>
           </div>
         </div>
       </div>
@@ -357,13 +361,11 @@
         </div>
         <div class="pricing-pos-actions">
           <span class="pricing-pro-price">Custom Quote</span>
-          <a href="contact.html?service=pos#contact-form" class="btn btn-primary">Discuss POS Project</a>
-          <a href="services/pos.html" class="card-link">View POS details</a>
+          <a href="/contact?service=pos#contact-form" class="btn btn-primary">Discuss POS Project</a>
+          <a href="/services/pos" class="card-link">View POS details</a>
         </div>
       </div>
     </div>
-  </section>
-
   </section>
 
   <section class="content-section pricing-section alt" id="social-proof">
@@ -373,12 +375,12 @@
         <h2 class="section-title">Built for businesses that need to look professional</h2>
         <div class="pricing-proof-stats">
           <div class="pricing-proof-stat">
-            <strong>77+</strong>
-            <span>Users across client teams · May 2026</span>
-          </div>
-          <div class="pricing-proof-stat">
             <strong>8</strong>
             <span>Flagship services we deliver with confidence</span>
+          </div>
+          <div class="pricing-proof-stat">
+            <strong>R599</strong>
+            <span>Core platform per month</span>
           </div>
           <div class="pricing-proof-stat">
             <strong>ZA</strong>
@@ -386,7 +388,7 @@
           </div>
         </div>
         <p class="section-intro">Book a demo to see the platform, or request a walkthrough for your industry. Case studies and screenshots available on request.</p>
-        <a href="contact.html?interest=demo#contact-form" class="btn btn-primary">Book a Demo</a>
+        <a href="/contact?interest=demo#contact-form" class="btn btn-primary">Book a Demo</a>
       </div>
     </div>
   </section>
@@ -397,8 +399,8 @@
       <h2>Not sure which plan fits?</h2>
       <p>Book a demo first — we'll show you the platform, then recommend Starter, Professional, or Enterprise.</p>
       <div class="cta-actions">
-        <a href="contact.html?interest=demo#contact-form" class="btn btn-primary btn-lg">Book a Demo</a>
-        <a href="contact.html#contact-form" class="btn btn-white btn-lg">Request a Quote</a>
+        <a href="/contact?interest=demo#contact-form" class="btn btn-primary btn-lg">Book a Demo</a>
+        <a href="/contact#contact-form" class="btn btn-white btn-lg">Request a Quote</a>
       </div>
     </div>
   </section>

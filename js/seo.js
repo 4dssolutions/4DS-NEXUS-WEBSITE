@@ -152,7 +152,7 @@
         inLanguage: 'en-ZA',
         potentialAction: {
           '@type': 'SearchAction',
-          target: `${SITE_URL}/areas-served.html?q={search_term_string}`,
+          target: `${SITE_URL}//areas-served?q={search_term_string}`,
           'query-input': 'required name=search_term_string',
         },
       }] : []),

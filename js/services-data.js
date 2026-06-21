@@ -288,9 +288,8 @@ function renderServicePage() {
   }
   document.body.classList.add('service-page', `service-${slug}`);
 
-  const base = '../';
   const relatedMeta = {
-    'custom-solutions': { title: 'Custom Solutions', icon: 'puzzle', subtitle: 'Scoped industry builds', href: `${base}custom-solutions.html` },
+    'custom-solutions': { title: 'Custom Solutions', icon: 'puzzle', subtitle: 'Scoped industry builds', href: '/custom-solutions' },
   };
   const relatedCards = (data.related || []).map(key => {
     if (relatedMeta[key]) {
@@ -299,7 +298,7 @@ function renderServicePage() {
     }
     const r = SERVICE_PAGES[key];
     if (!r) return '';
-    const href = key === 'ai-assistant' ? 'ai-assistant.html' : `${key}.html`;
+    const href = `/services/${key}`;
     return `<a href="${href}" class="card"><div class="card-icon">${iconSvg(r.icon)}</div><h3>${r.title}</h3><p>${r.subtitle}</p><span class="card-link">Learn more</span></a>`;
   }).join('');
 
@@ -311,7 +310,7 @@ function renderServicePage() {
       <div class="container">
         <div class="coming-soon-banner reveal">
           <span class="coming-soon-badge">Coming Soon</span>
-          <p>This capability is on our roadmap. <a href="${base}future-platforms.html">View the roadmap</a> or <a href="${base}contact.html">join the waitlist</a>.</p>
+          <p>This capability is on our roadmap. <a href="/future-platforms">View the roadmap</a> or <a href="/contact">join the waitlist</a>.</p>
         </div>
       </div>
     </section>` : '';
@@ -320,7 +319,7 @@ function renderServicePage() {
       <div class="container">
         <div class="coming-soon-banner reveal">
           <span class="coming-soon-badge">Custom Solution</span>
-          <p>This is scoped and quoted per client, not a standard bundled module. <a href="${base}custom-solutions.html">Learn about custom solutions</a> or <a href="${base}contact.html">request a quote</a>.</p>
+          <p>This is scoped and quoted per client, not a standard bundled module. <a href="/custom-solutions">Learn about custom solutions</a> or <a href="/contact">request a quote</a>.</p>
         </div>
       </div>
     </section>` : '';
@@ -336,7 +335,7 @@ function renderServicePage() {
   document.getElementById('service-content').innerHTML = `
     <section class="page-hero ${theme.hero} service-hero">
       <div class="container">
-        <nav class="breadcrumb"><a href="${base}index.html">Home</a> / <a href="${base}solutions/nexus.html">Solutions</a> / <span>${data.title}</span></nav>
+        <nav class="breadcrumb"><a href="/">Home</a> / <a href="/solutions/nexus">Solutions</a> / <span>${data.title}</span></nav>
         ${data.comingSoon ? '<span class="coming-soon-badge" style="margin-bottom:12px;display:inline-block">Coming Soon</span>' : ''}
         ${theme.eyebrow ? `<p class="service-hero-eyebrow">${theme.eyebrow}</p>` : ''}
         <h1><span class="h1-icon">${iconSvg(data.icon)}</span>${data.title}</h1>
@@ -344,8 +343,8 @@ function renderServicePage() {
         <div class="service-hero-chips">${heroChips}</div>
         ${heroNav}
         <div class="service-hero-actions">
-          <a href="${base}contact.html" class="btn btn-primary btn-lg">Request a Demo</a>
-          <a href="${base}solutions/nexus.html" class="btn btn-ghost btn-lg">View Full Platform</a>
+          <a href="/contact" class="btn btn-primary btn-lg">Request a Demo</a>
+          <a href="/solutions/nexus" class="btn btn-ghost btn-lg">View Full Platform</a>
         </div>
       </div>
     </section>
@@ -408,8 +407,8 @@ function renderServicePage() {
         </div>
         ${outcomesHtml ? `<div class="benefits-box reveal"><h4>Key Outcomes</h4><ul>${outcomesHtml}</ul></div>` : ''}
         ${data.comingSoon
-          ? `<a href="${base}contact.html" class="btn btn-primary" style="margin-top:24px">Join the Waitlist</a>`
-          : `<a href="${base}pricing.html" class="btn btn-primary" style="margin-top:24px">View Pricing</a>`}
+          ? `<a href="/contact" class="btn btn-primary" style="margin-top:24px">Join the Waitlist</a>`
+          : `<a href="/pricing" class="btn btn-primary" style="margin-top:24px">View Pricing</a>`}
       </div>
     </section>
 
@@ -425,7 +424,7 @@ function renderServicePage() {
       <div class="container cta-inner reveal">
         <h2>Ready to add ${data.title} to your operations?</h2>
         <p>Speak to our team about configuring 4DS Nexus for your business.</p>
-        <a href="${base}contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+        <a href="/contact" class="btn btn-primary btn-lg">Get in Touch</a>
       </div>
     </section>
   `;

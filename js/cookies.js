@@ -9,12 +9,6 @@
   const hasAnalytics = Boolean(gaId);
   const hasMarketing = Boolean(marketingId) && settings.enableMarketing !== false;
 
-  function getBasePath() {
-    const path = window.location.pathname;
-    if (path.includes('/services/') || path.includes('/solutions/')) return '../';
-    return '';
-  }
-
   function readConsent() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -83,7 +77,6 @@
   }
 
   function mountUI() {
-    const base = getBasePath();
     const existing = document.getElementById('cookieConsent');
     if (existing) existing.remove();
 
@@ -94,7 +87,7 @@
         <div class="cookie-banner-inner">
           <p class="cookie-banner-label">Cookies</p>
           <h2 id="cookieBannerTitle">We value your privacy</h2>
-          <p id="cookieBannerDesc">We use essential cookies to run this site (theme and security). With your permission, we also use analytics cookies to understand how visitors use 4DS Nexus. Read our <a href="${base}privacy.html#cookies">Privacy Policy</a>.</p>
+          <p id="cookieBannerDesc">We use essential cookies to run this site (theme and security). With your permission, we also use analytics cookies to understand how visitors use 4DS Nexus. Read our <a href="/privacy#cookies">Privacy Policy</a>.</p>
           <div class="cookie-banner-actions">
             <button type="button" class="btn btn-primary btn-sm" data-cookie-accept-all>Accept all</button>
             <button type="button" class="btn btn-outline btn-sm" data-cookie-reject>Essential only</button>

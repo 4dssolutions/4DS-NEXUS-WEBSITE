@@ -75,37 +75,37 @@ const CAPABILITIES = [
     icon: 'users', title: 'CRM & Customer Management', theme: 'crm',
     desc: 'Unify leads, customers, support tickets, and communication history in one reliable system.',
     tags: ['CRM', 'Client Management', 'Support Tickets', 'Contact Management'],
-    href: 'services/crm.html', specs: [['Coverage', 5], ['Usability', 5], ['Support', 4]]
+    href: '/services/crm', specs: [['Coverage', 5], ['Usability', 5], ['Support', 4]]
   },
   {
     icon: 'monitor', title: 'Website & Portal Development', theme: 'sync',
     desc: 'Custom websites, upgrades, and secure client portals that represent your brand and connect to your operations.',
     tags: ['Websites', 'Client Portals', 'Landing Pages', 'Responsive Design'],
-    href: 'consulting.html#web', specs: [['Design', 5], ['Performance', 4], ['Integration', 4]]
+    href: '/consulting#web', specs: [['Design', 5], ['Performance', 4], ['Integration', 4]]
   },
   {
     icon: 'gear', title: 'Business Process Automation', theme: 'intel',
     desc: 'Replace manual steps with workflows, document handling, and connected business processes.',
     tags: ['Workflows', 'Document Management', 'Automation', 'Integrations'],
-    href: 'consulting.html', specs: [['Efficiency', 5], ['Accuracy', 4], ['Control', 4]]
+    href: '/consulting', specs: [['Efficiency', 5], ['Accuracy', 4], ['Control', 4]]
   },
   {
     icon: 'shield', title: 'Security Operations Management', theme: 'ops',
     desc: 'Guard scheduling, incident reporting, patrol records, and client management for security companies.',
     tags: ['Guard Management', 'Incident Reporting', 'Site Management', 'Workforce'],
-    href: 'industries.html', specs: [['Operations', 5], ['Visibility', 4], ['Compliance', 4]]
+    href: '/industries', specs: [['Operations', 5], ['Visibility', 4], ['Compliance', 4]]
   },
   {
     icon: 'box', title: 'Fleet & Asset Management', theme: 'mobile',
     desc: 'Track vehicles, equipment, and assets across sites, scoped and delivered as a custom solution.',
     tags: ['Asset Tracking', 'Field Service', 'Maintenance', 'Multi-site'],
-    href: 'custom-solutions.html', specs: [['Visibility', 5], ['Control', 4], ['Scale', 4]]
+    href: '/custom-solutions', specs: [['Visibility', 5], ['Control', 4], ['Scale', 4]]
   },
   {
     icon: 'wrench', title: 'Custom Software Development', theme: 'sync',
     desc: 'Custom cloud systems, API integrations, and modules built around how your business runs.',
     tags: ['Custom Builds', 'API Integrations', 'Cloud Systems', 'Industry-specific'],
-    href: 'consulting.html', specs: [['Fit', 5], ['Flexibility', 5], ['Support', 4]]
+    href: '/consulting', specs: [['Fit', 5], ['Flexibility', 5], ['Support', 4]]
   },
 ];
 
@@ -188,83 +188,84 @@ const WHATSAPP_URL = 'https://wa.me/27646552995';
 const MOBILE_NAV_BREAKPOINT = 768;
 const LINKEDIN_URL = 'https://www.linkedin.com/in/4ds-solutions-33ab62417';
 const SITE_CONTACT_EMAIL = '4dssolutions@gmail.com';
-const PRICING_URL = 'pricing.html';
-const NEXUS_URL = 'solutions/nexus.html';
-const CUSTOM_SOLUTIONS_URL = 'custom-solutions.html';
+const PRICING_URL = '/pricing';
+const NEXUS_URL = '/solutions/nexus';
+const CUSTOM_SOLUTIONS_URL = '/custom-solutions';
+const HOME_URL = '/';
 
 const SERVICE_CATEGORIES = [
   { label: 'Software Solutions', links: [
-    { title: '4DS Nexus CRM & ERP', href: 'solutions/nexus.html' },
-    { title: 'Custom Business Systems', href: 'consulting.html#software' },
-    { title: 'Fleet Management Systems', href: 'custom-solutions.html' },
-    { title: 'Security Management Systems', href: 'industries.html' },
-    { title: 'Asset Tracking Solutions', href: 'services/inventory.html' },
+    { title: '4DS Nexus CRM & ERP', href: '/solutions/nexus' },
+    { title: 'Custom Business Systems', href: '/consulting#software' },
+    { title: 'Fleet Management Systems', href: '/custom-solutions' },
+    { title: 'Security Management Systems', href: '/industries' },
+    { title: 'Asset Tracking Solutions', href: '/services/inventory' },
   ]},
   { label: 'Web Development', links: [
-    { title: 'Business Websites', href: 'consulting.html#web' },
-    { title: 'Website Upgrades', href: 'consulting.html#web' },
-    { title: 'E-commerce Websites', href: 'pricing.html#professional-services' },
-    { title: 'Customer Portals', href: 'consulting.html#web' },
-    { title: 'Web Applications', href: 'consulting.html#web' },
-    { title: 'Website Maintenance', href: 'consulting.html#web' },
+    { title: 'Business Websites', href: '/consulting#web' },
+    { title: 'Website Upgrades', href: '/consulting#web' },
+    { title: 'E-commerce Websites', href: '/pricing#professional-services' },
+    { title: 'Customer Portals', href: '/consulting#web' },
+    { title: 'Web Applications', href: '/consulting#web' },
+    { title: 'Website Maintenance', href: '/consulting#web' },
   ]},
   { label: 'Mobile Development', links: [
-    { title: 'Android Apps', href: 'services/mobile.html' },
-    { title: 'iOS Apps', href: 'services/mobile.html' },
-    { title: 'Progressive Web Apps', href: 'services/mobile.html' },
-    { title: 'Field Service Apps', href: 'services/mobile.html' },
-    { title: 'Tracking Applications', href: 'custom-solutions.html' },
+    { title: 'Android Apps', href: '/services/mobile' },
+    { title: 'iOS Apps', href: '/services/mobile' },
+    { title: 'Progressive Web Apps', href: '/services/mobile' },
+    { title: 'Field Service Apps', href: '/services/mobile' },
+    { title: 'Tracking Applications', href: '/custom-solutions' },
   ]},
   { label: 'Business Automation', links: [
-    { title: 'Workflow Automation', href: 'consulting.html#automation' },
-    { title: 'Document Automation', href: 'consulting.html#automation' },
-    { title: 'Email Automation', href: 'consulting.html#automation' },
-    { title: 'Reporting Automation', href: 'consulting.html#automation' },
-    { title: 'Client Onboarding Automation', href: 'consulting.html#automation' },
+    { title: 'Workflow Automation', href: '/consulting#automation' },
+    { title: 'Document Automation', href: '/consulting#automation' },
+    { title: 'Email Automation', href: '/consulting#automation' },
+    { title: 'Reporting Automation', href: '/consulting#automation' },
+    { title: 'Client Onboarding Automation', href: '/consulting#automation' },
   ]},
   { label: 'Business Operations', links: [
-    { title: 'POS Systems', href: 'pricing.html#pos' },
-    { title: 'Inventory Management', href: 'services/inventory.html' },
-    { title: 'Dispatch Systems', href: 'custom-solutions.html' },
-    { title: 'Employee Management', href: 'services/crm.html' },
-    { title: 'Visitor Management', href: 'industries.html' },
+    { title: 'POS Systems', href: '/pricing#pos' },
+    { title: 'Inventory Management', href: '/services/inventory' },
+    { title: 'Dispatch Systems', href: '/custom-solutions' },
+    { title: 'Employee Management', href: '/services/crm' },
+    { title: 'Visitor Management', href: '/industries' },
   ]},
   { label: 'Tracking & Security', links: [
-    { title: 'Vehicle Tracking', href: 'custom-solutions.html' },
-    { title: 'Fleet Tracking', href: 'custom-solutions.html' },
-    { title: 'Patrol Monitoring', href: 'industries.html' },
-    { title: 'Incident Reporting', href: 'industries.html' },
-    { title: 'Access Control Systems', href: 'industries.html' },
+    { title: 'Vehicle Tracking', href: '/custom-solutions' },
+    { title: 'Fleet Tracking', href: '/custom-solutions' },
+    { title: 'Patrol Monitoring', href: '/industries' },
+    { title: 'Incident Reporting', href: '/industries' },
+    { title: 'Access Control Systems', href: '/industries' },
   ]},
   { label: 'Consulting & Integration', links: [
-    { title: 'Digital Transformation', href: 'consulting.html#consulting' },
-    { title: 'Cloud Migration', href: 'consulting.html#consulting' },
-    { title: 'API Integration', href: 'consulting.html#consulting' },
-    { title: 'System Integration', href: 'consulting.html#consulting' },
-    { title: 'Technology Consulting', href: 'consulting.html#consulting' },
+    { title: 'Digital Transformation', href: '/consulting#consulting' },
+    { title: 'Cloud Migration', href: '/consulting#consulting' },
+    { title: 'API Integration', href: '/consulting#consulting' },
+    { title: 'System Integration', href: '/consulting#consulting' },
+    { title: 'Technology Consulting', href: '/consulting#consulting' },
   ]},
 ];
 
 const SERVICES = [
-  { id: 'nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Connected platform for CRM and operations', href: 'solutions/nexus.html' },
-  { id: 'custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Custom systems for your operation', href: 'consulting.html#software' },
-  { id: 'websites', icon: 'monitor', title: 'Website Development', desc: 'New sites, upgrades, e-commerce, and portals', href: 'consulting.html#web' },
-  { id: 'mobile', icon: 'phone', title: 'Mobile App Development', desc: 'Android, iOS, and cross-platform apps', href: 'services/mobile.html' },
-  { id: 'pos', icon: 'cart', title: 'POS Systems', desc: 'Retail checkout and inventory-linked sales', href: 'pricing.html#pos' },
-  { id: 'fleet', icon: 'truck', title: 'Vehicle & Fleet Tracking', desc: 'GPS, dispatch, and asset visibility', href: 'custom-solutions.html' },
-  { id: 'automation', icon: 'gear', title: 'Business Automation', desc: 'Workflows, documents, and notifications', href: 'consulting.html#automation' },
-  { id: 'security', icon: 'shield', title: 'Security Management Systems', desc: 'Guards, patrols, incidents, and sites', href: 'industries.html' },
+  { id: 'nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Connected platform for CRM and operations', href: '/solutions/nexus' },
+  { id: 'custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Custom systems for your operation', href: '/consulting#software' },
+  { id: 'websites', icon: 'monitor', title: 'Website Development', desc: 'New sites, upgrades, e-commerce, and portals', href: '/consulting#web' },
+  { id: 'mobile', icon: 'phone', title: 'Mobile App Development', desc: 'Android, iOS, and cross-platform apps', href: '/services/mobile' },
+  { id: 'pos', icon: 'cart', title: 'POS Systems', desc: 'Retail checkout and inventory-linked sales', href: '/pricing#pos' },
+  { id: 'fleet', icon: 'truck', title: 'Vehicle & Fleet Tracking', desc: 'GPS, dispatch, and asset visibility', href: '/custom-solutions' },
+  { id: 'automation', icon: 'gear', title: 'Business Automation', desc: 'Workflows, documents, and notifications', href: '/consulting#automation' },
+  { id: 'security', icon: 'shield', title: 'Security Management Systems', desc: 'Guards, patrols, incidents, and sites', href: '/industries' },
 ];
 
 const MODULE_EXPLORER = [
-  { id: 'nexus', tab: 'Nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Core platform from R599/month, with add-on modules and bundles from R1,299/month.', features: ['Central dashboard & reporting', 'User & role management', 'Inventory & employee modules', 'Customer portal access', 'Fleet & visitor add-ons', 'AI automation add-on'], outcomes: ['One shared database', 'Operational visibility', 'Scalable from startup to enterprise', 'South African support'], href: 'solutions/nexus.html' },
-  { id: 'custom', tab: 'Custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Cloud-based business systems and integrations built around your workflows, quoted and delivered properly.', features: ['Custom module development', 'CRM and ERP builds', 'API and system integrations', 'Cloud deployment', 'Industry-specific workflows', 'Internal business platforms'], outcomes: ['Built for your process', 'Scalable foundation', 'Practical delivery', 'Long-term partnership'], href: 'consulting.html#software' },
-  { id: 'websites', tab: 'Websites', icon: 'monitor', title: 'Website Development', desc: 'Professional business websites, upgrades, landing pages, and client portals, mobile-responsive, on-brand, and ready to grow.', features: ['Business and corporate websites', 'Website redesigns and upgrades', 'Landing pages and portfolios', 'E-commerce stores', 'SEO setup and maintenance', 'Hosting and domain setup', 'Contact and enquiry forms'], outcomes: ['Stronger online presence', 'Professional client experience', 'Mobile-ready design', 'Clear starting prices'], href: 'pricing.html#professional-services' },
-  { id: 'mobile', tab: 'Mobile', icon: 'phone', title: 'Mobile App Development', desc: 'Android, iOS, and cross-platform apps for field teams, clients, and employees, connected to your operations.', features: ['Android and iOS applications', 'Business management apps', 'Client and employee portals', 'Field service apps', 'Tracking applications', 'Progressive web apps (PWA)'], outcomes: ['Field teams stay connected', 'Real-time data capture', 'Better client experience', 'Apps that match your brand'], href: 'services/mobile.html' },
-  { id: 'pos', tab: 'POS', icon: 'cart', title: 'POS Systems', desc: 'Retail POS, inventory-linked checkout, multi-branch sales, and reporting, easy for clients to understand and adopt.', features: ['Retail POS systems', 'Inventory and stock tracking', 'Barcode scanning', 'Sales reporting', 'Multi-branch POS', 'Customer loyalty programs'], outcomes: ['Faster checkout', 'Stock linked to sales', 'Multi-site visibility', 'Clear operational reporting'], href: 'pricing.html#pos' },
-  { id: 'fleet', tab: 'Fleet', icon: 'truck', title: 'Vehicle & Fleet Tracking', desc: 'Vehicle tracking, fleet management, dispatch, and asset visibility, scoped as custom solutions for your operation.', features: ['Vehicle and asset records', 'GPS tracking integration', 'Dispatch management', 'Maintenance tracking', 'Multi-site visibility', 'Custom reporting'], outcomes: ['Asset visibility', 'Better dispatch control', 'Scoped delivery', 'Industry-fit setup'], href: 'custom-solutions.html' },
-  { id: 'automation', tab: 'Automation', icon: 'gear', title: 'Business Automation', desc: 'Workflow, document, email, and reporting automation, less manual admin and faster response times.', features: ['Workflow automation', 'Document automation', 'Email and notification flows', 'Reporting automation', 'Client onboarding automation', 'WhatsApp and SMS notifications'], outcomes: ['Less manual admin', 'Faster response times', 'Consistent follow-ups', 'Reliable notifications'], href: 'consulting.html#automation' },
-  { id: 'security', tab: 'Security', icon: 'shield', title: 'Security Management Systems', desc: 'Systems for guard scheduling, patrol monitoring, incident reporting, visitor management, and client contracts.', features: ['Guard and shift scheduling', 'Patrol monitoring', 'Incident reporting', 'Visitor management', 'Site and contract management', 'Workforce visibility'], outcomes: ['Better site coverage', 'Documented incidents', 'Organised operations', 'Client transparency'], href: 'industries.html' },
+  { id: 'nexus', tab: 'Nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Core platform from R599/month, with add-on modules and bundles from R1,299/month.', features: ['Central dashboard & reporting', 'User & role management', 'Inventory & employee modules', 'Customer portal access', 'Fleet & visitor add-ons', 'AI automation add-on'], outcomes: ['One shared database', 'Operational visibility', 'Scalable from startup to enterprise', 'South African support'], href: '/solutions/nexus' },
+  { id: 'custom', tab: 'Custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Cloud-based business systems and integrations built around your workflows, quoted and delivered properly.', features: ['Custom module development', 'CRM and ERP builds', 'API and system integrations', 'Cloud deployment', 'Industry-specific workflows', 'Internal business platforms'], outcomes: ['Built for your process', 'Scalable foundation', 'Practical delivery', 'Long-term partnership'], href: '/consulting#software' },
+  { id: 'websites', tab: 'Websites', icon: 'monitor', title: 'Website Development', desc: 'Professional business websites, upgrades, landing pages, and client portals, mobile-responsive, on-brand, and ready to grow.', features: ['Business and corporate websites', 'Website redesigns and upgrades', 'Landing pages and portfolios', 'E-commerce stores', 'SEO setup and maintenance', 'Hosting and domain setup', 'Contact and enquiry forms'], outcomes: ['Stronger online presence', 'Professional client experience', 'Mobile-ready design', 'Clear starting prices'], href: '/pricing#professional-services' },
+  { id: 'mobile', tab: 'Mobile', icon: 'phone', title: 'Mobile App Development', desc: 'Android, iOS, and cross-platform apps for field teams, clients, and employees, connected to your operations.', features: ['Android and iOS applications', 'Business management apps', 'Client and employee portals', 'Field service apps', 'Tracking applications', 'Progressive web apps (PWA)'], outcomes: ['Field teams stay connected', 'Real-time data capture', 'Better client experience', 'Apps that match your brand'], href: '/services/mobile' },
+  { id: 'pos', tab: 'POS', icon: 'cart', title: 'POS Systems', desc: 'Retail POS, inventory-linked checkout, multi-branch sales, and reporting, easy for clients to understand and adopt.', features: ['Retail POS systems', 'Inventory and stock tracking', 'Barcode scanning', 'Sales reporting', 'Multi-branch POS', 'Customer loyalty programs'], outcomes: ['Faster checkout', 'Stock linked to sales', 'Multi-site visibility', 'Clear operational reporting'], href: '/pricing#pos' },
+  { id: 'fleet', tab: 'Fleet', icon: 'truck', title: 'Vehicle & Fleet Tracking', desc: 'Vehicle tracking, fleet management, dispatch, and asset visibility, scoped as custom solutions for your operation.', features: ['Vehicle and asset records', 'GPS tracking integration', 'Dispatch management', 'Maintenance tracking', 'Multi-site visibility', 'Custom reporting'], outcomes: ['Asset visibility', 'Better dispatch control', 'Scoped delivery', 'Industry-fit setup'], href: '/custom-solutions' },
+  { id: 'automation', tab: 'Automation', icon: 'gear', title: 'Business Automation', desc: 'Workflow, document, email, and reporting automation, less manual admin and faster response times.', features: ['Workflow automation', 'Document automation', 'Email and notification flows', 'Reporting automation', 'Client onboarding automation', 'WhatsApp and SMS notifications'], outcomes: ['Less manual admin', 'Faster response times', 'Consistent follow-ups', 'Reliable notifications'], href: '/consulting#automation' },
+  { id: 'security', tab: 'Security', icon: 'shield', title: 'Security Management Systems', desc: 'Systems for guard scheduling, patrol monitoring, incident reporting, visitor management, and client contracts.', features: ['Guard and shift scheduling', 'Patrol monitoring', 'Incident reporting', 'Visitor management', 'Site and contract management', 'Workforce visibility'], outcomes: ['Better site coverage', 'Documented incidents', 'Organised operations', 'Client transparency'], href: '/industries' },
 ];
 
 const CONNECT_ACCORDION = [
@@ -274,23 +275,29 @@ const CONNECT_ACCORDION = [
   { title: 'Reporting ↔ Every Module', body: 'Dashboards and reports draw from one connected data layer, giving leadership a clear view across the business.' },
 ];
 
-function getBasePath() {
-  const path = window.location.pathname;
-  if (path.includes('/services/') || path.includes('/solutions/')) return '../';
-  return '';
+function getSitePath() {
+  let path = window.location.pathname.replace(/\/$/, '') || '/';
+  if (path.endsWith('/index.html')) path = path.slice(0, -'/index.html'.length) || '/';
+  return path;
+}
+
+function isHomePage() {
+  return getSitePath() === '/';
+}
+
+function isPathActive(match) {
+  const path = getSitePath();
+  if (match === '/') return path === '/';
+  return path === match || path.startsWith(`${match}/`);
 }
 
 function renderHeader() {
-  const base = getBasePath();
-  const current = window.location.pathname.split('/').pop() || 'index.html';
-
-  const isActive = (pages) => pages.some(p => current === p || current.includes(p));
 
   const servicesMega = SERVICE_CATEGORIES.map(cat => `
     <div class="mega-menu-category">
       <p class="mega-category-label">${cat.label}</p>
       <div class="mega-category-links">
-        ${cat.links.map(l => `<a href="${base}${l.href}">${l.title}</a>`).join('')}
+        ${cat.links.map(l => `<a href="${l.href}">${l.title}</a>`).join('')}
       </div>
     </div>
   `).join('');
@@ -298,7 +305,7 @@ function renderHeader() {
   const mobileServicesPanel = SERVICE_CATEGORIES.map(cat => `
     <div class="mobile-dropdown-group">
       <p class="mobile-dropdown-label">${cat.label}</p>
-      ${cat.links.map(l => `<a href="${base}${l.href}" class="mobile-dropdown-link">${l.title}</a>`).join('')}
+      ${cat.links.map(l => `<a href="${l.href}" class="mobile-dropdown-link">${l.title}</a>`).join('')}
     </div>
   `).join('');
 
@@ -306,9 +313,9 @@ function renderHeader() {
     <header class="site-header" id="siteHeader">
       <div class="container">
         <div class="header-inner">
-        <a href="${base}index.html" class="logo" aria-label="4DS Nexus home">
+        <a href="${HOME_URL}" class="logo" aria-label="4DS Nexus home">
           <span class="logo-mark-wrap">
-            <img class="logo-mark" src="${base}assets/4ds-logo-wordmark.png" width="847" height="334" alt="4DS">
+            <img class="logo-mark" src="/assets/4ds-logo-wordmark.png" width="847" height="334" alt="4DS">
           </span>
           <span class="logo-text">
             <span class="logo-suffix">Nexus</span>
@@ -316,24 +323,24 @@ function renderHeader() {
         </a>
         <nav class="main-nav" id="mainNav">
           <div class="nav-item" data-nav-priority="1">
-            <a href="${base}index.html" class="nav-link ${current === 'index.html' || current === '' ? 'active' : ''}">Home</a>
-            <template class="nav-overflow-template"><a href="${base}index.html" class="mobile-nav-link">Home</a></template>
+            <a href="${HOME_URL}" class="nav-link ${isHomePage() ? 'active' : ''}">Home</a>
+            <template class="nav-overflow-template"><a href="${HOME_URL}" class="mobile-nav-link">Home</a></template>
           </div>
           <div class="nav-item" data-nav-priority="2">
-            <a href="${base}about.html" class="nav-link ${current === 'about.html' ? 'active' : ''}">About</a>
-            <template class="nav-overflow-template"><a href="${base}about.html" class="mobile-nav-link">About</a></template>
+            <a href="/about" class="nav-link ${isPathActive('/about') ? 'active' : ''}">About</a>
+            <template class="nav-overflow-template"><a href="/about" class="mobile-nav-link">About</a></template>
           </div>
           <div class="nav-item" data-nav-priority="3">
-            <a href="${base}consulting.html" class="nav-link ${isActive(SERVICES.map(s => s.href.split('/').pop())) ? 'active' : ''}">
+            <a href="/consulting" class="nav-link ${isPathActive('/consulting') || isPathActive('/services') ? 'active' : ''}">
               Services
               <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5"/></svg>
             </a>
             <div class="mega-menu">
               <div class="mega-menu-categories">${servicesMega}</div>
               <div class="mega-menu-footer">
-                <a href="${base}consulting.html#web">Website development</a>
-                <a href="${base}solutions/nexus.html">View all modules on 4DS Nexus</a>
-                <a href="${base}${PRICING_URL}">View pricing</a>
+                <a href="/consulting#web">Website development</a>
+                <a href="/solutions/nexus">View all modules on 4DS Nexus</a>
+                <a href="${PRICING_URL}">View pricing</a>
               </div>
             </div>
             <template class="nav-overflow-template">
@@ -349,41 +356,41 @@ function renderHeader() {
             </template>
           </div>
           <div class="nav-item" data-nav-priority="4">
-            <a href="${base}${NEXUS_URL}" class="nav-link ${current === 'nexus.html' ? 'active' : ''}">
+            <a href="${NEXUS_URL}" class="nav-link ${isPathActive('/solutions') || isPathActive('/digital-transformation') || isPathActive('/custom-solutions') || isPathActive('/future-platforms') ? 'active' : ''}">
               Solutions
               <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5"/></svg>
             </a>
             <div class="mega-menu" style="min-width:320px">
               <div class="mega-menu-grid" style="grid-template-columns:1fr">
-                <a href="${base}${NEXUS_URL}#modules" class="mega-link">
+                <a href="${NEXUS_URL}#modules" class="mega-link">
                   <div class="mega-icon">${iconSvg('bolt')}</div>
                   <div>
                     <h4>4DS Nexus Platform</h4>
                     <p>CRM, business websites, client portals, inventory, and mobile apps, one company, connected systems.</p>
                   </div>
                 </a>
-                <a href="${base}consulting.html#web" class="mega-link">
+                <a href="/consulting#web" class="mega-link">
                   <div class="mega-icon">${iconSvg('monitor')}</div>
                   <div>
                     <h4>Website Development</h4>
                     <p>Business websites, upgrades, landing pages, and e-commerce, built by the same team as 4DS Nexus.</p>
                   </div>
                 </a>
-                <a href="${base}${PRICING_URL}" class="mega-link">
+                <a href="${PRICING_URL}" class="mega-link">
                   <div class="mega-icon">${iconSvg('chart')}</div>
                   <div>
                     <h4>Modular Pricing</h4>
                     <p>Core from R599/month, bundles from R1,299/month, and enterprise plans from R4,999/month.</p>
                   </div>
                 </a>
-                <a href="${base}future-platforms.html" class="mega-link">
+                <a href="/future-platforms" class="mega-link">
                   <div class="mega-icon">${iconSvg('robot')}</div>
                   <div>
                     <h4>Coming Soon <span class="coming-soon-badge coming-soon-badge--inline">Roadmap</span></h4>
                     <p>AI assistant, predictive analytics, and advanced BI, on our roadmap, not live yet.</p>
                   </div>
                 </a>
-                <a href="${base}${CUSTOM_SOLUTIONS_URL}" class="mega-link">
+                <a href="${CUSTOM_SOLUTIONS_URL}" class="mega-link">
                   <div class="mega-icon">${iconSvg('puzzle')}</div>
                   <div>
                     <h4>Custom Solutions</h4>
@@ -400,24 +407,24 @@ function renderHeader() {
                 </button>
                 <div class="mobile-dropdown-panel">
                   <div class="mobile-dropdown-panel-inner">
-                    <a href="${base}${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
-                    <a href="${base}consulting.html#web" class="mobile-dropdown-link">Website Development</a>
-                    <a href="${base}digital-transformation.html" class="mobile-dropdown-link">Digital Transformation</a>
-                    <a href="${base}${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
-                    <a href="${base}future-platforms.html" class="mobile-dropdown-link">Coming Soon</a>
-                    <a href="${base}${PRICING_URL}" class="mobile-dropdown-link">Pricing</a>
+                    <a href="${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
+                    <a href="/consulting#web" class="mobile-dropdown-link">Website Development</a>
+                    <a href="/digital-transformation" class="mobile-dropdown-link">Digital Transformation</a>
+                    <a href="${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
+                    <a href="/future-platforms" class="mobile-dropdown-link">Coming Soon</a>
+                    <a href="${PRICING_URL}" class="mobile-dropdown-link">Pricing</a>
                   </div>
                 </div>
               </div>
             </template>
           </div>
           <div class="nav-item" data-nav-priority="5">
-            <a href="${base}industries.html" class="nav-link ${current === 'industries.html' ? 'active' : ''}">Industries</a>
-            <template class="nav-overflow-template"><a href="${base}industries.html" class="mobile-nav-link">Industries</a></template>
+            <a href="/industries" class="nav-link ${isPathActive('/industries') ? 'active' : ''}">Industries</a>
+            <template class="nav-overflow-template"><a href="/industries" class="mobile-nav-link">Industries</a></template>
           </div>
           <div class="nav-item" data-nav-priority="6">
-            <a href="${base}${PRICING_URL}" class="nav-link ${current === 'pricing.html' ? 'active' : ''}">Pricing</a>
-            <template class="nav-overflow-template"><a href="${base}${PRICING_URL}" class="mobile-nav-link">Pricing</a></template>
+            <a href="${PRICING_URL}" class="nav-link ${isPathActive('/pricing') ? 'active' : ''}">Pricing</a>
+            <template class="nav-overflow-template"><a href="${PRICING_URL}" class="mobile-nav-link">Pricing</a></template>
           </div>
         </nav>
         <div class="header-tools">
@@ -426,8 +433,8 @@ function renderHeader() {
             <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
           </button>
           <div class="header-actions">
-            <a href="${base}solutions/nexus.html" class="btn btn-outline">Explore Nexus</a>
-            <a href="${base}contact.html?interest=demo#contact-form" class="btn btn-primary">Book a Demo</a>
+            <a href="/solutions/nexus" class="btn btn-outline">Explore Nexus</a>
+            <a href="/contact?interest=demo#contact-form" class="btn btn-primary">Book a Demo</a>
           </div>
           <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
             <span class="mobile-toggle-box" aria-hidden="true">
@@ -445,8 +452,8 @@ function renderHeader() {
       <div class="mobile-nav-inner">
         <div class="mobile-nav-scroll">
           <div class="mobile-nav-full" id="mobileNavFull">
-          <a href="${base}index.html" class="mobile-nav-link">Home</a>
-          <a href="${base}about.html" class="mobile-nav-link">About</a>
+          <a href="${HOME_URL}" class="mobile-nav-link">Home</a>
+          <a href="/about" class="mobile-nav-link">About</a>
           <div class="mobile-dropdown">
             <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
               <span>Services</span>
@@ -465,26 +472,26 @@ function renderHeader() {
             </button>
             <div class="mobile-dropdown-panel">
               <div class="mobile-dropdown-panel-inner">
-                <a href="${base}${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
-                <a href="${base}consulting.html#web" class="mobile-dropdown-link">Website Development</a>
-                <a href="${base}digital-transformation.html" class="mobile-dropdown-link">Digital Transformation</a>
-                <a href="${base}${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
-                <a href="${base}future-platforms.html" class="mobile-dropdown-link">Coming Soon</a>
-                <a href="${base}${PRICING_URL}" class="mobile-dropdown-link">Pricing</a>
+                <a href="${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
+                <a href="/consulting#web" class="mobile-dropdown-link">Website Development</a>
+                <a href="/digital-transformation" class="mobile-dropdown-link">Digital Transformation</a>
+                <a href="${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
+                <a href="/future-platforms" class="mobile-dropdown-link">Coming Soon</a>
+                <a href="${PRICING_URL}" class="mobile-dropdown-link">Pricing</a>
               </div>
             </div>
           </div>
-          <a href="${base}industries.html" class="mobile-nav-link">Industries</a>
-          <a href="${base}${PRICING_URL}" class="mobile-nav-link">Pricing</a>
-          <a href="${base}contact.html" class="mobile-nav-link">Contact</a>
+          <a href="/industries" class="mobile-nav-link">Industries</a>
+          <a href="${PRICING_URL}" class="mobile-nav-link">Pricing</a>
+          <a href="/contact" class="mobile-nav-link">Contact</a>
           </div>
           <div class="mobile-nav-overflow" id="mobileNavOverflow" hidden>
             <p class="mobile-nav-overflow-label">More</p>
           </div>
         </div>
         <div class="mobile-nav-actions">
-          <a href="${base}${PRICING_URL}" class="btn btn-outline">View Pricing</a>
-          <a href="${base}contact.html" class="btn btn-primary">Request Information</a>
+          <a href="${PRICING_URL}" class="btn btn-outline">View Pricing</a>
+          <a href="/contact" class="btn btn-primary">Request Information</a>
         </div>
       </div>
     </nav>
@@ -492,7 +499,6 @@ function renderHeader() {
 }
 
 function renderFooter() {
-  const base = getBasePath();
   return `
     <footer class="site-footer">
       <div class="container">
@@ -502,50 +508,50 @@ function renderFooter() {
             <span>New sites, redesigns, landing pages &amp; e-commerce, scoped and quoted per project.</span>
           </div>
           <div class="footer-website-callout-actions">
-            <a href="${base}contact.html?interest=website#contact-form" class="btn btn-outline btn-sm">Get a Quote</a>
+            <a href="/contact?interest=website#contact-form" class="btn btn-outline btn-sm">Get a Quote</a>
           </div>
         </div>
         <div class="footer-grid">
           <div class="footer-col">
             <h4>Explore</h4>
-            <a href="${base}about.html">About</a>
-            <a href="${base}solutions/nexus.html">Platform</a>
-            <a href="${base}${PRICING_URL}">Pricing</a>
-            <a href="${base}industries.html">Industries</a>
-            <a href="${base}areas-served.html">Areas We Serve</a>
-            <a href="${base}contact.html">Contact</a>
+            <a href="/about">About</a>
+            <a href="/solutions/nexus">Platform</a>
+            <a href="${PRICING_URL}">Pricing</a>
+            <a href="/industries">Industries</a>
+            <a href="/areas-served">Areas We Serve</a>
+            <a href="/contact">Contact</a>
           </div>
           <div class="footer-col">
             <h4>Solutions</h4>
-            <a href="${base}solutions/nexus.html">4DS Nexus</a>
-            <a href="${base}${PRICING_URL}">Pricing</a>
-            <a href="${base}${CUSTOM_SOLUTIONS_URL}">Custom Solutions</a>
-            <a href="${base}industries.html">Industry Solutions</a>
-            <a href="${base}consulting.html">Consulting</a>
+            <a href="/solutions/nexus">4DS Nexus</a>
+            <a href="${PRICING_URL}">Pricing</a>
+            <a href="${CUSTOM_SOLUTIONS_URL}">Custom Solutions</a>
+            <a href="/industries">Industry Solutions</a>
+            <a href="/consulting">Consulting</a>
           </div>
           <div class="footer-col">
             <h4>Services</h4>
-            <a href="${base}solutions/nexus.html">4DS Nexus CRM &amp; ERP</a>
-            <a href="${base}consulting.html#web">Website Development</a>
-            <a href="${base}services/mobile.html">Mobile App Development</a>
-            <a href="${base}${PRICING_URL}#pos">POS Systems</a>
-            <a href="${base}${CUSTOM_SOLUTIONS_URL}">Fleet &amp; Tracking</a>
-            <a href="${base}contact.html#contact-form">Request a Quote</a>
+            <a href="/solutions/nexus">4DS Nexus CRM &amp; ERP</a>
+            <a href="/consulting#web">Website Development</a>
+            <a href="/services/mobile">Mobile App Development</a>
+            <a href="${PRICING_URL}#pos">POS Systems</a>
+            <a href="${CUSTOM_SOLUTIONS_URL}">Fleet &amp; Tracking</a>
+            <a href="/contact#contact-form">Request a Quote</a>
           </div>
           <div class="footer-col">
             <h4>Company</h4>
-            <a href="${base}about.html">4DS Solutions (Pty) Ltd</a>
-            <a href="${base}solutions/nexus.html">4DS Nexus</a>
-            <a href="${base}partnerships.html">Partnerships</a>
-            <a href="${base}privacy.html">Privacy Policy</a>
-            <a href="${base}terms.html">Terms &amp; Conditions</a>
+            <a href="/about">4DS Solutions (Pty) Ltd</a>
+            <a href="/solutions/nexus">4DS Nexus</a>
+            <a href="/partnerships">Partnerships</a>
+            <a href="/privacy">Privacy Policy</a>
+            <a href="/terms">Terms &amp; Conditions</a>
             <a href="#" data-cookie-settings>Cookie settings</a>
           </div>
           <div class="footer-col">
             <h4>Connect</h4>
             <a href="mailto:${SITE_CONTACT_EMAIL}">${SITE_CONTACT_EMAIL}</a>
             <a href="${WHATSAPP_URL}" target="_blank" rel="noopener noreferrer">+27 64 655 2995</a>
-            <a href="${base}contact.html">Contact Form</a>
+            <a href="/contact">Contact Form</a>
             <p class="footer-meta">Mon–Fri, 08:00–17:00 SAST</p>
             <p class="footer-meta">Quotes based on your modules and operation</p>
             <div class="footer-socials">
@@ -573,11 +579,10 @@ function renderFooter() {
 }
 
 function initFavicon() {
-  const base = getBasePath();
   const icons = [
-    { rel: 'icon', type: 'image/png', sizes: '32x32', href: `${base}assets/favicon-32.png` },
-    { rel: 'icon', type: 'image/png', sizes: '16x16', href: `${base}assets/favicon-16.png` },
-    { rel: 'apple-touch-icon', sizes: '180x180', href: `${base}assets/apple-touch-icon.png` },
+    { rel: 'icon', type: 'image/png', sizes: '32x32', href: `/assets/favicon-32.png` },
+    { rel: 'icon', type: 'image/png', sizes: '16x16', href: `/assets/favicon-16.png` },
+    { rel: 'apple-touch-icon', sizes: '180x180', href: `/assets/apple-touch-icon.png` },
   ];
 
   icons.forEach(({ rel, type, sizes, href }) => {
@@ -1079,7 +1084,6 @@ function initStaggerReveal() {
 function renderHomeModuleExplorer() {
   const root = document.getElementById('homeModuleExplorer');
   if (!root) return;
-  const base = getBasePath();
 
   const tabs = MODULE_EXPLORER.map((m, i) =>
     `<button type="button" class="module-tab${i === 0 ? ' active' : ''}" data-module="home-mod-${m.id}">${m.tab}</button>`
@@ -1093,7 +1097,7 @@ function renderHomeModuleExplorer() {
         <div class="module-header">
           <div class="module-header-icon">${iconSvg(m.icon)}</div>
           <div>
-            <h2><a href="${base}${m.href}" class="module-panel-title-link">${m.title}</a></h2>
+            <h2><a href="${m.href}" class="module-panel-title-link">${m.title}</a></h2>
             <p>${m.desc}</p>
           </div>
         </div>
@@ -1111,14 +1115,14 @@ function renderHomeModuleExplorer() {
           <h4>Key Outcomes</h4>
           <ul>${outcomes}</ul>
         </div>
-        <a href="${base}${m.href}" class="card-link module-explorer-link">Full ${m.tab} details</a>
+        <a href="${m.href}" class="card-link module-explorer-link">Full ${m.tab} details</a>
       </div>`;
   }).join('');
 
   root.innerHTML = `
     <div class="module-nav reveal">${tabs}</div>
     <div class="module-explorer-panels reveal">${panels}</div>
-    <p class="module-explorer-pricing reveal"><a href="${base}${PRICING_URL}" class="btn btn-outline">View modular pricing</a></p>`;
+    <p class="module-explorer-pricing reveal"><a href="${PRICING_URL}" class="btn btn-outline">View modular pricing</a></p>`;
 
   initIcons();
 }
@@ -1168,6 +1172,72 @@ function getContactEmail() {
   return window.CONTACT_EMAIL || SITE_CONTACT_EMAIL;
 }
 
+function hasAutomaticFormDelivery() {
+  return Boolean(window.WEB3FORMS_ACCESS_KEY);
+}
+
+function captchaRequiredForContact() {
+  return Boolean(window.TURNSTILE_SITE_KEY) && !turnstileUnavailable;
+}
+
+function isContactCaptchaReady(form) {
+  if (!captchaRequiredForContact()) return true;
+  const token = form.querySelector('[name="cf-turnstile-response"]')?.value;
+  return captchaVerified && Boolean(token);
+}
+
+function buildContactPayload(form, token) {
+  const fd = new FormData(form);
+  const interest = fd.get('interest') || 'General enquiry';
+  const payload = {
+    access_key: window.WEB3FORMS_ACCESS_KEY,
+    subject: `4DS Nexus enquiry: ${interest}`,
+    from_name: `${fd.get('firstName')} ${fd.get('lastName')}`.trim(),
+    name: `${fd.get('firstName')} ${fd.get('lastName')}`.trim(),
+    email: fd.get('email'),
+    phone: fd.get('phone') || 'Not provided',
+    company: fd.get('company') || 'Not provided',
+    interest,
+    contact_method: fd.get('contactMethod') || 'Not specified',
+    timeline: fd.get('priority') || 'Not specified',
+    message: fd.get('message') || '',
+  };
+  if (token) payload['cf-turnstile-response'] = token;
+  return payload;
+}
+
+async function submitContactForm(form, token) {
+  const res = await fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+    body: JSON.stringify(buildContactPayload(form, token)),
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok || !data.success) {
+    throw new Error(data.message || 'Could not send your message. Please try again or email us directly.');
+  }
+  return data;
+}
+
+function showContactFormSuccess(message) {
+  const form = document.getElementById('contactForm');
+  const success = document.getElementById('formSuccess');
+  if (form) form.style.display = 'none';
+  if (success) {
+    success.innerHTML = `<h3>Thank you!</h3><p>${message}</p>`;
+    success.classList.add('show');
+  }
+}
+
+function resetContactCaptcha() {
+  if (turnstileWidgetId !== null && typeof turnstile !== 'undefined') {
+    turnstile.reset(turnstileWidgetId);
+  }
+  captchaVerified = false;
+  const btn = document.getElementById('submitBtn');
+  if (btn && captchaRequiredForContact()) btn.disabled = true;
+}
+
 function buildContactMailto(form) {
   const fd = new FormData(form);
   const interest = fd.get('interest') || 'General enquiry';
@@ -1194,13 +1264,21 @@ function waitForTurnstile(callback, attempts = 50) {
     turnstileUnavailable = true;
     const err = document.getElementById('captchaError');
     const btn = document.getElementById('submitBtn');
-    if (err) {
-      err.innerHTML = `Security check could not load. You can still email us at <a href="mailto:${getContactEmail()}">${getContactEmail()}</a> or use WhatsApp.`;
-      err.classList.add('show');
-    }
-    if (btn) {
-      btn.disabled = false;
-      btn.textContent = 'Open Email to Send';
+    if (hasAutomaticFormDelivery()) {
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = 'Send Message';
+      }
+      err?.classList.remove('show');
+    } else {
+      if (err) {
+        err.innerHTML = `Security check could not load. You can still email us at <a href="mailto:${getContactEmail()}">${getContactEmail()}</a> or use WhatsApp.`;
+        err.classList.add('show');
+      }
+      if (btn) {
+        btn.disabled = false;
+        btn.textContent = 'Open Email to Send';
+      }
     }
   }
 }
@@ -1333,7 +1411,15 @@ function initContactForm() {
   if (!form) return;
 
   const submitBtn = document.getElementById('submitBtn');
-  if (submitBtn) submitBtn.disabled = true;
+  if (submitBtn) {
+    if (hasAutomaticFormDelivery() && !window.TURNSTILE_SITE_KEY) {
+      submitBtn.disabled = false;
+    } else if (!window.TURNSTILE_SITE_KEY && !hasAutomaticFormDelivery()) {
+      submitBtn.disabled = false;
+    } else {
+      submitBtn.disabled = true;
+    }
+  }
 
   const priorityFields = form.querySelectorAll('.form-priority input[required]');
 
@@ -1360,7 +1446,7 @@ function initContactForm() {
 
   waitForTurnstile(initTurnstile);
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     priorityFields.forEach(f => { f.dataset.touched = '1'; });
@@ -1377,7 +1463,7 @@ function initContactForm() {
     const token = form.querySelector('[name="cf-turnstile-response"]')?.value;
     const captchaError = document.getElementById('captchaError');
 
-    if (!turnstileUnavailable && (!captchaVerified || !token)) {
+    if (!isContactCaptchaReady(form)) {
       if (captchaError) {
         captchaError.textContent = 'Please complete the security check before submitting.';
         captchaError.classList.add('show');
@@ -1386,22 +1472,28 @@ function initContactForm() {
     }
 
     captchaError?.classList.remove('show');
-    setButtonLoading(submitBtn, true, turnstileUnavailable ? 'Opening email…' : 'Sending…');
+    setButtonLoading(submitBtn, true, 'Sending…');
 
-    window.setTimeout(() => {
-      setButtonLoading(submitBtn, false);
-      if (turnstileUnavailable) {
-        window.location.href = buildContactMailto(form);
+    try {
+      if (hasAutomaticFormDelivery()) {
+        await submitContactForm(form, token);
+        showContactFormSuccess('Your message has been sent. Our team will be in touch shortly.');
         return;
       }
-      form.style.display = 'none';
-      const success = document.getElementById('formSuccess');
-      if (success) {
-        success.innerHTML = `<h3>Thank you!</h3><p>Your message is ready to send. If your email app did not open, contact us at <a href="mailto:${getContactEmail()}">${getContactEmail()}</a>.</p>`;
-        success.classList.add('show');
-      }
+
+      setButtonLoading(submitBtn, false);
+      showContactFormSuccess(
+        `Your message is ready to send. If your email app did not open, contact us at <a href="mailto:${getContactEmail()}">${getContactEmail()}</a>.`
+      );
       window.location.href = buildContactMailto(form);
-    }, 600);
+    } catch (err) {
+      setButtonLoading(submitBtn, false);
+      if (captchaError) {
+        captchaError.textContent = err.message || 'Something went wrong. Please try again.';
+        captchaError.classList.add('show');
+      }
+      resetContactCaptcha();
+    }
   });
 }
 
@@ -1432,7 +1524,6 @@ function initCapabilities() {
   const preview = document.getElementById('capPreview');
   if (!list || !preview) return;
 
-  const base = getBasePath();
   const total = String(CAPABILITIES.length).padStart(2, '0');
 
   list.innerHTML = CAPABILITIES.map((c, i) => `
@@ -1468,7 +1559,7 @@ function initCapabilities() {
         <h3>${c.title}</h3>
         <p>${c.desc}</p>
         <div class="cap-preview-tags">${tags}</div>
-        <a href="${base}${c.href}" class="card-link" style="margin-top:18px;display:inline-flex">Explore capability</a>
+        <a href="${c.href}" class="card-link" style="margin-top:18px;display:inline-flex">Explore capability</a>
       </div>
     `;
   }

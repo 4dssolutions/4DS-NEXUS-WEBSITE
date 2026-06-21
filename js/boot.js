@@ -1,8 +1,5 @@
 /* 4DS Nexus — theme + fonts (defer in <head>) */
 (function bootEarly() {
-  const src = document.currentScript?.getAttribute('src') || '';
-  const base = src.includes('../') ? '../' : '';
-
   const storedTheme = localStorage.getItem('4ds-theme');
   document.documentElement.setAttribute(
     'data-theme',
@@ -21,7 +18,7 @@
   }
 
   if (!document.querySelector('link[rel="icon"]')) {
-    headLink('icon', `${base}assets/favicon-32.png`, { type: 'image/png', sizes: '32x32' });
+    headLink('icon', '/assets/favicon-32.png', { type: 'image/png', sizes: '32x32' });
   }
 
   headLink('preconnect', 'https://fonts.googleapis.com');
@@ -39,7 +36,7 @@
     const loadCookies = () => {
       if (document.querySelector('script[src*="cookies.js"]')) return;
       const cookies = document.createElement('script');
-      cookies.src = `${base}js/cookies.js`;
+      cookies.src = '/js/cookies.js';
       cookies.defer = true;
       document.head.appendChild(cookies);
     };
@@ -47,7 +44,7 @@
     const loadSeo = () => {
       if (document.querySelector('script[src*="seo.js"]')) return;
       const seo = document.createElement('script');
-      seo.src = `${base}js/seo.js`;
+      seo.src = '/js/seo.js';
       seo.defer = true;
       document.head.appendChild(seo);
     };
@@ -59,7 +56,7 @@
     }
 
     const config = document.createElement('script');
-    config.src = `${base}js/config.js`;
+    config.src = '/js/config.js';
     config.defer = true;
     config.onload = () => {
       loadSeo();

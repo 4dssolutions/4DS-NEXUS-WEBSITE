@@ -3,8 +3,18 @@
   if (window.__4DS_CONFIG_LOADED) return;
   window.__4DS_CONFIG_LOADED = true;
 
-  window.TURNSTILE_SITE_KEY = '0x4AAAAAADnaWWjh836Ut1Be';
+  /*
+   * Cloudflare Turnstile — widget name: turnstile4dssolutions
+   * https://dash.cloudflare.com → Turnstile → Add widget
+   * Hostnames: 4dsnexus.co.za, www.4dsnexus.co.za, localhost
+   * Paste your new Site Key below (public — safe in client code)
+   */
+  window.TURNSTILE_SITE_KEY = '';
+
   window.CONTACT_EMAIL = '4dssolutions@gmail.com';
+
+  /* Paste your Web3Forms access key here — https://web3forms.com (free, delivers to Gmail) */
+  window.WEB3FORMS_ACCESS_KEY = '4c826155-7721-4766-99e4-4f16ba4f13af';
 
   /*
    * Cookie & analytics — fill in when you go live
