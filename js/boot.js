@@ -9,6 +9,28 @@
   );
   document.documentElement.classList.add('is-loading');
 
+  function ensureCompatMeta() {
+    const add = (attrs) => {
+      const selector = attrs.name
+        ? `meta[name="${attrs.name}"]`
+        : `meta[http-equiv="${attrs['http-equiv']}"]`;
+      if (document.querySelector(selector)) return;
+      const meta = document.createElement('meta');
+      Object.entries(attrs).forEach(([key, value]) => meta.setAttribute(key, value));
+      document.head.appendChild(meta);
+    };
+
+    add({ name: 'format-detection', content: 'telephone=no' });
+    add({ name: 'color-scheme', content: 'dark light' });
+    add({ name: 'apple-mobile-web-app-capable', content: 'yes' });
+    add({ name: 'apple-mobile-web-app-title', content: '4DS Nexus' });
+    add({ name: 'mobile-web-app-capable', content: 'yes' });
+    add({ 'http-equiv': 'X-UA-Compatible', content: 'IE=edge' });
+    add({ name: 'referrer', content: 'strict-origin-when-cross-origin' });
+  }
+
+  ensureCompatMeta();
+
   function headLink(rel, href, attrs) {
     const sel = attrs?.id ? `#${attrs.id}` : `link[rel="${rel}"][href="${href}"]`;
     if (document.querySelector(sel)) return;
@@ -23,6 +45,8 @@
     headLink('icon', asset('assets/favicon-32.png'), { type: 'image/png', sizes: '32x32' });
   }
 
+  headLink('dns-prefetch', 'https://4dsnexus.co.za');
+  headLink('preconnect', 'https://4dsnexus.co.za');
   headLink('preconnect', 'https://fonts.googleapis.com');
   headLink('preconnect', 'https://fonts.gstatic.com', { crossorigin: '' });
 
