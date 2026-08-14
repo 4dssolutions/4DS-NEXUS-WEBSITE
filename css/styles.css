@@ -3769,53 +3769,103 @@ a.card:focus-visible {
   margin-bottom: 0 !important;
 }
 
-.pricing-catalogue-wrap {
-  overflow-x: auto;
+.pricing-catalogue-panel {
   border: 1px solid var(--gray-100);
   border-radius: var(--radius-xl);
   background: var(--surface);
+  padding: 28px 28px 24px;
+  overflow: hidden;
 }
 
-.pricing-catalogue-table {
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 0.9375rem;
+.pricing-catalogue-groups {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px 40px;
 }
 
-.pricing-catalogue-table th,
-.pricing-catalogue-table td {
-  padding: 14px 20px;
-  text-align: left;
-  border-bottom: 1px solid var(--gray-100);
+.pricing-catalogue-group--wide {
+  grid-column: 1 / -1;
+  padding-top: 8px;
+  border-top: 1px solid var(--gray-100);
 }
 
-.pricing-catalogue-table th {
+.pricing-catalogue-group-title {
   font-size: 0.75rem;
   font-weight: 700;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--text-secondary);
+  margin: 0 0 14px;
+}
+
+.pricing-catalogue-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pricing-catalogue-list li {
+  position: relative;
+  padding: 10px 14px 10px 36px;
+  border-radius: var(--radius);
   background: rgba(0, 0, 0, 0.03);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  color: var(--text);
 }
 
-.pricing-catalogue-table td:last-child {
-  font-weight: 700;
-  white-space: nowrap;
-  text-align: right;
+.pricing-catalogue-list li::before {
+  content: '';
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--red);
+  transform: translateY(-50%);
 }
 
-.pricing-catalogue-table tbody tr:last-child td {
-  border-bottom: none;
+[data-theme="dark"] .pricing-catalogue-list li {
+  background: rgba(255, 255, 255, 0.04);
 }
 
 .pricing-catalogue-cta {
   margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid var(--gray-100);
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  text-align: center;
 }
 
-[data-theme="dark"] .pricing-catalogue-table th {
-  background: rgba(255, 255, 255, 0.04);
+.pricing-catalogue-cta-note {
+  margin: 0;
+  max-width: 36rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+@media (max-width: 720px) {
+  .pricing-catalogue-panel {
+    padding: 20px;
+  }
+
+  .pricing-catalogue-groups {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .pricing-catalogue-group--wide {
+    padding-top: 0;
+    border-top: none;
+  }
 }
 
 @media (max-width: 1100px) {
