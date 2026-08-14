@@ -285,7 +285,7 @@ const SERVICES = [
 ];
 
 const MODULE_EXPLORER = [
-  { id: 'nexus', tab: 'Nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Core platform from R599/month, with add-on modules and bundles from R1,299/month.', features: ['Central dashboard & reporting', 'User & role management', 'Inventory & employee modules', 'Customer portal access', 'Fleet & visitor add-ons', 'AI automation add-on'], outcomes: ['One shared database', 'Operational visibility', 'Scalable from startup to enterprise', 'South African support'], href: '/solutions/nexus' },
+  { id: 'nexus', tab: 'Nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Modular CRM and operations platform — request a quote for Core, bundles, and add-on modules.', features: ['Central dashboard & reporting', 'User & role management', 'Inventory & employee modules', 'Customer portal access', 'Fleet & visitor add-ons', 'AI automation add-on'], outcomes: ['One shared database', 'Operational visibility', 'Scalable from startup to enterprise', 'South African support'], href: '/solutions/nexus' },
   { id: 'custom', tab: 'Custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Cloud-based business systems and integrations built around your workflows, quoted and delivered properly.', features: ['Custom module development', 'CRM and ERP builds', 'API and system integrations', 'Cloud deployment', 'Industry-specific workflows', 'Internal business platforms'], outcomes: ['Built for your process', 'Scalable foundation', 'Practical delivery', 'Long-term partnership'], href: '/consulting#software' },
   { id: 'websites', tab: 'Websites', icon: 'monitor', title: 'Website Development', desc: 'Professional business websites, upgrades, landing pages, and client portals, mobile-responsive, on-brand, and ready to grow.', features: ['Business and corporate websites', 'Website redesigns and upgrades', 'Landing pages and portfolios', 'E-commerce stores', 'SEO setup and maintenance', 'Hosting and domain setup', 'Contact and enquiry forms'], outcomes: ['Stronger online presence', 'Professional client experience', 'Mobile-ready design', 'Clear starting prices'], href: '/pricing#professional-services' },
   { id: 'mobile', tab: 'Mobile', icon: 'phone', title: 'Mobile App Development', desc: 'Android, iOS, and cross-platform apps for field teams, clients, and employees, connected to your operations.', features: ['Android and iOS applications', 'Business management apps', 'Client and employee portals', 'Field service apps', 'Tracking applications', 'Progressive web apps (PWA)'], outcomes: ['Field teams stay connected', 'Real-time data capture', 'Better client experience', 'Apps that match your brand'], href: '/services/mobile' },
@@ -407,7 +407,7 @@ function renderHeader() {
                   <div class="mega-icon">${iconSvg('chart')}</div>
                   <div>
                     <h4>Modular Pricing</h4>
-                    <p>Core from R599/month, bundles from R1,299/month, and enterprise plans from R4,999/month.</p>
+                    <p>Core, Starter, Professional, and Enterprise — request a quote for your modules and users.</p>
                   </div>
                 </a>
                 <a href="/future-platforms" class="mega-link">
