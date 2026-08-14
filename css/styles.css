@@ -3808,6 +3808,12 @@ a.card:focus-visible {
   border-bottom: none;
 }
 
+.pricing-catalogue-cta {
+  margin-top: 28px;
+  display: flex;
+  justify-content: center;
+}
+
 [data-theme="dark"] .pricing-catalogue-table th {
   background: rgba(255, 255, 255, 0.04);
 }
