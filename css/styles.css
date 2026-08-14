@@ -3722,6 +3722,108 @@ a.card:focus-visible {
   margin-bottom: 0;
 }
 
+.pricing-grid--packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  align-items: stretch;
+  padding-top: 36px;
+  margin-bottom: 32px;
+}
+
+.pricing-setup-line {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin: -4px 0 12px;
+}
+
+.pricing-bundle-card--managed {
+  border-color: rgba(196, 30, 58, 0.45);
+  background: linear-gradient(165deg, var(--surface) 0%, rgba(196, 30, 58, 0.06) 100%);
+}
+
+.pricing-capacity-note {
+  max-width: 880px;
+  margin: 8px auto 0;
+  padding: 24px 28px;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+}
+
+.pricing-capacity-note h3 {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pricing-capacity-note p {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0 0 10px;
+}
+
+.pricing-capacity-note-sub {
+  margin-bottom: 0 !important;
+}
+
+.pricing-catalogue-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  background: var(--surface);
+}
+
+.pricing-catalogue-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.pricing-catalogue-table th,
+.pricing-catalogue-table td {
+  padding: 14px 20px;
+  text-align: left;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.pricing-catalogue-table th {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.03);
+}
+
+.pricing-catalogue-table td:last-child {
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
+}
+
+.pricing-catalogue-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+[data-theme="dark"] .pricing-catalogue-table th {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 1100px) {
+  .pricing-grid--packages {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .pricing-grid--packages {
+    grid-template-columns: 1fr;
+  }
+}
+
 .pricing-bundle-card {
   display: flex;
   flex-direction: column;
