@@ -1053,10 +1053,20 @@ function initTabs(containerSelector, tabSelector, panelSelector) {
   });
 }
 
+function hasFunctionalCookieConsent() {
+  try {
+    const data = JSON.parse(localStorage.getItem('4ds-cookie-consent') || '');
+    return Boolean(data && data.functional);
+  } catch {
+    return false;
+  }
+}
+
 function initModuleTabs() {
   const tabs = document.querySelectorAll('.module-tab');
   const panels = document.querySelectorAll('.module-panel');
   if (!tabs.length) return;
+  const LAST_MODULE_KEY = '4ds-last-module';
 
   function activateModule(moduleId) {
     const tab = document.querySelector(`.module-tab[data-module="${moduleId}"]`);
@@ -1099,11 +1109,21 @@ function initModuleTabs() {
       if (tab.classList.contains('active')) return;
       activateModule(tab.dataset.module);
       history.replaceState(null, '', `#${tab.dataset.module}`);
+      if (hasFunctionalCookieConsent()) {
+        localStorage.setItem(LAST_MODULE_KEY, tab.dataset.module);
+      }
     });
   });
 
   syncFromHash();
+  if (!location.hash.replace('#', '').startsWith('mod-') && hasFunctionalCookieConsent()) {
+    const lastModule = localStorage.getItem(LAST_MODULE_KEY);
+    if (lastModule) activateModule(lastModule);
+  }
   window.addEventListener('hashchange', syncFromHash);
+  window.addEventListener('4ds:cookie-consent', (event) => {
+    if (!event.detail?.functional) localStorage.removeItem(LAST_MODULE_KEY);
+  });
 }
 
 function initNexusFlow() {

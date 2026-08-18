@@ -1,7 +1,7 @@
 /* 4DS Nexus — cookie consent (POPIA-friendly) */
 (function initCookieConsent() {
   const STORAGE_KEY = '4ds-cookie-consent';
-  const CONSENT_VERSION = 1;
+  const CONSENT_VERSION = 2;
 
   const settings = window.COOKIE_SETTINGS || {};
   const gaId = settings.googleAnalyticsId || '';
@@ -25,6 +25,7 @@
     const data = {
       version: CONSENT_VERSION,
       essential: true,
+      functional: Boolean(prefs.functional),
       analytics: Boolean(prefs.analytics),
       marketing: Boolean(prefs.marketing),
       timestamp: new Date().toISOString(),
@@ -87,7 +88,7 @@
         <div class="cookie-banner-inner">
           <p class="cookie-banner-label">Cookies</p>
           <h2 id="cookieBannerTitle">We value your privacy</h2>
-          <p id="cookieBannerDesc">We use essential cookies to run this site (theme and security). With your permission, we also use analytics cookies to understand how visitors use 4DS Nexus. Read our <a href="/privacy#cookies">Privacy Policy</a>.</p>
+          <p id="cookieBannerDesc">We use essential cookies to run this site (theme and security). You can also allow optional functional, analytics, and marketing cookies. Read our <a href="/privacy#cookies">Privacy Policy</a>.</p>
           <div class="cookie-banner-actions">
             <button type="button" class="btn btn-primary btn-sm" data-cookie-accept-all>Accept all</button>
             <button type="button" class="btn btn-outline btn-sm" data-cookie-reject>Essential only</button>
@@ -109,30 +110,39 @@
               </div>
               <span class="cookie-pref-badge">Always on</span>
             </li>
-            ${hasAnalytics ? `
+            <li class="cookie-pref">
+              <div class="cookie-pref-copy">
+                <strong>Functional</strong>
+                <span>Optional extras such as remembering which module you last viewed. The site works without these.</span>
+              </div>
+              <label class="cookie-toggle">
+                <input type="checkbox" id="cookiePrefFunctional">
+                <span class="cookie-toggle-ui" aria-hidden="true"></span>
+                <span class="sr-only">Allow functional cookies</span>
+              </label>
+            </li>
             <li class="cookie-pref">
               <div class="cookie-pref-copy">
                 <strong>Analytics</strong>
-                <span>Google Analytics — anonymous usage stats (pages visited, device type).</span>
+                <span>Anonymous usage stats (pages visited, device type). Google Analytics is only loaded after you opt in, and only if we have configured it.</span>
               </div>
               <label class="cookie-toggle">
                 <input type="checkbox" id="cookiePrefAnalytics">
                 <span class="cookie-toggle-ui" aria-hidden="true"></span>
                 <span class="sr-only">Allow analytics cookies</span>
               </label>
-            </li>` : ''}
-            ${hasMarketing ? `
+            </li>
             <li class="cookie-pref">
               <div class="cookie-pref-copy">
                 <strong>Marketing</strong>
-                <span>Meta Pixel — measure ad performance if you arrived from a campaign.</span>
+                <span>Advertising measurement (for example Meta Pixel) if we run campaigns. Only loaded after you opt in, and only if configured.</span>
               </div>
               <label class="cookie-toggle">
                 <input type="checkbox" id="cookiePrefMarketing">
                 <span class="cookie-toggle-ui" aria-hidden="true"></span>
                 <span class="sr-only">Allow marketing cookies</span>
               </label>
-            </li>` : ''}
+            </li>
           </ul>
           <div class="cookie-modal-actions">
             <button type="button" class="btn btn-primary btn-sm" data-cookie-save>Save preferences</button>
@@ -145,6 +155,7 @@
 
     const banner = document.getElementById('cookieBanner');
     const modal = document.getElementById('cookieModal');
+    const functionalInput = document.getElementById('cookiePrefFunctional');
     const analyticsInput = document.getElementById('cookiePrefAnalytics');
     const marketingInput = document.getElementById('cookiePrefMarketing');
 
@@ -160,6 +171,7 @@
 
     function openModal() {
       const saved = readConsent();
+      if (functionalInput) functionalInput.checked = saved?.functional ?? false;
       if (analyticsInput) analyticsInput.checked = saved?.analytics ?? false;
       if (marketingInput) marketingInput.checked = saved?.marketing ?? false;
       modal.classList.add('is-open');
@@ -174,14 +186,14 @@
     }
 
     function acceptAll() {
-      const consent = saveConsent({ analytics: hasAnalytics, marketing: hasMarketing });
+      const consent = saveConsent({ functional: true, analytics: true, marketing: true });
       applyConsent(consent);
       hideBanner();
       closeModal();
     }
 
     function rejectOptional() {
-      const consent = saveConsent({ analytics: false, marketing: false });
+      const consent = saveConsent({ functional: false, analytics: false, marketing: false });
       applyConsent(consent);
       hideBanner();
       closeModal();
@@ -189,6 +201,7 @@
 
     function savePreferences() {
       const consent = saveConsent({
+        functional: functionalInput?.checked ?? false,
         analytics: analyticsInput?.checked ?? false,
         marketing: marketingInput?.checked ?? false,
       });

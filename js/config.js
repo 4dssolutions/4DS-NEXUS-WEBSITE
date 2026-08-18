@@ -21,11 +21,14 @@
   /*
    * Cookie & analytics — fill in when you go live
    * --------------------------------------------
+   * Optional Functional / Analytics / Marketing toggles are always shown.
+   * Scripts only load after consent, and only if an ID is set below.
+   *
    * googleAnalyticsId: https://analytics.google.com Admin Data Streams Web
    *   Copy the Measurement ID (starts with G-). Leave empty until ready.
    *
    * metaPixelId: Optional Meta Pixel ID for Facebook/Instagram ads.
-   * enableMarketing: false hides marketing cookies even if metaPixelId is set.
+   * enableMarketing: false blocks the Meta Pixel even if metaPixelId is set.
    */
   window.COOKIE_SETTINGS = {
     googleAnalyticsId: '',
