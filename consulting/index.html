@@ -49,7 +49,7 @@
       </nav>
       <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
         <a href="/contact?interest=website#contact-form" class="btn btn-primary btn-lg">Get a Website Quote</a>
-        <a href="/consulting#web" class="btn btn-outline btn-lg">View Web Services</a>
+        <a href="/services/websites" class="btn btn-outline btn-lg">View Web Services</a>
       </div>
     </div>
   </section>
@@ -59,79 +59,7 @@
       <p class="section-label label-purple reveal">Services</p>
       <h2 class="section-title reveal">Everything we deliver, organised by solution type</h2>
       <p class="section-intro reveal">These are the services with clear scope and pricing on our <a href="/pricing">pricing page</a>.</p>
-      <div class="service-category-grid reveal">
-        <div class="service-category-card" id="software">
-          <h3><span class="card-icon" data-icon="bolt" style="width:32px;height:32px"></span> Software Solutions</h3>
-          <ul>
-            <li><a href="/solutions/nexus">4DS Nexus CRM &amp; ERP</a></li>
-            <li><a href="/consulting#software">Custom Business Systems</a></li>
-            <li><a href="/custom-solutions">Fleet Management Systems</a></li>
-            <li><a href="/industries">Security Management Systems</a></li>
-            <li><a href="/services/inventory">Asset Tracking Solutions</a></li>
-          </ul>
-        </div>
-        <div class="service-category-card" id="web">
-          <h3><span class="card-icon" data-icon="monitor" style="width:32px;height:32px"></span> Web Development</h3>
-          <ul>
-            <li><a href="/consulting#web">Business Websites</a></li>
-            <li><a href="/consulting#web">Website Upgrades</a></li>
-            <li><a href="/pricing#professional-services">E-commerce Websites</a></li>
-            <li><a href="/consulting#web">Customer Portals</a></li>
-            <li><a href="/consulting#web">Web Applications</a></li>
-            <li><a href="/consulting#web">Website Maintenance</a></li>
-          </ul>
-        </div>
-        <div class="service-category-card" id="mobile">
-          <h3><span class="card-icon" data-icon="phone" style="width:32px;height:32px"></span> Mobile Development</h3>
-          <ul>
-            <li><a href="/services/mobile">Android Apps</a></li>
-            <li><a href="/services/mobile">iOS Apps</a></li>
-            <li><a href="/services/mobile">Progressive Web Apps</a></li>
-            <li><a href="/services/mobile">Field Service Apps</a></li>
-            <li><a href="/custom-solutions">Tracking Applications</a></li>
-          </ul>
-        </div>
-        <div class="service-category-card" id="automation">
-          <h3><span class="card-icon" data-icon="gear" style="width:32px;height:32px"></span> Business Automation</h3>
-          <ul>
-            <li><a href="/consulting#automation">Workflow Automation</a></li>
-            <li><a href="/consulting#automation">Document Automation</a></li>
-            <li><a href="/consulting#automation">Email Automation</a></li>
-            <li><a href="/consulting#automation">Reporting Automation</a></li>
-            <li><a href="/consulting#automation">Client Onboarding Automation</a></li>
-          </ul>
-        </div>
-        <div class="service-category-card" id="operations">
-          <h3><span class="card-icon" data-icon="cart" style="width:32px;height:32px"></span> Business Operations</h3>
-          <ul>
-            <li><a href="/pricing#pos">POS Systems</a></li>
-            <li><a href="/services/inventory">Inventory Management</a></li>
-            <li><a href="/custom-solutions">Dispatch Systems</a></li>
-            <li><a href="/services/crm">Employee Management</a></li>
-            <li><a href="/industries">Visitor Management</a></li>
-          </ul>
-        </div>
-        <div class="service-category-card" id="tracking">
-          <h3><span class="card-icon" data-icon="truck" style="width:32px;height:32px"></span> Tracking &amp; Security</h3>
-          <ul>
-            <li><a href="/custom-solutions">Vehicle Tracking</a></li>
-            <li><a href="/custom-solutions">Fleet Tracking</a></li>
-            <li><a href="/industries">Patrol Monitoring</a></li>
-            <li><a href="/industries">Incident Reporting</a></li>
-            <li><a href="/industries">Access Control Systems</a></li>
-          </ul>
-        </div>
-        <div class="service-category-card" id="consulting">
-          <h3><span class="card-icon" data-icon="handshake" style="width:32px;height:32px"></span> Consulting &amp; Integration</h3>
-          <ul>
-            <li><a href="/consulting#consulting">Digital Transformation</a></li>
-            <li><a href="/consulting#consulting">Cloud Migration</a></li>
-            <li><a href="/consulting#consulting">API Integration</a></li>
-            <li><a href="/consulting#consulting">System Integration</a></li>
-            <li><a href="/consulting#consulting">Technology Consulting</a></li>
-          </ul>
-        </div>
-      </div>
+      <div class="service-category-grid reveal" id="service-category-grid"></div>
       <p class="section-intro reveal" style="margin-top:32px">
         <a href="/pricing" class="btn btn-outline">View pricing &amp; starting prices</a>
       </p>
@@ -144,7 +72,7 @@
       <p class="section-label label-purple reveal">Implementation</p>
       <h2 class="section-title reveal">How we help</h2>
       <div class="card-grid reveal">
-        <a href="/consulting#web" class="card card--link">
+        <a href="/services/websites" class="card card--link">
           <div class="card-icon" data-icon="monitor"></div>
           <h3>Website Design &amp; Development</h3>
           <p>We build custom websites, upgrade outdated sites, and create landing pages, responsive, on-brand, and ready to grow with your business.</p>
@@ -174,7 +102,7 @@
           <p>We train your team and managers so the platform is used confidently from day one.</p>
           <span class="card-link">Book training</span>
         </a>
-        <a href="/consulting#consulting" class="card card--link">
+        <a href="/digital-transformation#integration" class="card card--link">
           <div class="card-icon" data-icon="gear"></div>
           <h3>Custom Integrations</h3>
           <p>We connect 4DS Nexus to your existing tools, accounting, and payment providers.</p>

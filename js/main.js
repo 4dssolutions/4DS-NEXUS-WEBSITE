@@ -81,13 +81,13 @@ const CAPABILITIES = [
     icon: 'monitor', title: 'Website & Portal Development', theme: 'sync',
     desc: 'Custom websites, upgrades, and secure client portals that represent your brand and connect to your operations.',
     tags: ['Websites', 'Client Portals', 'Landing Pages', 'Responsive Design'],
-    href: '/consulting#web', specs: [['Design', 5], ['Performance', 4], ['Integration', 4]]
+    href: '/services/websites', specs: [['Design', 5], ['Performance', 4], ['Integration', 4]]
   },
   {
     icon: 'gear', title: 'Business Process Automation', theme: 'intel',
     desc: 'Replace manual steps with workflows, document handling, and connected business processes.',
     tags: ['Workflows', 'Document Management', 'Automation', 'Integrations'],
-    href: '/consulting', specs: [['Efficiency', 5], ['Accuracy', 4], ['Control', 4]]
+    href: '/services/automation', specs: [['Efficiency', 5], ['Accuracy', 4], ['Control', 4]]
   },
   {
     icon: 'shield', title: 'Security Operations Management', theme: 'ops',
@@ -105,7 +105,7 @@ const CAPABILITIES = [
     icon: 'wrench', title: 'Custom Software Development', theme: 'sync',
     desc: 'Custom cloud systems, API integrations, and modules built around how your business runs.',
     tags: ['Custom Builds', 'API Integrations', 'Cloud Systems', 'Industry-specific'],
-    href: '/consulting', specs: [['Fit', 5], ['Flexibility', 5], ['Support', 4]]
+    href: '/custom-solutions#systems', specs: [['Fit', 5], ['Flexibility', 5], ['Support', 4]]
   },
 ];
 
@@ -221,77 +221,77 @@ const LOGO_LIGHT_URL = '/assets/4ds-logo-wordmark.png';
 const LOGO_DARK_URL = '/assets/4ds-logo-black-nav.png';
 
 const SERVICE_CATEGORIES = [
-  { label: 'Software Solutions', links: [
+  { id: 'software', icon: 'bolt', label: 'Software Solutions', links: [
     { title: '4DS Nexus CRM & ERP', href: '/solutions/nexus' },
-    { title: 'Custom Business Systems', href: '/consulting#software' },
-    { title: 'Fleet Management Systems', href: '/custom-solutions' },
-    { title: 'Security Management Systems', href: '/industries' },
+    { title: 'Custom Business Systems', href: '/custom-solutions#systems' },
+    { title: 'Fleet Management Systems', href: '/services/fleet' },
+    { title: 'Security Management Systems', href: '/industries#security' },
     { title: 'Asset Tracking Solutions', href: '/services/inventory' },
   ]},
-  { label: 'Web Development', links: [
-    { title: 'Business Websites', href: '/consulting#web' },
-    { title: 'Website Upgrades', href: '/consulting#web' },
-    { title: 'E-commerce Websites', href: '/pricing#professional-services' },
-    { title: 'Customer Portals', href: '/consulting#web' },
-    { title: 'Web Applications', href: '/consulting#web' },
-    { title: 'Website Maintenance', href: '/consulting#web' },
+  { id: 'web', icon: 'monitor', label: 'Web Development', links: [
+    { title: 'Business Websites', href: '/services/websites' },
+    { title: 'Website Upgrades', href: '/services/websites#upgrades' },
+    { title: 'E-commerce Websites', href: '/services/websites#ecommerce' },
+    { title: 'Customer Portals', href: '/services/websites#portals' },
+    { title: 'Web Applications', href: '/services/websites#applications' },
+    { title: 'Website Maintenance', href: '/services/websites#maintenance' },
   ]},
-  { label: 'Mobile Development', links: [
-    { title: 'Android Apps', href: '/services/mobile' },
-    { title: 'iOS Apps', href: '/services/mobile' },
-    { title: 'Progressive Web Apps', href: '/services/mobile' },
-    { title: 'Field Service Apps', href: '/services/mobile' },
-    { title: 'Tracking Applications', href: '/custom-solutions' },
+  { id: 'mobile', icon: 'phone', label: 'Mobile Development', links: [
+    { title: 'Android Apps', href: '/services/mobile#android' },
+    { title: 'iOS Apps', href: '/services/mobile#ios' },
+    { title: 'Progressive Web Apps', href: '/services/mobile#pwa' },
+    { title: 'Field Service Apps', href: '/services/mobile#field' },
+    { title: 'Tracking Applications', href: '/services/mobile#tracking' },
   ]},
-  { label: 'Business Automation', links: [
-    { title: 'Workflow Automation', href: '/consulting#automation' },
-    { title: 'Document Automation', href: '/consulting#automation' },
-    { title: 'Email Automation', href: '/consulting#automation' },
-    { title: 'Reporting Automation', href: '/consulting#automation' },
-    { title: 'Client Onboarding Automation', href: '/consulting#automation' },
+  { id: 'automation', icon: 'gear', label: 'Business Automation', links: [
+    { title: 'Workflow Automation', href: '/services/automation' },
+    { title: 'Document Automation', href: '/services/automation#documents' },
+    { title: 'Email Automation', href: '/services/automation#email' },
+    { title: 'Reporting Automation', href: '/services/automation#reporting' },
+    { title: 'Client Onboarding Automation', href: '/services/automation#onboarding' },
   ]},
-  { label: 'Business Operations', links: [
-    { title: 'POS Systems', href: '/pricing#pos' },
+  { id: 'operations', icon: 'cart', label: 'Business Operations', links: [
+    { title: 'POS Systems', href: '/services/pos' },
     { title: 'Inventory Management', href: '/services/inventory' },
-    { title: 'Dispatch Systems', href: '/custom-solutions' },
+    { title: 'Dispatch Systems', href: '/services/dispatch' },
     { title: 'Employee Management', href: '/services/crm' },
-    { title: 'Visitor Management', href: '/industries' },
+    { title: 'Visitor Management', href: '/industries#visitors' },
   ]},
-  { label: 'Tracking & Security', links: [
-    { title: 'Vehicle Tracking', href: '/custom-solutions' },
-    { title: 'Fleet Tracking', href: '/custom-solutions' },
-    { title: 'Patrol Monitoring', href: '/industries' },
-    { title: 'Incident Reporting', href: '/industries' },
-    { title: 'Access Control Systems', href: '/industries' },
+  { id: 'tracking', icon: 'truck', label: 'Tracking & Security', links: [
+    { title: 'Vehicle Tracking', href: '/services/fleet#vehicles' },
+    { title: 'Fleet Tracking', href: '/services/fleet' },
+    { title: 'Patrol Monitoring', href: '/industries#patrol' },
+    { title: 'Incident Reporting', href: '/industries#incidents' },
+    { title: 'Access Control Systems', href: '/industries#access' },
   ]},
-  { label: 'Consulting & Integration', links: [
-    { title: 'Digital Transformation', href: '/consulting#consulting' },
-    { title: 'Cloud Migration', href: '/consulting#consulting' },
-    { title: 'API Integration', href: '/consulting#consulting' },
-    { title: 'System Integration', href: '/consulting#consulting' },
-    { title: 'Technology Consulting', href: '/consulting#consulting' },
+  { id: 'consulting', icon: 'handshake', label: 'Consulting & Integration', links: [
+    { title: 'Digital Transformation', href: '/digital-transformation' },
+    { title: 'Cloud Migration', href: '/digital-transformation#cloud' },
+    { title: 'API Integration', href: '/digital-transformation#api' },
+    { title: 'System Integration', href: '/digital-transformation#integration' },
+    { title: 'Technology Consulting', href: '/digital-transformation#consulting' },
   ]},
 ];
 
 const SERVICES = [
   { id: 'nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Connected platform for CRM and operations', href: '/solutions/nexus' },
-  { id: 'custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Custom systems for your operation', href: '/consulting#software' },
-  { id: 'websites', icon: 'monitor', title: 'Website Development', desc: 'New sites, upgrades, e-commerce, and portals', href: '/consulting#web' },
+  { id: 'custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Custom systems for your operation', href: '/custom-solutions#systems' },
+  { id: 'websites', icon: 'monitor', title: 'Website Development', desc: 'New sites, upgrades, e-commerce, and portals', href: '/services/websites' },
   { id: 'mobile', icon: 'phone', title: 'Mobile App Development', desc: 'Android, iOS, and cross-platform apps', href: '/services/mobile' },
-  { id: 'pos', icon: 'cart', title: 'POS Systems', desc: 'Retail checkout and inventory-linked sales', href: '/pricing#pos' },
+  { id: 'pos', icon: 'cart', title: 'POS Systems', desc: 'Retail checkout and inventory-linked sales', href: '/services/pos' },
   { id: 'fleet', icon: 'truck', title: 'Vehicle & Fleet Tracking', desc: 'GPS, dispatch, and asset visibility', href: '/custom-solutions' },
-  { id: 'automation', icon: 'gear', title: 'Business Automation', desc: 'Workflows, documents, and notifications', href: '/consulting#automation' },
+  { id: 'automation', icon: 'gear', title: 'Business Automation', desc: 'Workflows, documents, and notifications', href: '/services/automation' },
   { id: 'security', icon: 'shield', title: 'Security Management Systems', desc: 'Guards, patrols, incidents, and sites', href: '/industries' },
 ];
 
 const MODULE_EXPLORER = [
   { id: 'nexus', tab: 'Nexus', icon: 'bolt', title: '4DS Nexus CRM & ERP', desc: 'Connected operations from R799/month — Core through Enterprise, plus Custom Managed from R75,000/month.', features: ['Central dashboard & reporting', 'User & role management', 'Inventory & employee modules', 'Customer portal access', 'Fleet & visitor add-ons', 'Custom managed retail deployments'], outcomes: ['One shared database', 'Operational visibility', 'Scalable from SME to enterprise', 'South African support'], href: '/solutions/nexus' },
-  { id: 'custom', tab: 'Custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Cloud-based business systems and integrations built around your workflows, quoted and delivered properly.', features: ['Custom module development', 'CRM and ERP builds', 'API and system integrations', 'Cloud deployment', 'Industry-specific workflows', 'Internal business platforms'], outcomes: ['Built for your process', 'Scalable foundation', 'Practical delivery', 'Long-term partnership'], href: '/consulting#software' },
-  { id: 'websites', tab: 'Websites', icon: 'monitor', title: 'Website Development', desc: 'Professional business websites, upgrades, landing pages, and client portals, mobile-responsive, on-brand, and ready to grow.', features: ['Business and corporate websites', 'Website redesigns and upgrades', 'Landing pages and portfolios', 'E-commerce stores', 'SEO setup and maintenance', 'Hosting and domain setup', 'Contact and enquiry forms'], outcomes: ['Stronger online presence', 'Professional client experience', 'Mobile-ready design', 'Clear starting prices'], href: '/pricing#professional-services' },
+  { id: 'custom', tab: 'Custom', icon: 'wrench', title: 'Custom Software Development', desc: 'Cloud-based business systems and integrations built around your workflows, quoted and delivered properly.', features: ['Custom module development', 'CRM and ERP builds', 'API and system integrations', 'Cloud deployment', 'Industry-specific workflows', 'Internal business platforms'], outcomes: ['Built for your process', 'Scalable foundation', 'Practical delivery', 'Long-term partnership'], href: '/custom-solutions#systems' },
+  { id: 'websites', tab: 'Websites', icon: 'monitor', title: 'Website Development', desc: 'Professional business websites, upgrades, landing pages, and client portals, mobile-responsive, on-brand, and ready to grow.', features: ['Business and corporate websites', 'Website redesigns and upgrades', 'Landing pages and portfolios', 'E-commerce stores', 'SEO setup and maintenance', 'Hosting and domain setup', 'Contact and enquiry forms'], outcomes: ['Stronger online presence', 'Professional client experience', 'Mobile-ready design', 'Clear starting prices'], href: '/services/websites' },
   { id: 'mobile', tab: 'Mobile', icon: 'phone', title: 'Mobile App Development', desc: 'Android, iOS, and cross-platform apps for field teams, clients, and employees, connected to your operations.', features: ['Android and iOS applications', 'Business management apps', 'Client and employee portals', 'Field service apps', 'Tracking applications', 'Progressive web apps (PWA)'], outcomes: ['Field teams stay connected', 'Real-time data capture', 'Better client experience', 'Apps that match your brand'], href: '/services/mobile' },
-  { id: 'pos', tab: 'POS', icon: 'cart', title: 'POS Systems', desc: 'Retail POS, inventory-linked checkout, multi-branch sales, and reporting, easy for clients to understand and adopt.', features: ['Retail POS systems', 'Inventory and stock tracking', 'Barcode scanning', 'Sales reporting', 'Multi-branch POS', 'Customer loyalty programs'], outcomes: ['Faster checkout', 'Stock linked to sales', 'Multi-site visibility', 'Clear operational reporting'], href: '/pricing#pos' },
+  { id: 'pos', tab: 'POS', icon: 'cart', title: 'POS Systems', desc: 'Retail POS, inventory-linked checkout, multi-branch sales, and reporting, easy for clients to understand and adopt.', features: ['Retail POS systems', 'Inventory and stock tracking', 'Barcode scanning', 'Sales reporting', 'Multi-branch POS', 'Customer loyalty programs'], outcomes: ['Faster checkout', 'Stock linked to sales', 'Multi-site visibility', 'Clear operational reporting'], href: '/services/pos' },
   { id: 'fleet', tab: 'Fleet', icon: 'truck', title: 'Vehicle & Fleet Tracking', desc: 'Vehicle tracking, fleet management, dispatch, and asset visibility, scoped as custom solutions for your operation.', features: ['Vehicle and asset records', 'GPS tracking integration', 'Dispatch management', 'Maintenance tracking', 'Multi-site visibility', 'Custom reporting'], outcomes: ['Asset visibility', 'Better dispatch control', 'Scoped delivery', 'Industry-fit setup'], href: '/custom-solutions' },
-  { id: 'automation', tab: 'Automation', icon: 'gear', title: 'Business Automation', desc: 'Workflow, document, email, and reporting automation, less manual admin and faster response times.', features: ['Workflow automation', 'Document automation', 'Email and notification flows', 'Reporting automation', 'Client onboarding automation', 'WhatsApp and SMS notifications'], outcomes: ['Less manual admin', 'Faster response times', 'Consistent follow-ups', 'Reliable notifications'], href: '/consulting#automation' },
+  { id: 'automation', tab: 'Automation', icon: 'gear', title: 'Business Automation', desc: 'Workflow, document, email, and reporting automation, less manual admin and faster response times.', features: ['Workflow automation', 'Document automation', 'Email and notification flows', 'Reporting automation', 'Client onboarding automation', 'WhatsApp and SMS notifications'], outcomes: ['Less manual admin', 'Faster response times', 'Consistent follow-ups', 'Reliable notifications'], href: '/services/automation' },
   { id: 'security', tab: 'Security', icon: 'shield', title: 'Security Management Systems', desc: 'Systems for guard scheduling, patrol monitoring, incident reporting, visitor management, and client contracts.', features: ['Guard and shift scheduling', 'Patrol monitoring', 'Incident reporting', 'Visitor management', 'Site and contract management', 'Workforce visibility'], outcomes: ['Better site coverage', 'Documented incidents', 'Organised operations', 'Client transparency'], href: '/industries' },
 ];
 
@@ -306,6 +306,19 @@ function getSitePath() {
   let path = window.location.pathname.replace(/\/$/, '') || '/';
   if (path.endsWith('/index.html')) path = path.slice(0, -'/index.html'.length) || '/';
   return path;
+}
+
+function renderServiceCategoryGrid() {
+  const host = document.getElementById('service-category-grid');
+  if (!host) return;
+  host.innerHTML = SERVICE_CATEGORIES.map(cat => `
+    <div class="service-category-card" id="${cat.id}">
+      <h3><span class="card-icon" data-icon="${cat.icon}"></span> ${cat.label}</h3>
+      <ul>
+        ${cat.links.map(l => `<li><a href="${l.href}">${l.title}</a></li>`).join('')}
+      </ul>
+    </div>
+  `).join('');
 }
 
 function isHomePage() {
@@ -365,7 +378,7 @@ function renderHeader() {
             <div class="mega-menu">
               <div class="mega-menu-categories">${servicesMega}</div>
               <div class="mega-menu-footer">
-                <a href="/consulting#web">Website development</a>
+                <a href="/services/websites">Website development</a>
                 <a href="/solutions/nexus">View all modules on 4DS Nexus</a>
                 <a href="${PRICING_URL}">View pricing</a>
               </div>
@@ -396,7 +409,7 @@ function renderHeader() {
                     <p>CRM, business websites, client portals, inventory, and mobile apps, one company, connected systems.</p>
                   </div>
                 </a>
-                <a href="/consulting#web" class="mega-link">
+                <a href="/services/websites" class="mega-link">
                   <div class="mega-icon">${iconSvg('monitor')}</div>
                   <div>
                     <h4>Website Development</h4>
@@ -435,7 +448,7 @@ function renderHeader() {
                 <div class="mobile-dropdown-panel">
                   <div class="mobile-dropdown-panel-inner">
                     <a href="${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
-                    <a href="/consulting#web" class="mobile-dropdown-link">Website Development</a>
+                    <a href="/services/websites" class="mobile-dropdown-link">Website Development</a>
                     <a href="/digital-transformation" class="mobile-dropdown-link">Digital Transformation</a>
                     <a href="${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
                     <a href="/future-platforms" class="mobile-dropdown-link">Coming Soon</a>
@@ -500,7 +513,7 @@ function renderHeader() {
             <div class="mobile-dropdown-panel">
               <div class="mobile-dropdown-panel-inner">
                 <a href="${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
-                <a href="/consulting#web" class="mobile-dropdown-link">Website Development</a>
+                <a href="/services/websites" class="mobile-dropdown-link">Website Development</a>
                 <a href="/digital-transformation" class="mobile-dropdown-link">Digital Transformation</a>
                 <a href="${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
                 <a href="/future-platforms" class="mobile-dropdown-link">Coming Soon</a>
@@ -559,10 +572,10 @@ function renderFooter() {
           <div class="footer-col">
             <h4>Services</h4>
             <a href="/solutions/nexus">4DS Nexus CRM &amp; ERP</a>
-            <a href="/consulting#web">Website Development</a>
+            <a href="/services/websites">Website Development</a>
             <a href="/services/mobile">Mobile App Development</a>
-            <a href="${PRICING_URL}#pos">POS Systems</a>
-            <a href="${CUSTOM_SOLUTIONS_URL}">Fleet &amp; Tracking</a>
+            <a href="/services/pos">POS Systems</a>
+            <a href="/services/fleet">Fleet &amp; Tracking</a>
             <a href="/contact#contact-form">Request a Quote</a>
           </div>
           <div class="footer-col">
@@ -1987,8 +2000,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavigationLoader();
   initLayout();
   initTheme();
-  initIcons();
   initHeader();
+  renderServiceCategoryGrid();
+  initIcons();
   initScrollProgress();
   initHeroCarousel();
   renderHomeModuleExplorer();

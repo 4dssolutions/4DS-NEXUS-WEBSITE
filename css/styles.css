@@ -4616,32 +4616,147 @@ a.pricing-addon-card:hover h4 {
   gap: 12px;
 }
 
+.service-category-card h3 .card-icon,
+.service-category-card h3 [data-icon] {
+  width: 32px;
+  height: 32px;
+}
+
 .service-category-card ul {
   margin: 0;
   padding: 0;
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .service-category-card ul li {
-  padding: 6px 0;
+  padding: 0;
   font-size: 0.875rem;
   color: var(--text-secondary);
-  border-bottom: 1px solid var(--gray-100);
+  border-bottom: none;
 }
 
 .service-category-card ul li a {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition), padding-left var(--transition);
+  padding: 11px 14px;
+  border-radius: 12px;
+  border: 1px solid var(--gray-100);
+  background: rgba(0, 0, 0, 0.02);
+  transition: color var(--transition), background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.service-category-card ul li a::after {
+  content: '→';
+  flex-shrink: 0;
+  opacity: 0.45;
+  font-size: 0.95rem;
+  transition: opacity var(--transition), transform var(--transition);
 }
 
 .service-category-card ul li a:hover {
-  color: var(--red);
-  padding-left: 4px;
+  color: var(--text);
+  background: rgba(196, 30, 58, 0.06);
+  border-color: rgba(196, 30, 58, 0.28);
+}
+
+.service-category-card ul li a:hover::after {
+  opacity: 1;
+  transform: translateX(3px);
 }
 
 .service-category-card ul li:last-child { border-bottom: none; }
+
+.service-topic-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.service-topic-card {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: 22px;
+  align-items: center;
+  padding: 24px 26px;
+  background: var(--surface);
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-xl);
+  scroll-margin-top: calc(var(--header-h) + var(--header-offset) + 16px);
+}
+
+.service-topic-icon {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(196, 30, 58, 0.1);
+  color: var(--red);
+  flex-shrink: 0;
+}
+
+.service-topic-icon .icon,
+.service-topic-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.service-topic-copy h2 {
+  font-size: 1.25rem;
+  margin: 0 0 8px;
+}
+
+.service-topic-copy p {
+  margin: 0;
+  color: var(--text-secondary);
+  line-height: 1.55;
+}
+
+.service-topic-copy .feature-list {
+  margin-top: 14px;
+}
+
+.service-topic-card .btn {
+  white-space: nowrap;
+}
+
+.service-topic-card--simple {
+  grid-template-columns: 1fr auto;
+}
+
+.industry-card[id],
+.industry-card li[id],
+.card[id] {
+  scroll-margin-top: calc(var(--header-h) + var(--header-offset) + 16px);
+}
+
+@media (max-width: 800px) {
+  .service-topic-card {
+    grid-template-columns: auto 1fr;
+  }
+
+  .service-topic-card .btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+  }
+}
+
+[data-theme="dark"] .service-category-card ul li a {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--gray-200);
+}
+
+[data-theme="dark"] .service-category-card ul li a:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+}
 
 .mega-menu-categories {
   display: grid;
@@ -4677,16 +4792,32 @@ a.pricing-addon-card:hover h4 {
 }
 
 .mega-category-links a {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
   font-size: 0.875rem;
   color: var(--text-secondary);
   text-decoration: none;
-  padding: 4px 0;
+  padding: 8px 10px;
   line-height: 1.4;
   overflow-wrap: anywhere;
-  transition: color 0.15s;
+  border-radius: 10px;
+  transition: color 0.15s, background 0.15s;
 }
 
-.mega-category-links a:hover { color: var(--red); }
+.mega-category-links a::after {
+  content: '→';
+  opacity: 0.35;
+  font-size: 0.8rem;
+}
+
+.mega-category-links a:hover {
+  color: var(--text);
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mega-category-links a:hover::after { opacity: 0.9; }
 
 /* Services mega menu — tablet: avoid clipped / overlapping columns */
 @media (max-width: 1100px) {
@@ -7341,6 +7472,7 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
 [data-theme="dark"] .pricing-ai-card,
 [data-theme="dark"] .pricing-value-anchor,
 [data-theme="dark"] .service-category-card,
+[data-theme="dark"] .service-topic-card,
 [data-theme="dark"] .accordion-item {
   background: var(--surface-raised);
   border-color: var(--gray-200);

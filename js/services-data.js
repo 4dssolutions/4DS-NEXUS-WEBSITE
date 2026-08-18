@@ -97,7 +97,10 @@ const SERVICE_PAGES = {
       'Better fleet visibility', 'Reduced operational costs', 'Improved vehicle utilisation'
     ],
     outcomes: ['Full fleet visibility', 'Lower running costs', 'Better utilisation', 'Safer operations'],
-    related: ['mobile', 'dispatch', 'custom-solutions']
+    related: ['mobile', 'dispatch', 'custom-solutions'],
+    variants: [
+      { id: 'vehicles', title: 'Vehicle Tracking', text: 'Live vehicle location, trip history, and status for cars, bakkies, and specialised units.' }
+    ]
   },
   mobile: {
     title: 'Mobile Applications',
@@ -116,7 +119,14 @@ const SERVICE_PAGES = {
       'Increased operational efficiency'
     ],
     outcomes: ['Connected field teams', 'Works without signal', 'Less paperwork', 'Faster updates'],
-    related: ['crm', 'inventory', 'custom-solutions']
+    related: ['crm', 'inventory', 'custom-solutions'],
+    variants: [
+      { id: 'android', title: 'Android Apps', text: 'Field, driver, and customer apps that run on Android phones and tablets, including offline capture.' },
+      { id: 'ios', title: 'iOS Apps', text: 'iPhone and iPad apps for managers, clients, and field staff who work in the Apple ecosystem.' },
+      { id: 'pwa', title: 'Progressive Web Apps', text: 'Installable web apps that work like a native app in the browser, useful when you need one build across devices.' },
+      { id: 'field', title: 'Field Service Apps', text: 'Job lists, digital forms, photos, GPS check-ins, and status updates for technicians and guards.' },
+      { id: 'tracking', title: 'Tracking Applications', text: 'Mobile tracking for vehicles, staff, or deliveries, scoped with the hardware and permissions your operation needs.' }
+    ]
   },
   kiosks: {
     title: 'Self-Service Kiosks',
@@ -305,6 +315,15 @@ function renderServicePage() {
   const featuresHtml = data.features.map(f => `<li>${f}</li>`).join('');
   const benefitsHtml = data.benefits.map(b => `<li>${b}</li>`).join('');
   const outcomesHtml = (data.outcomes || []).map(o => `<li>${o}</li>`).join('');
+  const variantsHtml = (data.variants || []).map(v => `
+    <article class="service-topic-card service-topic-card--simple" id="${v.id}">
+      <div class="service-topic-copy">
+        <h2>${v.title}</h2>
+        <p>${v.text}</p>
+      </div>
+      <a href="/contact#contact-form" class="btn btn-outline">Request a Quote</a>
+    </article>
+  `).join('');
   const comingSoonBanner = data.comingSoon ? `
     <section class="content-section alt">
       <div class="container">
@@ -411,6 +430,15 @@ function renderServicePage() {
           : `<a href="/pricing" class="btn btn-primary" style="margin-top:24px">View Pricing</a>`}
       </div>
     </section>
+
+    ${variantsHtml ? `
+    <section class="content-section">
+      <div class="container">
+        <p class="section-label label-purple reveal">Options</p>
+        <h2 class="section-title reveal">Jump to a specific type</h2>
+        <div class="service-topic-stack reveal">${variantsHtml}</div>
+      </div>
+    </section>` : ''}
 
     <section class="content-section" id="related">
       <div class="container">
