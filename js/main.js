@@ -229,7 +229,7 @@ const SERVICE_CATEGORIES = [
     { title: 'Asset Tracking Solutions', href: '/services/inventory' },
   ]},
   { id: 'web', icon: 'monitor', label: 'Web Development', links: [
-    { title: 'Business Websites', href: '/services/websites' },
+    { title: 'Business Websites', href: '/services/websites#business' },
     { title: 'Website Upgrades', href: '/services/websites#upgrades' },
     { title: 'E-commerce Websites', href: '/services/websites#ecommerce' },
     { title: 'Customer Portals', href: '/services/websites#portals' },
@@ -244,7 +244,7 @@ const SERVICE_CATEGORIES = [
     { title: 'Tracking Applications', href: '/services/mobile#tracking' },
   ]},
   { id: 'automation', icon: 'gear', label: 'Business Automation', links: [
-    { title: 'Workflow Automation', href: '/services/automation' },
+    { title: 'Workflow Automation', href: '/services/automation#workflow' },
     { title: 'Document Automation', href: '/services/automation#documents' },
     { title: 'Email Automation', href: '/services/automation#email' },
     { title: 'Reporting Automation', href: '/services/automation#reporting' },
@@ -254,7 +254,7 @@ const SERVICE_CATEGORIES = [
     { title: 'POS Systems', href: '/services/pos' },
     { title: 'Inventory Management', href: '/services/inventory' },
     { title: 'Dispatch Systems', href: '/services/dispatch' },
-    { title: 'Employee Management', href: '/services/crm' },
+    { title: 'Employee Management', href: '/services/crm#employees' },
     { title: 'Visitor Management', href: '/industries#visitors' },
   ]},
   { id: 'tracking', icon: 'truck', label: 'Tracking & Security', links: [
@@ -2004,6 +2004,16 @@ function initReloadControls() {
   });
 }
 
+function scrollToLocationHash() {
+  const id = decodeURIComponent((window.location.hash || '').slice(1));
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (!el) return;
+  requestAnimationFrame(() => {
+    el.scrollIntoView({ block: 'start' });
+  });
+}
+
 function reinitPageInteractions() {
   initIcons();
   initAccordions();
@@ -2039,4 +2049,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSocialLinks();
   initCounterAnimation();
   initReloadControls();
+  scrollToLocationHash();
 });

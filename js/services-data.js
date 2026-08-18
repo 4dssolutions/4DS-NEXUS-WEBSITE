@@ -12,7 +12,8 @@ const SERVICE_PAGES = {
       'Quotation management', 'Invoice management', 'Job card management',
       'Task and calendar scheduling', 'Customer communication history',
       'Customer support ticketing', 'Document management', 'Contact management',
-      'Customer activity timeline', 'Basic reporting', 'Multi-user access control'
+      'Customer activity timeline', 'Basic reporting', 'Multi-user access control',
+      'Employee records and role management'
     ],
     benefits: [
       'Improve customer relationships', 'Increase sales conversion rates',
@@ -20,7 +21,10 @@ const SERVICE_PAGES = {
       'Gain visibility into customer activity'
     ],
     outcomes: ['Higher conversion', 'Better retention', 'Organised follow-ups', 'Full customer visibility'],
-    related: ['inventory', 'mobile', 'custom-solutions']
+    related: ['inventory', 'mobile', 'custom-solutions'],
+    variants: [
+      { id: 'employees', title: 'Employee Management', text: 'Staff records, roles, and access so the same people who serve customers are managed in one system, not a separate spreadsheet.' }
+    ]
   },
   inventory: {
     title: 'Inventory Management',
@@ -461,4 +465,5 @@ function renderServicePage() {
 document.addEventListener('DOMContentLoaded', () => {
   renderServicePage();
   if (typeof reinitPageInteractions === 'function') reinitPageInteractions();
+  if (typeof scrollToLocationHash === 'function') scrollToLocationHash();
 });

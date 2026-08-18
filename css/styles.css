@@ -3338,6 +3338,8 @@ a.card:focus-visible {
 .browse-section,
 .content-section[id],
 .service-category-card[id],
+.industry-card[id],
+.industry-card-body li[id],
 .module-panel[id],
 .page-hero {
   scroll-margin-top: calc(var(--header-h) + var(--header-offset) + 16px);
