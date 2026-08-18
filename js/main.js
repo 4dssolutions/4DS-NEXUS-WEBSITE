@@ -1169,7 +1169,7 @@ function renderHomeModuleExplorer() {
           <h4>Key Outcomes</h4>
           <ul>${outcomes}</ul>
         </div>
-        <a href="${m.href}" class="card-link module-explorer-link">Full ${m.tab} details</a>
+        <a href="${m.href}" class="btn btn-outline" style="margin-top:24px">Full ${m.tab} details</a>
       </div>`;
   }).join('');
 

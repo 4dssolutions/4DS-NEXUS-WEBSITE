@@ -6359,6 +6359,21 @@ a.service-meta-item:focus-visible {
   cursor: pointer;
 }
 
+.trust-pill--link::after {
+  content: '→';
+  margin-left: auto;
+  flex-shrink: 0;
+  opacity: 0.4;
+  font-size: 0.95rem;
+  align-self: center;
+  transition: opacity var(--transition), transform var(--transition);
+}
+
+.trust-pill--link:hover::after {
+  opacity: 1;
+  transform: translateX(3px);
+}
+
 .trust-pill-icon {
   width: 36px;
   height: 36px;
