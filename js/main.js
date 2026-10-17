@@ -4,7 +4,7 @@
   const stored = localStorage.getItem('4ds-theme');
   document.documentElement.setAttribute(
     'data-theme',
-    stored === 'light' ? 'light' : 'dark'
+    stored === 'dark' ? 'dark' : 'light'
   );
 })();
 
@@ -43,6 +43,8 @@ const ICON_PATHS = {
   doc: '<path d="M6.5 3.5h7l4 4v13h-11z"/><path d="M13.5 3.5v4h4"/><path d="M9 12h6M9 15.5h6"/>',
   leaf: '<path d="M12 21c-4.5-5.5-7-9-7-12.5a6 6 0 0 1 10.5-4A6 6 0 0 1 19 8.5c0 3.5-2.5 7-7 12.5z"/><path d="M12 21V9"/>',
   globe: '<circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 3 4 6.5 4 9s-1.5 6-4 9"/><path d="M12 3c-2.5 3-4 6.5-4 9s1.5 6 4 9"/>',
+  home: '<path d="M4 11.2 12 4l8 7.2"/><path d="M6.5 10.2V20h11V10.2"/><path d="M10 20v-5.2h4V20"/>',
+  grid: '<rect x="4" y="4" width="6.4" height="6.4" rx="1.3"/><rect x="13.6" y="4" width="6.4" height="6.4" rx="1.3"/><rect x="4" y="13.6" width="6.4" height="6.4" rx="1.3"/><rect x="13.6" y="13.6" width="6.4" height="6.4" rx="1.3"/>',
 };
 
 function iconSvg(name) {
@@ -292,7 +294,7 @@ const MODULE_EXPLORER = [
   { id: 'pos', tab: 'POS', icon: 'cart', title: 'POS Systems', desc: 'Retail POS, inventory-linked checkout, multi-branch sales, and reporting, easy for clients to understand and adopt.', features: ['Retail POS systems', 'Inventory and stock tracking', 'Barcode scanning', 'Sales reporting', 'Multi-branch POS', 'Customer loyalty programs'], outcomes: ['Faster checkout', 'Stock linked to sales', 'Multi-site visibility', 'Clear operational reporting'], href: '/services/pos' },
   { id: 'fleet', tab: 'Fleet', icon: 'truck', title: 'Vehicle & Fleet Tracking', desc: 'Vehicle tracking, fleet management, dispatch, and asset visibility, scoped as custom solutions for your operation.', features: ['Vehicle and asset records', 'GPS tracking integration', 'Dispatch management', 'Maintenance tracking', 'Multi-site visibility', 'Custom reporting'], outcomes: ['Asset visibility', 'Better dispatch control', 'Scoped delivery', 'Industry-fit setup'], href: '/custom-solutions' },
   { id: 'automation', tab: 'Automation', icon: 'gear', title: 'Business Automation', desc: 'Workflow, document, email, and reporting automation, less manual admin and faster response times.', features: ['Workflow automation', 'Document automation', 'Email and notification flows', 'Reporting automation', 'Client onboarding automation', 'WhatsApp and SMS notifications'], outcomes: ['Less manual admin', 'Faster response times', 'Consistent follow-ups', 'Reliable notifications'], href: '/services/automation' },
-  { id: 'security', tab: 'Security', icon: 'shield', title: 'Security Management Systems', desc: 'Systems for guard scheduling, patrol monitoring, incident reporting, visitor management, and client contracts.', features: ['Guard and shift scheduling', 'Patrol monitoring', 'Incident reporting', 'Visitor management', 'Site and contract management', 'Workforce visibility'], outcomes: ['Better site coverage', 'Documented incidents', 'Organised operations', 'Client transparency'], href: '/industries' },
+  { id: 'security', tab: 'Security', icon: 'shield', title: 'Security Control Panel', desc: 'Live view, playback, multi-site cameras, client portals, panic alerts, and control-room operations — built for security companies.', features: ['Live view & playback', 'Multi-site camera grid', 'Client portals', 'Panic & armed response', 'Officer & event status', 'E-map and device views'], outcomes: ['Control-room visibility', 'Faster panic response', 'Client transparency', 'Playback & evidence ready'], href: '/industries#security' },
 ];
 
 const CONNECT_ACCORDION = [
@@ -321,6 +323,58 @@ function renderServiceCategoryGrid() {
   `).join('');
 }
 
+const CATALOG_BLURBS = {
+  software: 'Connected CRM, ERP, fleet, security, and asset systems built around how your operation actually runs.',
+  web: 'Business websites, upgrades, e-commerce, portals, and web apps — scoped, quoted, and delivered properly.',
+  mobile: 'Android, iOS, and progressive web apps for field teams, clients, and employees.',
+  automation: 'Workflow, document, email, and reporting automation that cuts manual admin.',
+  operations: 'POS, inventory, dispatch, employees, and visitor flows for day-to-day operations.',
+  tracking: 'Vehicle, fleet, patrol, incident, and access systems for sites you run from more than one place.',
+  consulting: 'Digital transformation, cloud migration, API work, and technology consulting.',
+};
+
+function renderCatalogExplore() {
+  const host = document.getElementById('catalog-explore');
+  if (!host) return;
+
+  const sidebar = SERVICE_CATEGORIES.map((cat, i) => `
+    <button type="button" class="catalog-side-item${i === 0 ? ' is-active' : ''}" data-catalog-id="${cat.id}" aria-pressed="${i === 0}">
+      ${cat.label}
+    </button>
+  `).join('');
+
+  host.innerHTML = `
+    <aside class="catalog-sidebar" aria-label="Service categories">${sidebar}</aside>
+    <div class="catalog-detail" id="catalog-detail"></div>
+  `;
+
+  const detail = host.querySelector('#catalog-detail');
+  const buttons = [...host.querySelectorAll('.catalog-side-item')];
+
+  const show = (id) => {
+    const cat = SERVICE_CATEGORIES.find(c => c.id === id) || SERVICE_CATEGORIES[0];
+    buttons.forEach(btn => {
+      const on = btn.dataset.catalogId === cat.id;
+      btn.classList.toggle('is-active', on);
+      btn.setAttribute('aria-pressed', String(on));
+    });
+    detail.innerHTML = `
+      <h3>${cat.label}</h3>
+      <p>${CATALOG_BLURBS[cat.id] || ''}</p>
+      <ul class="catalog-detail-links">
+        ${cat.links.map(l => `<li><a href="${l.href}">${l.title}</a></li>`).join('')}
+      </ul>
+      <a href="${cat.links[0]?.href || '/consulting'}" class="btn btn-primary catalog-detail-cta">Learn more</a>
+    `;
+  };
+
+  buttons.forEach(btn => btn.addEventListener('click', () => show(btn.dataset.catalogId)));
+  show(SERVICE_CATEGORIES[0].id);
+
+  const hash = (window.location.hash || '').replace('#', '');
+  if (hash && SERVICE_CATEGORIES.some(c => c.id === hash)) show(hash);
+}
+
 function isHomePage() {
   return getSitePath() === '/';
 }
@@ -331,16 +385,105 @@ function isPathActive(match) {
   return path === match || path.startsWith(`${match}/`);
 }
 
-function renderHeader() {
-
-  const servicesMega = SERVICE_CATEGORIES.map(cat => `
-    <div class="mega-menu-category">
-      <p class="mega-category-label">${cat.label}</p>
-      <div class="mega-category-links">
-        ${cat.links.map(l => `<a href="${l.href}">${l.title}</a>`).join('')}
-      </div>
+function megaCategory(cat, { viewAll } = {}) {
+  return `<div class="mega-col">
+    <p class="mega-col-title">${cat.label}</p>
+    <div class="mega-col-links">
+      ${cat.links.map(l => `<a href="${l.href}">${l.title}</a>`).join('')}
     </div>
-  `).join('');
+    ${viewAll ? `<a href="${viewAll.href}" class="mega-view-all">${viewAll.label}</a>` : ''}
+  </div>`;
+}
+
+function renderHeader() {
+  const byId = Object.fromEntries(SERVICE_CATEGORIES.map(c => [c.id, c]));
+  const servicesMega = `
+    <div class="mega-panel">
+      <div class="mega-panel-cols mega-panel-cols--3">
+        <div class="mega-col-stack">
+          ${megaCategory(byId.software, { viewAll: { href: '/solutions/nexus', label: 'View platform →' } })}
+          ${megaCategory(byId.operations)}
+        </div>
+        <div class="mega-col-stack">
+          ${megaCategory(byId.web, { viewAll: { href: '/services/websites', label: 'View web services →' } })}
+          ${megaCategory(byId.mobile)}
+        </div>
+        <div class="mega-col-stack">
+          ${megaCategory(byId.automation)}
+          ${megaCategory(byId.tracking)}
+          ${megaCategory(byId.consulting, { viewAll: { href: '/consulting', label: 'View all services →' } })}
+        </div>
+      </div>
+      <aside class="mega-panel-cta">
+        <a href="/contact?interest=demo#contact-form" class="mega-cta-card">
+          <img src="/assets/photos/crm.jpg" alt="" width="320" height="180">
+          <div>
+            <strong>Need a connected platform?</strong>
+            <span class="mega-cta-link">Request information →</span>
+          </div>
+        </a>
+        <a href="/services/pos" class="mega-cta-card">
+          <img src="/assets/photos/pos.jpg" alt="" width="320" height="180">
+          <div>
+            <strong>Retail checkout &amp; stock</strong>
+            <span class="mega-cta-link">View POS systems →</span>
+          </div>
+        </a>
+        <a href="/consulting" class="mega-view-all">View all services →</a>
+      </aside>
+    </div>`;
+
+  const solutionsMega = `
+    <div class="mega-panel mega-panel--solutions">
+      <div class="mega-panel-cols mega-panel-cols--3">
+        <div class="mega-col">
+          <p class="mega-col-title">4DS Nexus platform</p>
+          <div class="mega-col-links">
+            <a href="${NEXUS_URL}">4DS Nexus overview</a>
+            <a href="${NEXUS_URL}#modules">CRM, portals &amp; modules</a>
+            <a href="${PRICING_URL}">Modular pricing</a>
+            <a href="/#products">Products we've built</a>
+          </div>
+          <a href="${NEXUS_URL}" class="mega-view-all">View platform →</a>
+        </div>
+        <div class="mega-col">
+          <p class="mega-col-title">Product builds</p>
+          <div class="mega-col-links">
+            <a href="/#product-security">Security control panel</a>
+            <a href="/#product-property">Property management app</a>
+            <a href="/#product-ecommerce">E-commerce apps</a>
+            <a href="/industries#security">Client portals &amp; panic</a>
+          </div>
+          <a href="/#products" class="mega-view-all">View all products →</a>
+        </div>
+        <div class="mega-col">
+          <p class="mega-col-title">Custom &amp; industries</p>
+          <div class="mega-col-links">
+            <a href="${CUSTOM_SOLUTIONS_URL}">Custom solutions</a>
+            <a href="/digital-transformation">Digital transformation</a>
+            <a href="/industries">Industry solutions</a>
+            <a href="/services/websites">Website development</a>
+          </div>
+          <a href="${CUSTOM_SOLUTIONS_URL}" class="mega-view-all">View custom builds →</a>
+        </div>
+      </div>
+      <aside class="mega-panel-cta">
+        <a href="/contact?interest=demo#contact-form" class="mega-cta-card">
+          <img src="/assets/screenshots/crm-dashboard.png" alt="" width="320" height="180">
+          <div>
+            <strong>Interested in 4DS Nexus?</strong>
+            <span class="mega-cta-link">Book a demo →</span>
+          </div>
+        </a>
+        <a href="/#product-security" class="mega-cta-card">
+          <img src="/assets/screenshots/security-control-panel.png" alt="" width="320" height="180">
+          <div>
+            <strong>Security control panel</strong>
+            <span class="mega-cta-link">See live view &amp; panic →</span>
+          </div>
+        </a>
+      </aside>
+    </div>`;
 
   const mobileServicesPanel = SERVICE_CATEGORIES.map(cat => `
     <div class="mobile-dropdown-group">
@@ -350,140 +493,115 @@ function renderHeader() {
   `).join('');
 
   return `
-    <header class="site-header" id="siteHeader">
-      <div class="container">
-        <div class="header-inner">
-        <a href="${HOME_URL}" class="logo" aria-label="4DS Nexus home">
-          <span class="logo-mark-wrap">
-            <img class="logo-mark" src="${LOGO_LIGHT_URL}" width="847" height="334" alt="4DS">
-          </span>
-          <span class="logo-text">
-            <span class="logo-suffix">Nexus</span>
-          </span>
-        </a>
-        <nav class="main-nav" id="mainNav">
-          <div class="nav-item" data-nav-priority="1">
-            <a href="${HOME_URL}" class="nav-link ${isHomePage() ? 'active' : ''}">Home</a>
-            <template class="nav-overflow-template"><a href="${HOME_URL}" class="mobile-nav-link">Home</a></template>
-          </div>
-          <div class="nav-item" data-nav-priority="2">
-            <a href="/about" class="nav-link ${isPathActive('/about') ? 'active' : ''}">About</a>
-            <template class="nav-overflow-template"><a href="/about" class="mobile-nav-link">About</a></template>
-          </div>
-          <div class="nav-item" data-nav-priority="3">
-            <a href="/consulting" class="nav-link ${isPathActive('/consulting') || isPathActive('/services') ? 'active' : ''}">
-              Services
-              <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5"/></svg>
-            </a>
-            <div class="mega-menu">
-              <div class="mega-menu-categories">${servicesMega}</div>
-              <div class="mega-menu-footer">
-                <a href="/services/websites">Website development</a>
-                <a href="/solutions/nexus">View all modules on 4DS Nexus</a>
-                <a href="${PRICING_URL}">View pricing</a>
-              </div>
-            </div>
-            <template class="nav-overflow-template">
-              <div class="mobile-dropdown">
-                <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                  <span>Services</span>
-                  <svg class="mobile-dropdown-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div class="mobile-dropdown-panel">
-                  <div class="mobile-dropdown-panel-inner">${mobileServicesPanel}</div>
-                </div>
-              </div>
-            </template>
-          </div>
-          <div class="nav-item" data-nav-priority="4">
-            <a href="${NEXUS_URL}" class="nav-link ${isPathActive('/solutions') || isPathActive('/digital-transformation') || isPathActive('/custom-solutions') || isPathActive('/future-platforms') ? 'active' : ''}">
-              Solutions
-              <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5"/></svg>
-            </a>
-            <div class="mega-menu" style="min-width:320px">
-              <div class="mega-menu-grid" style="grid-template-columns:1fr">
-                <a href="${NEXUS_URL}#modules" class="mega-link">
-                  <div class="mega-icon">${iconSvg('bolt')}</div>
-                  <div>
-                    <h4>4DS Nexus Platform</h4>
-                    <p>CRM, business websites, client portals, inventory, and mobile apps, one company, connected systems.</p>
-                  </div>
-                </a>
-                <a href="/services/websites" class="mega-link">
-                  <div class="mega-icon">${iconSvg('monitor')}</div>
-                  <div>
-                    <h4>Website Development</h4>
-                    <p>Business websites, upgrades, landing pages, and e-commerce, built by the same team as 4DS Nexus.</p>
-                  </div>
-                </a>
-                <a href="${PRICING_URL}" class="mega-link">
-                  <div class="mega-icon">${iconSvg('chart')}</div>
-                  <div>
-                    <h4>Modular Pricing</h4>
-                    <p>From R799/month Core, through Enterprise, with Custom Managed from R75,000/month.</p>
-                  </div>
-                </a>
-                <a href="/future-platforms" class="mega-link">
-                  <div class="mega-icon">${iconSvg('robot')}</div>
-                  <div>
-                    <h4>Coming Soon <span class="coming-soon-badge coming-soon-badge--inline">Roadmap</span></h4>
-                    <p>AI assistant, predictive analytics, and advanced BI, on our roadmap, not live yet.</p>
-                  </div>
-                </a>
-                <a href="${CUSTOM_SOLUTIONS_URL}" class="mega-link">
-                  <div class="mega-icon">${iconSvg('puzzle')}</div>
-                  <div>
-                    <h4>Custom Solutions</h4>
-                    <p>Fleet tracking, dispatch, GPS monitoring, and industry-specific builds, scoped per client.</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <template class="nav-overflow-template">
-              <div class="mobile-dropdown">
-                <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
-                  <span>Solutions</span>
-                  <svg class="mobile-dropdown-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                </button>
-                <div class="mobile-dropdown-panel">
-                  <div class="mobile-dropdown-panel-inner">
-                    <a href="${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
-                    <a href="/services/websites" class="mobile-dropdown-link">Website Development</a>
-                    <a href="/digital-transformation" class="mobile-dropdown-link">Digital Transformation</a>
-                    <a href="${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
-                    <a href="/future-platforms" class="mobile-dropdown-link">Coming Soon</a>
-                    <a href="${PRICING_URL}" class="mobile-dropdown-link">Pricing</a>
-                  </div>
-                </div>
-              </div>
-            </template>
-          </div>
-          <div class="nav-item" data-nav-priority="5">
-            <a href="/industries" class="nav-link ${isPathActive('/industries') ? 'active' : ''}">Industries</a>
-            <template class="nav-overflow-template"><a href="/industries" class="mobile-nav-link">Industries</a></template>
-          </div>
-          <div class="nav-item" data-nav-priority="6">
-            <a href="${PRICING_URL}" class="nav-link ${isPathActive('/pricing') ? 'active' : ''}">Pricing</a>
-            <template class="nav-overflow-template"><a href="${PRICING_URL}" class="mobile-nav-link">Pricing</a></template>
-          </div>
-        </nav>
-        <div class="header-tools">
-          <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Light mode">
-            <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-            <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-          </button>
-          <div class="header-actions">
-            <a href="/solutions/nexus" class="btn btn-outline">Explore Nexus</a>
-            <a href="/contact?interest=demo#contact-form" class="btn btn-primary">Book a Demo</a>
-          </div>
-          <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
-            <span class="mobile-toggle-box" aria-hidden="true">
-              <span class="mobile-toggle-line"></span>
-              <span class="mobile-toggle-line"></span>
-              <span class="mobile-toggle-line"></span>
+    <header class="site-header site-header--catalog" id="siteHeader">
+      <div class="header-top">
+        <div class="container header-top-inner header-inner">
+          <a href="${HOME_URL}" class="logo" aria-label="4DS Nexus home">
+            <span class="logo-mark-wrap">
+              <img class="logo-mark" src="${LOGO_LIGHT_URL}" width="847" height="334" alt="4DS">
             </span>
-          </button>
+            <span class="logo-text">
+              <span class="logo-suffix">Nexus</span>
+            </span>
+          </a>
+          <form class="header-search" role="search" action="/consulting" method="get" id="headerSearch">
+            <label class="visually-hidden" for="headerSearchInput">Search 4DS Nexus</label>
+            <svg class="header-search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input id="headerSearchInput" type="search" name="q" placeholder="Search 4DS Nexus for services, solutions, pricing…" autocomplete="off">
+          </form>
+          <div class="header-tools">
+            <button type="button" class="header-icon-btn header-search-toggle" id="headerSearchToggle" aria-label="Search" aria-expanded="false" aria-controls="siteSearchPanel">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><circle cx="11" cy="11" r="6.5" stroke="currentColor" stroke-width="1.6"/><path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </button>
+            <a href="/contact" class="header-icon-btn" aria-label="Contact">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" aria-hidden="true"><circle cx="12" cy="8" r="3.2" stroke="currentColor" stroke-width="1.6"/><path d="M5 19c0-3.2 2.8-5.2 7-5.2s7 2 7 5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </a>
+            <button type="button" class="theme-toggle" id="themeToggle" aria-label="Switch to light mode" title="Light mode">
+              <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+              <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </button>
+            <div class="header-actions">
+              <a href="/contact?interest=demo#contact-form" class="btn btn-primary">Book a Demo</a>
+            </div>
+            <button type="button" class="mobile-toggle" id="mobileToggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+              <span class="mobile-toggle-box" aria-hidden="true">
+                <span class="mobile-toggle-line"></span>
+                <span class="mobile-toggle-line"></span>
+                <span class="mobile-toggle-line"></span>
+              </span>
+            </button>
+          </div>
         </div>
+      </div>
+      <div class="header-nav-bar">
+        <div class="container header-nav-inner">
+          <nav class="main-nav" id="mainNav">
+            <div class="nav-item" data-nav-priority="1">
+              <a href="${HOME_URL}" class="nav-link ${isHomePage() ? 'active' : ''}">Home</a>
+              <template class="nav-overflow-template"><a href="${HOME_URL}" class="mobile-nav-link">Home</a></template>
+            </div>
+            <div class="nav-item" data-nav-priority="2">
+              <a href="/about" class="nav-link ${isPathActive('/about') ? 'active' : ''}">About</a>
+              <template class="nav-overflow-template"><a href="/about" class="mobile-nav-link">About</a></template>
+            </div>
+            <div class="nav-item" data-nav-priority="3">
+              <a href="/consulting" class="nav-link ${isPathActive('/consulting') || isPathActive('/services') ? 'active' : ''}">
+                Services
+                <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+              <div class="mega-menu mega-menu--wide">${servicesMega}</div>
+              <template class="nav-overflow-template">
+                <div class="mobile-dropdown">
+                  <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                    <span>Services</span>
+                    <svg class="mobile-dropdown-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="mobile-dropdown-panel">
+                    <div class="mobile-dropdown-panel-inner">${mobileServicesPanel}</div>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="nav-item" data-nav-priority="4">
+              <a href="${NEXUS_URL}" class="nav-link ${isPathActive('/solutions') || isPathActive('/digital-transformation') || isPathActive('/custom-solutions') || isPathActive('/future-platforms') ? 'active' : ''}">
+                Solutions
+                <svg viewBox="0 0 12 12" fill="none"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5"/></svg>
+              </a>
+              <div class="mega-menu mega-menu--wide">${solutionsMega}</div>
+              <template class="nav-overflow-template">
+                <div class="mobile-dropdown">
+                  <button type="button" class="mobile-dropdown-toggle" aria-expanded="false">
+                    <span>Solutions</span>
+                    <svg class="mobile-dropdown-chevron" viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 4.5L6 7.5L9 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  </button>
+                  <div class="mobile-dropdown-panel">
+                    <div class="mobile-dropdown-panel-inner">
+                      <a href="${NEXUS_URL}#modules" class="mobile-dropdown-link">4DS Nexus Platform</a>
+                      <a href="/services/websites" class="mobile-dropdown-link">Website Development</a>
+                      <a href="/digital-transformation" class="mobile-dropdown-link">Digital Transformation</a>
+                      <a href="${CUSTOM_SOLUTIONS_URL}" class="mobile-dropdown-link">Custom Solutions</a>
+                      <a href="/future-platforms" class="mobile-dropdown-link">Coming Soon</a>
+                      <a href="${PRICING_URL}" class="mobile-dropdown-link">Pricing</a>
+                    </div>
+                  </div>
+                </div>
+              </template>
+            </div>
+            <div class="nav-item" data-nav-priority="5">
+              <a href="/industries" class="nav-link ${isPathActive('/industries') ? 'active' : ''}">Industries</a>
+              <template class="nav-overflow-template"><a href="/industries" class="mobile-nav-link">Industries</a></template>
+            </div>
+            <div class="nav-item" data-nav-priority="6">
+              <a href="${PRICING_URL}" class="nav-link ${isPathActive('/pricing') ? 'active' : ''}">Pricing</a>
+              <template class="nav-overflow-template"><a href="${PRICING_URL}" class="mobile-nav-link">Pricing</a></template>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="site-search-panel" id="siteSearchPanel" hidden>
+        <div class="container">
+          <p class="site-search-label">Results</p>
+          <ul class="site-search-results" id="siteSearchResults"></ul>
         </div>
       </div>
     </header>
@@ -639,7 +757,7 @@ function getTheme() {
 }
 
 function updateHeaderLogo(theme = getTheme()) {
-  const logo = document.querySelector('.header-inner .logo-mark');
+  const logo = document.querySelector('.site-header .logo-mark');
   if (!logo) return;
   const spec = theme === 'dark'
     ? { src: LOGO_DARK_URL, width: 842, height: 334 }
@@ -682,7 +800,7 @@ function initTheme() {
   if (stored === 'dark' || stored === 'light') {
     applyTheme(stored);
   } else {
-    applyTheme(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark');
+    applyTheme('light');
   }
 
   if (document._themeBound) return;
@@ -692,6 +810,24 @@ function initTheme() {
     if (!e.target.closest('#themeToggle')) return;
     applyTheme(getTheme() === 'dark' ? 'light' : 'dark');
   });
+}
+
+function renderBottomDock() {
+  const path = getSitePath();
+  const items = [
+    { href: '/', label: 'Home', icon: 'home', on: path === '/' },
+    { href: '/consulting', label: 'Services', icon: 'grid', on: path === '/consulting' || path.startsWith('/services') },
+    { href: '/solutions/nexus', label: 'Solutions', icon: 'puzzle', on: path.startsWith('/solutions') || path.startsWith('/custom-solutions') },
+    { href: '/pricing', label: 'Pricing', icon: 'chart', on: path.startsWith('/pricing') },
+    { href: '/contact', label: 'Contact', icon: 'mail', on: path.startsWith('/contact') },
+  ];
+  return `<nav class="bottom-dock" aria-label="Sections">
+    ${items.map(item => `<a href="${item.href}" class="bottom-dock-item${item.on ? ' is-active' : ''}"${item.on ? ' aria-current="page"' : ''}>
+      <span class="bottom-dock-tip">${item.label}</span>
+      <span class="bottom-dock-icon" data-icon="${item.icon}"></span>
+      <span class="bottom-dock-label">${item.label}</span>
+    </a>`).join('')}
+  </nav>`;
 }
 
 function initLayout() {
@@ -704,6 +840,9 @@ function initLayout() {
     updateHeaderLogo();
   }
   if (footerEl) footerEl.innerHTML = renderFooter();
+  if (!document.querySelector('.bottom-dock')) {
+    document.body.insertAdjacentHTML('beforeend', renderBottomDock());
+  }
 }
 
 function initHeader() {
@@ -778,7 +917,7 @@ function initHeader() {
 
 function initResponsiveNav() {
   const header = document.getElementById('siteHeader');
-  const headerInner = header?.querySelector('.header-inner');
+  const headerInner = header?.querySelector('.header-nav-inner') || header?.querySelector('.header-inner');
   const mainNav = document.getElementById('mainNav');
   const mobileNavFull = document.getElementById('mobileNavFull');
   const mobileNavOverflow = document.getElementById('mobileNavOverflow');
@@ -918,6 +1057,91 @@ function initMegaMenus() {
   });
 }
 
+const SITE_SEARCH_INDEX = [
+  { title: 'Home', href: '/', keywords: 'home 4ds nexus' },
+  { title: 'About', href: '/about', keywords: 'about company 4ds solutions' },
+  { title: 'Services & Consulting', href: '/consulting', keywords: 'services consulting websites automation' },
+  { title: '4DS Nexus Platform', href: '/solutions/nexus', keywords: 'crm erp platform modules nexus' },
+  { title: 'Pricing', href: '/pricing', keywords: 'pricing packages core enterprise' },
+  { title: 'Industries', href: '/industries', keywords: 'security fleet retail field service' },
+  { title: 'Security Control Panel', href: '/#product-security', keywords: 'security control panel live playback panic portal cameras' },
+  { title: 'Property Management App', href: '/#product-property', keywords: 'property management tenants listings maintenance' },
+  { title: 'E-commerce Apps', href: '/#product-ecommerce', keywords: 'ecommerce ecommerce store checkout catalogue' },
+  { title: '4DS Nexus Products', href: '/#products', keywords: '4ds products builds saas platform' },
+  { title: 'Website Development', href: '/services/websites', keywords: 'website web ecommerce portal' },
+  { title: 'POS Systems', href: '/services/pos', keywords: 'pos retail checkout till' },
+  { title: 'CRM', href: '/services/crm', keywords: 'crm customers leads invoices' },
+  { title: 'Inventory', href: '/services/inventory', keywords: 'inventory stock warehouse' },
+  { title: 'Fleet Tracking', href: '/services/fleet', keywords: 'fleet vehicle gps tracking' },
+  { title: 'Mobile Apps', href: '/services/mobile', keywords: 'mobile android ios app' },
+  { title: 'Automation', href: '/services/automation', keywords: 'automation workflow' },
+  { title: 'Digital Transformation', href: '/digital-transformation', keywords: 'digital transformation cloud integration' },
+  { title: 'Custom Solutions', href: '/custom-solutions', keywords: 'custom software build' },
+  { title: 'Contact', href: '/contact', keywords: 'contact demo quote book' },
+];
+
+function initSiteSearch() {
+  const form = document.getElementById('headerSearch');
+  const input = document.getElementById('headerSearchInput');
+  const panel = document.getElementById('siteSearchPanel');
+  const results = document.getElementById('siteSearchResults');
+  const toggle = document.getElementById('headerSearchToggle');
+  if (!form || !input || !panel || !results) return;
+
+  const closePanel = () => {
+    panel.hidden = true;
+    toggle?.setAttribute('aria-expanded', 'false');
+  };
+
+  const openPanel = () => {
+    panel.hidden = false;
+    toggle?.setAttribute('aria-expanded', 'true');
+  };
+
+  const runSearch = (q) => {
+    const query = String(q || '').trim().toLowerCase();
+    if (!query) {
+      closePanel();
+      results.innerHTML = '';
+      return;
+    }
+    const matches = SITE_SEARCH_INDEX.filter(item =>
+      `${item.title} ${item.keywords}`.toLowerCase().includes(query)
+    ).slice(0, 8);
+    results.innerHTML = matches.length
+      ? matches.map(item => `<li><a href="${item.href}">${item.title}</a></li>`).join('')
+      : '<li class="site-search-empty">No matching pages</li>';
+    openPanel();
+  };
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    runSearch(input.value);
+  });
+
+  input.addEventListener('input', () => runSearch(input.value));
+  input.addEventListener('focus', () => {
+    if (input.value.trim()) runSearch(input.value);
+  });
+
+  toggle?.addEventListener('click', () => {
+    if (panel.hidden) {
+      openPanel();
+      input.focus();
+    } else {
+      closePanel();
+    }
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('#siteHeader')) closePanel();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePanel();
+  });
+}
+
 function initHeroCarousel() {
   const hero = document.querySelector('.hero');
   const track = document.querySelector('.hero-slides');
@@ -933,10 +1157,12 @@ function initHeroCarousel() {
   let current = 0;
   let interval;
   let resumeTimer;
-  const pause = { hidden: false, interacting: false };
+  const pause = { hidden: false, interacting: false, locked: false };
+  const studio = Boolean(hero?.classList.contains('hero--studio'));
+  const viewport = hero?.querySelector('.hero-viewport');
 
   function isPaused() {
-    return reducedMotion || pause.hidden || pause.interacting;
+    return reducedMotion || pause.hidden || pause.interacting || pause.locked;
   }
 
   function syncAutoplay() {
@@ -961,14 +1187,28 @@ function initHeroCarousel() {
     }, RESUME_DELAY_MS);
   }
 
+  function layoutStudio() {
+    if (!studio || !track || !viewport) return;
+    const slideW = slides[0].offsetWidth;
+    const styles = getComputedStyle(track);
+    const gap = parseFloat(styles.columnGap || styles.gap) || 0;
+    const offset = -current * (slideW + gap);
+    track.style.transform = `translate3d(${offset}px, 0, 0)`;
+  }
+
   function goTo(index) {
-    slides[current].classList.remove('active');
-    dots[current]?.classList.remove('active');
-    dots[current]?.setAttribute('aria-selected', 'false');
     current = (index + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    dots[current]?.classList.add('active');
-    dots[current]?.setAttribute('aria-selected', 'true');
+    slides.forEach((slide, i) => {
+      const on = i === current;
+      slide.classList.toggle('active', on);
+      if (studio) slide.toggleAttribute('inert', !on);
+    });
+    dots.forEach((dot, i) => {
+      const on = i === current;
+      dot.classList.toggle('active', on);
+      dot.setAttribute('aria-selected', on ? 'true' : 'false');
+    });
+    layoutStudio();
   }
 
   dots.forEach((dot, i) => {
@@ -1031,6 +1271,28 @@ function initHeroCarousel() {
       track.classList.remove('is-dragging');
       scheduleResume();
     });
+  }
+
+  hero?.querySelector('[data-hero-prev]')?.addEventListener('click', () => {
+    goTo(current - 1);
+    markManualUse();
+  });
+  hero?.querySelector('[data-hero-next]')?.addEventListener('click', () => {
+    goTo(current + 1);
+    markManualUse();
+  });
+  const pauseBtn = hero?.querySelector('[data-hero-pause]');
+  pauseBtn?.addEventListener('click', () => {
+    pause.locked = !pause.locked;
+    pauseBtn.setAttribute('aria-pressed', String(pause.locked));
+    pauseBtn.setAttribute('aria-label', pause.locked ? 'Play slideshow' : 'Pause slideshow');
+    pauseBtn.classList.toggle('is-paused', pause.locked);
+    syncAutoplay();
+  });
+
+  if (studio) {
+    window.addEventListener('resize', layoutStudio);
+    goTo(0);
   }
 
   syncAutoplay();
@@ -2031,7 +2293,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initLayout();
   initTheme();
   initHeader();
+  initSiteSearch();
   renderServiceCategoryGrid();
+  renderCatalogExplore();
   initIcons();
   initScrollProgress();
   initHeroCarousel();

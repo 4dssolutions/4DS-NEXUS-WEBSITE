@@ -5,7 +5,7 @@
   const storedTheme = localStorage.getItem('4ds-theme');
   document.documentElement.setAttribute(
     'data-theme',
-    storedTheme === 'light' ? 'light' : 'dark'
+    storedTheme === 'dark' ? 'dark' : 'light'
   );
   document.documentElement.classList.add('is-loading');
 
@@ -21,7 +21,7 @@
     };
 
     add({ name: 'format-detection', content: 'telephone=no' });
-    add({ name: 'color-scheme', content: 'dark light' });
+    add({ name: 'color-scheme', content: 'light dark' });
     add({ name: 'apple-mobile-web-app-capable', content: 'yes' });
     add({ name: 'apple-mobile-web-app-title', content: '4DS Nexus' });
     add({ name: 'mobile-web-app-capable', content: 'yes' });
@@ -53,7 +53,7 @@
   if (!document.querySelector('link[data-4ds-fonts]')) {
     const fonts = document.createElement('link');
     fonts.rel = 'stylesheet';
-    fonts.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap';
+    fonts.href = 'https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap';
     fonts.setAttribute('data-4ds-fonts', '1');
     document.head.appendChild(fonts);
   }

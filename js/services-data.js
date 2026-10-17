@@ -20,6 +20,8 @@ const SERVICE_PAGES = {
       'Track opportunities more effectively', 'Provide better customer service',
       'Gain visibility into customer activity'
     ],
+    heroImage: '/assets/photos/crm.jpg',
+    heroImageAlt: 'Open laptop and notebook on an office desk',
     outcomes: ['Higher conversion', 'Better retention', 'Organised follow-ups', 'Full customer visibility'],
     related: ['inventory', 'mobile', 'custom-solutions'],
     variants: [
@@ -43,6 +45,8 @@ const SERVICE_PAGES = {
       'Reduce stock shortages', 'Improve inventory accuracy',
       'Reduce waste', 'Improve procurement planning'
     ],
+    heroImage: '/assets/photos/stock.jpg',
+    heroImageAlt: 'Barcode scanner on a carton in a stockroom',
     outcomes: ['Accurate stock levels', 'Fewer stockouts', 'Better procurement', 'Multi-site visibility'],
     related: ['crm', 'mobile', 'custom-solutions']
   },
@@ -62,6 +66,8 @@ const SERVICE_PAGES = {
       'Faster transactions', 'Improved reporting',
       'Real-time stock updates', 'Reduced manual work'
     ],
+    heroImage: '/assets/photos/pos.jpg',
+    heroImageAlt: 'Card payment terminal and tablet on a shop counter',
     outcomes: ['Faster checkout', 'Real-time stock sync', 'Reliable offline sales', 'Cleaner reporting'],
     related: ['inventory', 'crm', 'custom-solutions']
   },
@@ -100,6 +106,8 @@ const SERVICE_PAGES = {
     benefits: [
       'Better fleet visibility', 'Reduced operational costs', 'Improved vehicle utilisation'
     ],
+    heroImage: '/assets/photos/fleet.jpg',
+    heroImageAlt: 'Tracker and phone mount on a vehicle dashboard',
     outcomes: ['Full fleet visibility', 'Lower running costs', 'Better utilisation', 'Safer operations'],
     related: ['mobile', 'dispatch', 'custom-solutions'],
     variants: [
@@ -122,6 +130,8 @@ const SERVICE_PAGES = {
       'Improved workforce mobility', 'Real-time information access',
       'Increased operational efficiency'
     ],
+    heroImage: '/assets/photos/field.jpg',
+    heroImageAlt: 'Rugged tablet and radio on a field toolbox',
     outcomes: ['Connected field teams', 'Works without signal', 'Less paperwork', 'Faster updates'],
     related: ['crm', 'inventory', 'custom-solutions'],
     variants: [
@@ -354,6 +364,26 @@ function renderServicePage() {
   const heroNav = renderHeroBlueprintNav(SERVICE_HERO_NAV);
   const twoColReverse = theme.reverse ? ' two-col--reverse' : '';
   const showcaseClass = theme.showcase ? ` ${theme.showcase}` : '';
+  const visualHtml = data.heroImage
+    ? `<img class="service-photo" src="${data.heroImage}" alt="${data.heroImageAlt || data.title}" width="1600" height="900">`
+    : `<div class="showcase ${theme.bp}${showcaseClass}">
+              <div class="showcase-emblem">${iconSvg(data.icon)}</div>
+              <div class="showcase-foot">
+                <div>
+                  <p class="showcase-name">${data.title}</p>
+                  <p class="showcase-sub">A 4DS Nexus module</p>
+                </div>
+                <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
+              </div>
+            </div>
+            <div class="spec-chip spec-chip--tl">
+              <span class="spec-label">Integration</span>
+              <span class="spec-value">Native</span>
+            </div>
+            <div class="spec-chip spec-chip--br">
+              <span class="spec-label">Data</span>
+              <span class="spec-value">Shared</span>
+            </div>`;
 
   document.getElementById('service-content').innerHTML = `
     <section class="page-hero ${theme.hero} service-hero">
@@ -386,24 +416,7 @@ function renderServicePage() {
             <p>${data.customScoped ? 'We scope and deliver this as a custom solution, configured for your sites, integrations, and operational requirements.' : 'This capability connects to the 4DS Nexus platform so your data stays in one place across your organisation.'}</p>
           </div>
           <div class="visual-block service-visual">
-            <div class="showcase ${theme.bp}${showcaseClass}">
-              <div class="showcase-emblem">${iconSvg(data.icon)}</div>
-              <div class="showcase-foot">
-                <div>
-                  <p class="showcase-name">${data.title}</p>
-                  <p class="showcase-sub">A 4DS Nexus module</p>
-                </div>
-                <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
-              </div>
-            </div>
-            <div class="spec-chip spec-chip--tl">
-              <span class="spec-label">Integration</span>
-              <span class="spec-value">Native</span>
-            </div>
-            <div class="spec-chip spec-chip--br">
-              <span class="spec-label">Data</span>
-              <span class="spec-value">Shared</span>
-            </div>
+            ${visualHtml}
           </div>
         </div>
       </div>

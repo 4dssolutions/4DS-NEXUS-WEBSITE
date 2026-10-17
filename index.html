@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-ZA" data-theme="dark">
+<html lang="en-ZA" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -38,126 +38,232 @@
 <body>
   <div id="header-placeholder"></div>
 
-  <!-- Hero Carousel -->
-  <section class="hero" aria-roledescription="carousel" aria-label="Featured highlights" tabindex="0">
+  <!-- Photo carousel -->
+  <section class="hero hero--studio" aria-roledescription="carousel" aria-label="Featured operations" tabindex="0">
     <h1 class="sr-only">CRM, Websites &amp; Business Software for South African Businesses</h1>
-    <div class="hero-slides" aria-live="polite">
-      <div class="hero-slide active">
-        <div class="hero-slide-bg"><div class="hero-pattern"></div></div>
-        <div class="container" style="position:relative;z-index:2;display:flex;align-items:center;height:100%">
-          <div class="hero-content">
-            <span class="hero-badge">Digital Blueprint</span>
-            <h2>One platform. Every operation connected.</h2>
-            <p>4DS Nexus brings <strong>CRM</strong>, <strong>client portals</strong>, inventory, <strong>mobile apps</strong>, and reporting into one platform. We also build and upgrade <strong>business websites</strong> and <strong>e-commerce stores</strong>.</p>
-            <div class="hero-actions">
-              <a href="/contact?interest=demo#contact-form" class="btn btn-primary btn-lg">Book a Demo</a>
-              <a href="/solutions/nexus" class="btn btn-ghost btn-lg">Explore 4DS Nexus</a>
-            </div>
+    <div class="hero-viewport">
+      <div class="hero-slides">
+        <article class="hero-slide active">
+          <img class="hero-photo" src="/assets/photos/cctv.jpg" width="1600" height="900" alt="Grey security camera with control-room monitors in the background">
+          <div class="hero-caption">
+            <p class="hero-kicker">4DS Security</p>
+            <h2>Control room software that stays live</h2>
+            <p>Playback, multi-site cameras, client portals, and panic alerts — built for operators who need the full picture.</p>
+            <a href="/#product-security" class="hero-photo-cta">Find out more</a>
           </div>
-        </div>
-        <div class="hero-visual">
-          <div class="showcase showcase--animated bp-blue">
-            <div class="showcase-emblem" data-icon="bolt"></div>
-            <div class="showcase-foot">
-              <div>
-                <p class="showcase-name">4DS Nexus</p>
-                <p class="showcase-sub">Operations Platform</p>
-              </div>
-              <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
-            </div>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-photo" src="/assets/photos/pos.jpg" width="1600" height="900" alt="Card payment terminal and tablet on a shop counter">
+          <div class="hero-caption">
+            <p class="hero-kicker">Point of sale</p>
+            <h2>Checkout that stays at the counter</h2>
+            <p>Card terminals, till tablets, and stock that updates when the sale goes through.</p>
+            <a href="/services/pos" class="hero-photo-cta">Find out more</a>
           </div>
-          <div class="spec-chip spec-chip--tl">
-            <span class="spec-label">Data Sync</span>
-            <span class="spec-value">Real-time</span>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-photo" src="/assets/photos/field.jpg" width="1600" height="900" alt="Rugged tablet and two-way radio on a worn metal toolbox">
+          <div class="hero-caption">
+            <p class="hero-kicker">Field teams</p>
+            <h2>The job leaves the office with them</h2>
+            <p>Tablets, radios, and forms for guards, technicians, and drivers.</p>
+            <a href="/services/mobile" class="hero-photo-cta">Find out more</a>
           </div>
-          <div class="spec-chip spec-chip--br">
-            <span class="spec-label">Efficiency</span>
-            <span class="spec-value">+24%</span>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-photo" src="/assets/photos/fleet.jpg" width="1600" height="900" alt="Phone mount and tracker on a bakkie dashboard, road ahead">
+          <div class="hero-caption">
+            <p class="hero-kicker">Fleet</p>
+            <h2>Know which vehicle is out</h2>
+            <p>Tracking, trips, and maintenance for bakkies and delivery fleets.</p>
+            <a href="/services/fleet" class="hero-photo-cta">Find out more</a>
           </div>
-        </div>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-photo" src="/assets/photos/stock.jpg" width="1600" height="900" alt="Barcode scanner resting on a carton in a stockroom aisle">
+          <div class="hero-caption">
+            <p class="hero-kicker">Inventory</p>
+            <h2>Count stock without the spreadsheet</h2>
+            <p>Scanners, locations, and a warning before the shelf runs out.</p>
+            <a href="/services/inventory" class="hero-photo-cta">Find out more</a>
+          </div>
+        </article>
+        <article class="hero-slide">
+          <img class="hero-photo" src="/assets/photos/crm.jpg" width="1600" height="900" alt="Open laptop, notebook, and pen on a quiet office desk">
+          <div class="hero-caption">
+            <p class="hero-kicker">CRM</p>
+            <h2>Customers, quotes, and the follow-up</h2>
+            <p>One record for the conversation, instead of another notebook on the desk.</p>
+            <a href="/services/crm" class="hero-photo-cta">Find out more</a>
+          </div>
+        </article>
       </div>
-
-      <div class="hero-slide">
-        <div class="hero-slide-bg"><div class="hero-pattern"></div></div>
-        <div class="container" style="position:relative;z-index:2;display:flex;align-items:center;height:100%">
-          <div class="hero-content">
-            <span class="hero-badge">Core Services</span>
-            <h2>Websites, CRM, and custom software</h2>
-            <p>From <strong>business websites</strong> and <strong>website upgrades</strong> to <strong>e-commerce stores</strong>, <strong>client portals</strong>, inventory systems, and <strong>mobile apps</strong>. We build what you can use today.</p>
-            <div class="hero-actions">
-              <a href="/services/websites" class="btn btn-primary btn-lg">Website Development</a>
-              <a href="/contact?interest=website#contact-form" class="hero-text-link">Request a quote</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide">
-        <div class="hero-slide-bg"><div class="hero-pattern"></div></div>
-        <div class="container" style="position:relative;z-index:2;display:flex;align-items:center;height:100%">
-          <div class="hero-content">
-            <span class="hero-badge">Modular</span>
-            <h2>Start small. Scale without limits.</h2>
-            <p>Choose the modules you need today, CRM, inventory, portals, websites, mobile access, and reporting. Add custom solutions as your operation grows.</p>
-            <div class="hero-actions">
-              <a href="/pricing" class="btn btn-primary btn-lg">View Pricing</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hero-slide">
-        <div class="hero-slide-bg"><div class="hero-pattern"></div></div>
-        <div class="container" style="position:relative;z-index:2;display:flex;align-items:center;height:100%">
-          <div class="hero-content">
-            <span class="hero-badge">Industries</span>
-            <h2>Built for your sector</h2>
-            <p>From security operations and field service to professional services, 4DS Nexus adapts to how your industry operates.</p>
-            <div class="hero-actions">
-              <a href="/industries" class="btn btn-primary btn-lg">Explore Industries</a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <button type="button" class="hero-arrow hero-arrow--prev" data-hero-prev aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M14.5 5.5 8 12l6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <button type="button" class="hero-arrow hero-arrow--next" data-hero-next aria-label="Next slide">
+        <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M9.5 5.5 16 12l-6.5 6.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
     <div class="hero-controls" aria-label="Slide navigation">
       <div class="hero-dots" role="tablist" aria-label="Choose slide">
-        <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Slide 1 of 4"></button>
-        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 2 of 4"></button>
-        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 3 of 4"></button>
-        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Slide 4 of 4"></button>
+        <button class="hero-dot active" role="tab" aria-selected="true" aria-label="Security control panel"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Point of sale"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Field teams"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Fleet"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="Inventory"></button>
+        <button class="hero-dot" role="tab" aria-selected="false" aria-label="CRM"></button>
+      </div>
+      <button type="button" class="hero-pause" data-hero-pause aria-pressed="false" aria-label="Pause slideshow">
+        <span class="hero-pause-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </section>
+
+  <section class="product-rail" aria-label="Equipment and workflows">
+    <div class="product-rail-scroll">
+      <a class="product-rail-card" href="/solutions/nexus">
+        <img src="/assets/screenshots/crm-dashboard.png" alt="" width="800" height="500">
+        <span>4DS Nexus platform</span>
+      </a>
+      <a class="product-rail-card" href="/#product-security">
+        <img src="/assets/screenshots/security-control-panel.png" alt="" width="800" height="500">
+        <span>Security control panel</span>
+      </a>
+      <a class="product-rail-card" href="/services/pos">
+        <img src="/assets/photos/pos.jpg" alt="" width="800" height="500">
+        <span>POS &amp; card terminals</span>
+      </a>
+      <a class="product-rail-card" href="/#product-property">
+        <img src="/assets/screenshots/website-interiors-hero.png" alt="" width="800" height="500">
+        <span>Property app</span>
+      </a>
+      <a class="product-rail-card" href="/#product-ecommerce">
+        <img src="/assets/screenshots/pos-send-to-till.png" alt="" width="800" height="500">
+        <span>E-commerce apps</span>
+      </a>
+      <a class="product-rail-card" href="/services/crm">
+        <img src="/assets/photos/crm.jpg" alt="" width="800" height="500">
+        <span>CRM &amp; client portals</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="content-section product-builds" id="products">
+    <div class="container">
+      <p class="section-label label-blue reveal">4DS products &amp; builds</p>
+      <h2 class="section-title reveal">Software we build and ship for real operations</h2>
+      <p class="section-intro reveal"><strong>4DS Nexus</strong> is the core SaaS platform. Alongside it we deliver specialist products — security control rooms, property apps, e-commerce, and client portals — scoped for how South African businesses actually run.</p>
+      <div class="product-builds-grid reveal-stagger">
+        <a href="/solutions/nexus" class="product-build-card product-build-card--featured" id="product-nexus">
+          <div class="product-build-media">
+            <img src="/assets/screenshots/crm-dashboard.png" width="1024" height="550" alt="4DS Nexus CRM dashboard with calendar, meetings, tasks, and sales tools" loading="lazy" decoding="async">
+          </div>
+          <div class="product-build-body">
+            <p class="product-build-kicker">Flagship SaaS</p>
+            <h3>4DS Nexus — CRM &amp; operations platform</h3>
+            <p>Connected CRM, inventory, client portals, mobile ops, reporting, and automation in one modular subscription. Start from R799/month and expand with the modules your team needs.</p>
+            <div class="product-build-tags">
+              <span>CRM</span>
+              <span>Client portals</span>
+              <span>Inventory</span>
+              <span>Mobile</span>
+              <span>Reporting</span>
+            </div>
+            <span class="product-build-link">Explore 4DS Nexus →</span>
+          </div>
+        </a>
+        <a href="/industries#security" class="product-build-card" id="product-security">
+          <div class="product-build-media">
+            <img src="/assets/screenshots/security-control-panel.png" width="1600" height="900" alt="4DS security control panel with live camera playback, timeline, panic alerts, and multi-site operations" loading="lazy" decoding="async">
+          </div>
+          <div class="product-build-body">
+            <p class="product-build-kicker">Security ops</p>
+            <h3>Security control panel</h3>
+            <p>Live view, playback, multi-site cameras, e-map, devices, officer status, and armed response — built for control rooms that cannot afford blind spots.</p>
+            <div class="product-build-tags">
+              <span>Live &amp; playback</span>
+              <span>Panic alerts</span>
+              <span>Client portal</span>
+              <span>Multi-site</span>
+            </div>
+            <span class="product-build-link">Security solutions →</span>
+          </div>
+        </a>
+        <a href="/custom-solutions#property" class="product-build-card" id="product-property">
+          <div class="product-build-media">
+            <img src="/assets/screenshots/website-interiors-hero.png" width="1024" height="550" alt="Property and interiors style product interface imagery" loading="lazy" decoding="async">
+          </div>
+          <div class="product-build-body">
+            <p class="product-build-kicker">Property</p>
+            <h3>Property management app</h3>
+            <p>Listings, tenants, maintenance tickets, inspections, and owner updates — a property app wired to how agents and landlords actually work day to day.</p>
+            <div class="product-build-tags">
+              <span>Listings</span>
+              <span>Tenants</span>
+              <span>Maintenance</span>
+              <span>Owner portal</span>
+            </div>
+            <span class="product-build-link">Discuss a property build →</span>
+          </div>
+        </a>
+        <a href="/services/websites#ecommerce" class="product-build-card" id="product-ecommerce">
+          <div class="product-build-media">
+            <img src="/assets/screenshots/pos-send-to-till.png" width="1024" height="550" alt="Retail checkout and e-commerce style sales interface" loading="lazy" decoding="async">
+          </div>
+          <div class="product-build-body">
+            <p class="product-build-kicker">Commerce</p>
+            <h3>E-commerce apps &amp; stores</h3>
+            <p>Online stores, catalogues, cart and checkout flows, and stock-linked sales — including builds that connect online orders to till and warehouse ops.</p>
+            <div class="product-build-tags">
+              <span>Catalogues</span>
+              <span>Checkout</span>
+              <span>Stock sync</span>
+              <span>Orders</span>
+            </div>
+            <span class="product-build-link">E-commerce services →</span>
+          </div>
+        </a>
+        <a href="/industries#security" class="product-build-card" id="product-portal">
+          <div class="product-build-media">
+            <img src="/assets/screenshots/live-operations-map.png" width="1024" height="550" alt="Live operations map with incidents and dispatch visibility" loading="lazy" decoding="async">
+          </div>
+          <div class="product-build-body">
+            <p class="product-build-kicker">Client access</p>
+            <h3>Client portals &amp; panic workflows</h3>
+            <p>Secure client portals for site visibility, incident history, and panic / armed-response status — so your customers see what matters without calling the control room.</p>
+            <div class="product-build-tags">
+              <span>Client portal</span>
+              <span>Panic</span>
+              <span>Incidents</span>
+              <span>Site status</span>
+            </div>
+            <span class="product-build-link">See security features →</span>
+          </div>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- Digital Blueprint · Made in SA -->
   <section class="trust-strip" aria-label="Platform highlights">
     <div class="container">
       <div class="trust-strip-inner reveal-stagger">
         <div class="trust-slogan">
-          <span class="trust-slogan-mark">Digital Blueprint</span>
-          <p>Map your operations. Connect every module. Run smarter.</p>
+          <span class="trust-slogan-mark">Operations, connected</span>
+          <p>One platform for CRM, stock, field teams, and websites.</p>
         </div>
         <div class="trust-pills">
           <a href="/about#story" class="trust-pill trust-pill--link">
             <span class="trust-pill-icon" data-icon="building"></span>
-            <span><strong>Made in South Africa</strong><small>Built by 4DS Solutions (Pty) Ltd</small></span>
+            <span><strong>Made in South Africa</strong><small>Built by 4DS Solutions</small></span>
           </a>
-          <a href="/about#eco" class="trust-pill trust-pill--link">
-            <span class="trust-pill-icon" data-icon="leaf"></span>
-            <span><strong>Eco-conscious</strong><small>Paperless ops · Cloud-first · Less waste</small></span>
-          </a>
-          <a href="/services/websites" class="trust-pill trust-pill--link">
-            <span class="trust-pill-icon" data-icon="monitor"></span>
-            <span><strong>We build &amp; upgrade websites too</strong><small>New sites, redesigns, landing pages &amp; e-commerce</small></span>
+          <a href="/#products" class="trust-pill trust-pill--link">
+            <span class="trust-pill-icon" data-icon="bolt"></span>
+            <span><strong>4DS products</strong><small>Nexus, security, property, e-com</small></span>
           </a>
           <a href="/pricing#plans" class="trust-pill trust-pill--link">
             <span class="trust-pill-icon" data-icon="puzzle"></span>
-            <span><strong>Modular platform</strong><small>From R799/mo · packages through Custom Managed</small></span>
-          </a>
-          <a href="/areas-served" class="trust-pill trust-pill--link">
-            <span class="trust-pill-icon" data-icon="globe"></span>
-            <span><strong>Expanding across Africa</strong><small>Scaling with businesses region-wide</small></span>
+            <span><strong>From R799/mo</strong><small>Modular packages</small></span>
           </a>
         </div>
       </div>
@@ -171,7 +277,7 @@
         <div class="nexus-intro-copy">
           <p class="section-label">New here? Start here</p>
           <h2>What is 4DS Nexus?</h2>
-          <p class="nexus-intro-lead">4DS Solutions delivers <strong>business websites</strong>, <strong>website upgrades</strong>, <strong>e-commerce stores</strong>, the <strong>4DS Nexus platform</strong>, and <strong>custom software</strong> from one team. Nexus brings together <strong>CRM</strong>, client management, inventory, reporting, and mobile access so your team works from the same data instead of copying between spreadsheets. Platform plans and project work are <strong>scoped and quoted before you commit</strong>.</p>
+          <p class="nexus-intro-lead"><strong>4DS Nexus</strong> is our SaaS operations platform — <strong>CRM</strong>, client portals, inventory, reporting, and mobile access in one place. Around it, 4DS Solutions also ships specialist products: a <strong>security control panel</strong> (live view, playback, panic), a <strong>property management app</strong>, <strong>e-commerce apps</strong>, and custom portals. Platform plans and project work are <strong>scoped and quoted before you commit</strong>.</p>
         </div>
 
         <aside class="nexus-intro-panel" aria-label="Platform at a glance">
@@ -205,13 +311,10 @@
             <p class="nexus-context-sub">You do not need to learn everything at once. Read the overview below, then explore the modules that match how your business runs.</p>
           </div>
           <div class="nexus-context-chips" aria-label="Platform qualities">
-            <a href="/about" class="nexus-context-chip">Digital Blueprint</a>
             <a href="/about#story" class="nexus-context-chip">Made in SA</a>
-            <a href="/about#eco" class="nexus-context-chip">Eco-conscious</a>
-            <a href="/pricing#plans" class="nexus-context-chip">Modular</a>
-            <a href="/services/websites" class="nexus-context-chip">Websites &amp; Upgrades</a>
-            <a href="/services/websites#ecommerce" class="nexus-context-chip">E-commerce</a>
-            <a href="/solutions/nexus" class="nexus-context-chip">Connected</a>
+            <a href="/pricing#plans" class="nexus-context-chip">Modular pricing</a>
+            <a href="/services/websites" class="nexus-context-chip">Websites</a>
+            <a href="/solutions/nexus" class="nexus-context-chip">Platform</a>
           </div>
         </div>
       </div>

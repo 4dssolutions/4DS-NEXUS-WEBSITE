@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,39 +37,78 @@
 
   <section class="page-hero ph-purple">
     <div class="container">
-      <nav class="breadcrumb"><a href="/">Home</a> / <a href="/solutions/nexus">Services</a> / <span>Consulting</span></nav>
-      <h1>Websites, automation, and custom software</h1>
-      <p>We design and build <strong>business websites</strong>, <strong>website upgrades</strong>, <strong>e-commerce stores</strong>, <strong>client portals</strong>, <strong>workflow automation</strong>, and <strong>custom cloud systems</strong>. Each project is quoted and delivered properly.</p>
-      <nav class="hero-blueprint-nav reveal" aria-label="Service categories">
-        <a href="#software">Software</a>
-        <a href="#web">Web</a>
-        <a href="#mobile">Mobile</a>
-        <a href="#automation">Automation</a>
-        <a href="#operations">Operations</a>
-        <a href="#tracking">Tracking</a>
-        <a href="#consulting">Consulting</a>
-      </nav>
-      <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
-        <a href="/contact?interest=website#contact-form" class="btn btn-primary btn-lg">Get a Website Quote</a>
-        <a href="/services/websites" class="btn btn-outline btn-lg">View Web Services</a>
+      <nav class="breadcrumb"><a href="/">Home</a> / <span>Services</span></nav>
+      <h1>Solutions &amp; Services</h1>
+      <p>From the <strong>4DS Nexus</strong> SaaS platform to security control panels, property apps, e-commerce, and custom software — one team that designs, builds, and supports what your operation needs.</p>
+    </div>
+  </section>
+
+  <nav class="page-subnav" aria-label="Services sections">
+    <div class="container page-subnav-inner">
+      <a href="#overview" class="is-active">Overview</a>
+      <a href="#explore">Explore services</a>
+      <a href="#products">Products</a>
+      <a href="#implementation">Implementation</a>
+      <a href="/pricing">Pricing</a>
+    </div>
+  </nav>
+
+  <section class="content-section" id="overview">
+    <div class="container">
+      <div class="catalog-intro reveal">
+        <h2>To run a connected business, you need a platform partner — not another disconnected tool.</h2>
+        <p>4DS Solutions builds the <strong>4DS Nexus</strong> platform plus specialist products: security control rooms with live view and panic, property management apps, e-commerce stores, and client portals. Each engagement is scoped and quoted before you commit.</p>
       </div>
     </div>
   </section>
 
-  <section class="content-section">
+  <section class="content-section alt" id="explore">
     <div class="container">
-      <p class="section-label label-purple reveal">Services</p>
-      <h2 class="section-title reveal">Everything we deliver, organised by solution type</h2>
-      <p class="section-intro reveal">These are the services with clear scope and pricing on our <a href="/pricing">pricing page</a>.</p>
-      <div class="service-category-grid reveal" id="service-category-grid"></div>
-      <p class="section-intro reveal" style="margin-top:32px">
+      <p class="section-label label-purple reveal">Explore</p>
+      <h2 class="section-title reveal">Explore our services</h2>
+      <p class="section-intro reveal">Whatever challenges you are facing, we have solutions for your business — select a category to see what we deliver.</p>
+      <div class="catalog-explore reveal" id="catalog-explore"></div>
+      <p class="section-intro reveal" style="margin-top:28px">
         <a href="/pricing" class="btn btn-outline">View pricing &amp; starting prices</a>
       </p>
-      <p class="section-intro reveal" style="margin-top:20px">Serving businesses across South Africa — <a href="/areas-served">Gauteng, KZN, Western Cape, Mpumalanga, and remote nationwide</a>.</p>
     </div>
   </section>
 
-  <section class="content-section alt">
+  <section class="content-section" id="products">
+    <div class="container">
+      <p class="section-label label-blue reveal">Products</p>
+      <h2 class="section-title reveal">4DS products we emphasise</h2>
+      <p class="section-intro reveal">These are live product lines and builds we have shipped — not just brochure concepts.</p>
+      <div class="card-grid reveal">
+        <a href="/solutions/nexus" class="card card--link">
+          <div class="card-icon" data-icon="bolt"></div>
+          <h3>4DS Nexus</h3>
+          <p>Modular SaaS for CRM, inventory, portals, mobile ops, and reporting — from R799/month.</p>
+          <span class="card-link">Platform details</span>
+        </a>
+        <a href="/#product-security" class="card card--link">
+          <div class="card-icon" data-icon="shield"></div>
+          <h3>Security control panel</h3>
+          <p>Live view, playback, multi-site cameras, panic alerts, and client portals for control rooms.</p>
+          <span class="card-link">See the product</span>
+        </a>
+        <a href="/custom-solutions#property" class="card card--link">
+          <div class="card-icon" data-icon="building"></div>
+          <h3>Property management app</h3>
+          <p>Listings, tenants, maintenance, inspections, and owner updates for property operators.</p>
+          <span class="card-link">Discuss a build</span>
+        </a>
+        <a href="/services/websites#ecommerce" class="card card--link">
+          <div class="card-icon" data-icon="cart"></div>
+          <h3>E-commerce apps</h3>
+          <p>Online stores and commerce apps with catalogues, checkout, and stock-linked orders.</p>
+          <span class="card-link">Web &amp; commerce</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-section alt" id="implementation">
     <div class="container">
       <p class="section-label label-purple reveal">Implementation</p>
       <h2 class="section-title reveal">How we help</h2>
@@ -110,52 +149,6 @@
           <p>We connect 4DS Nexus to your existing tools, accounting, and payment providers.</p>
           <span class="card-link">Integration services</span>
         </a>
-        <a href="/contact?interest=consulting#contact-form" class="card card--link">
-          <div class="card-icon" data-icon="chart"></div>
-          <h3>Ongoing Optimisation</h3>
-          <p>Regular reviews to unlock new capabilities and keep your operation running at its best.</p>
-          <span class="card-link">Request support</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section class="content-section">
-    <div class="container">
-      <div class="two-col reveal">
-        <div>
-          <p class="section-label label-teal">Engagement</p>
-          <h2>Flexible support for any stage</h2>
-          <p>Whether you are starting out or scaling an established operation, our consultants work with you at the stage you are at.</p>
-          <ul class="feature-list">
-            <li>Custom website design, development, and upgrades</li>
-            <li>Project-based implementation engagements</li>
-            <li>Ongoing retainer support for larger teams</li>
-            <li>Industry-specific workflow design</li>
-            <li>Scoped delivery for custom and multi-site projects</li>
-          </ul>
-          <a href="/contact" class="btn btn-primary" style="margin-top:24px">Request a Consultation</a>
-        </div>
-        <div class="visual-block">
-          <div class="showcase bp-purple">
-            <div class="showcase-emblem" data-icon="handshake"></div>
-            <div class="showcase-foot">
-              <div>
-                <p class="showcase-name">Expert Guidance</p>
-                <p class="showcase-sub">Support for any stage</p>
-              </div>
-              <span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span>
-            </div>
-          </div>
-          <div class="spec-chip spec-chip--tl">
-            <span class="spec-label">Engagement</span>
-            <span class="spec-value">Flexible</span>
-          </div>
-          <div class="spec-chip spec-chip--br">
-            <span class="spec-label">Support</span>
-            <span class="spec-value">Priority</span>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -163,7 +156,7 @@
   <section class="cta-band">
     <div class="container cta-inner reveal">
       <h2>Need a hand getting started?</h2>
-      <p>Our team is ready to help you plan and deliver your 4DS Nexus rollout.</p>
+      <p>Tell us whether you need 4DS Nexus, a security control panel, a property or e-commerce build, or a custom system — we will scope it properly.</p>
       <a href="/contact" class="btn btn-primary btn-lg">Talk to a Consultant</a>
     </div>
   </section>
