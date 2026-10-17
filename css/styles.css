@@ -9476,7 +9476,7 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   padding: 0;
   overflow: visible;
   position: relative;
-  transition: transform 0.38s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .hero.hero--studio .hero-slides.is-dragging {
@@ -9528,7 +9528,7 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   right: min(42%, 360px);
   bottom: 40px;
   color: #fff;
-  transition: opacity 0.28s ease;
+  transition: opacity 0.55s ease;
   pointer-events: none;
 }
 
