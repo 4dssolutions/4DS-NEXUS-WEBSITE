@@ -1,11 +1,10 @@
 /* 4DS Nexus shared site interactions */
 
 (function initThemeEarly() {
-  const stored = localStorage.getItem('4ds-theme');
-  document.documentElement.setAttribute(
-    'data-theme',
-    stored === 'dark' ? 'dark' : 'light'
-  );
+  // Light by default. Ignore device dark mode; dark only if user chose it.
+  const theme = localStorage.getItem('4ds-theme') === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+  document.documentElement.style.colorScheme = theme;
 })();
 
 /* ─── Hand-drawn / pencil-sketch line icons ───
@@ -768,9 +767,13 @@ function updateHeaderLogo(theme = getTheme()) {
 }
 
 function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  localStorage.setItem('4ds-theme', theme);
-  updateHeaderLogo(theme);
+  const next = theme === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', next);
+  document.documentElement.style.colorScheme = next;
+  localStorage.setItem('4ds-theme', next);
+  const schemeMeta = document.querySelector('meta[name="color-scheme"]');
+  if (schemeMeta) schemeMeta.setAttribute('content', next);
+  updateHeaderLogo(next);
   const hcaptchaWidget = document.getElementById('hcaptchaWidget');
   if (hcaptchaWidget && typeof hcaptcha !== 'undefined' && window.__hcaptchaWidgetId != null) {
     hcaptcha.remove(window.__hcaptchaWidgetId);

@@ -2,11 +2,10 @@
 (function bootEarly() {
   const asset = (path) => (path.startsWith('/') ? path : `/${path}`);
 
-  const storedTheme = localStorage.getItem('4ds-theme');
-  document.documentElement.setAttribute(
-    'data-theme',
-    storedTheme === 'dark' ? 'dark' : 'light'
-  );
+  // Light by default. Never follow device/system dark mode — only manual toggle.
+  const storedTheme = localStorage.getItem('4ds-theme') === 'dark' ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', storedTheme);
+  document.documentElement.style.colorScheme = storedTheme;
   document.documentElement.classList.add('is-loading');
 
   function ensureCompatMeta() {
@@ -21,7 +20,7 @@
     };
 
     add({ name: 'format-detection', content: 'telephone=no' });
-    add({ name: 'color-scheme', content: 'light dark' });
+    add({ name: 'color-scheme', content: storedTheme === 'dark' ? 'dark' : 'light' });
     add({ name: 'apple-mobile-web-app-capable', content: 'yes' });
     add({ name: 'apple-mobile-web-app-title', content: '4DS Nexus' });
     add({ name: 'mobile-web-app-capable', content: 'yes' });
