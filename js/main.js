@@ -1192,11 +1192,24 @@ function initHeroCarousel() {
 
   function layoutStudio() {
     if (!studio || !track || !viewport) return;
-    const slideW = slides[0].offsetWidth;
+    const viewportW = viewport.clientWidth || window.innerWidth;
+    const compact = window.matchMedia('(max-width: 900px)').matches;
     const styles = getComputedStyle(track);
-    const gap = parseFloat(styles.columnGap || styles.gap) || 0;
-    const offset = -current * (slideW + gap);
-    track.style.transform = `translate3d(${offset}px, 0, 0)`;
+    const gap = compact ? 0 : (parseFloat(styles.columnGap || styles.gap) || 0);
+    const slideW = compact ? viewportW : (slides[0].offsetWidth || viewportW);
+
+    slides.forEach((slide) => {
+      if (compact) {
+        slide.style.width = `${viewportW}px`;
+        slide.style.flex = `0 0 ${viewportW}px`;
+      } else {
+        slide.style.removeProperty('width');
+        slide.style.removeProperty('flex');
+      }
+    });
+
+    track.style.gap = compact ? '0px' : '';
+    track.style.transform = `translate3d(${-current * (slideW + gap)}px, 0, 0)`;
   }
 
   function goTo(index) {

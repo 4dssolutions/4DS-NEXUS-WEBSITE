@@ -9526,8 +9526,11 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   position: absolute;
   z-index: 2;
   left: 96px;
-  right: min(42%, 360px);
+  right: auto;
   bottom: 40px;
+  width: min(34rem, calc(100% - 140px));
+  max-width: calc(100% - 140px);
+  box-sizing: border-box;
   color: #fff;
   transition: opacity 0.55s ease;
   pointer-events: none;
@@ -9557,15 +9560,22 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   font-size: clamp(1.75rem, 3vw, 2.65rem);
   font-weight: 700;
   letter-spacing: -0.03em;
-  line-height: 1.08;
+  line-height: 1.15;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero.hero--studio .hero-caption p {
   margin: 0 0 18px;
-  max-width: 34rem;
+  max-width: 100%;
   color: rgba(255, 255, 255, 0.9);
   font-size: 1rem;
   line-height: 1.45;
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .hero-photo-cta {
@@ -9724,6 +9734,38 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   object-position: center center;
 }
 
+@media (max-width: 900px) {
+  .hero.hero--studio .hero-slides {
+    gap: 0;
+  }
+
+  .hero.hero--studio .hero-slide {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero.hero--studio .hero-caption {
+    left: 16px;
+    right: 16px;
+    width: auto;
+    max-width: none;
+    bottom: 24px;
+  }
+
+  .hero.hero--studio .hero-caption h2,
+  .hero.hero--studio .hero-caption p {
+    width: 100%;
+    max-width: 100%;
+    white-space: normal;
+    overflow-wrap: break-word;
+  }
+
+  .hero.hero--studio .hero-arrow {
+    display: none;
+  }
+}
+
 @media (max-width: 768px) {
   .hero.hero--studio {
     padding: calc(var(--header-h) + 8px) 0 0;
@@ -9734,7 +9776,6 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   }
 
   .hero.hero--studio .hero-slide {
-    width: 100%;
     height: min(58vh, 440px);
     min-height: 340px;
   }
@@ -9753,6 +9794,7 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
     left: 16px;
     right: 16px;
     bottom: 20px;
+    width: auto;
     max-width: none;
   }
 
@@ -9762,21 +9804,25 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
 
   .hero.hero--studio .hero-caption h2 {
     font-size: clamp(1.35rem, 6.2vw, 1.7rem);
-    line-height: 1.15;
+    line-height: 1.2;
     max-width: 100%;
-    overflow-wrap: anywhere;
+    width: 100%;
     margin-bottom: 8px;
+    white-space: normal;
+    overflow-wrap: break-word;
+    word-break: normal;
   }
 
   .hero.hero--studio .hero-caption p {
+    display: block;
     font-size: 0.875rem;
     line-height: 1.4;
     max-width: 100%;
+    width: 100%;
     margin-bottom: 14px;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+    white-space: normal;
+    overflow: visible;
+    -webkit-line-clamp: unset;
   }
 
   .hero.hero--studio .hero-photo-cta {
