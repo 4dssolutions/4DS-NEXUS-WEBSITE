@@ -4229,11 +4229,12 @@ a.card:focus-visible {
 .pricing-stat {
   display: block;
   padding: 14px 16px;
-  background: rgba(255, 255, 255, 0.12);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #fff;
+  border: 1px solid var(--gray-100);
   border-radius: var(--radius-lg);
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
+  box-shadow: none;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
   text-decoration: none;
   color: inherit;
   cursor: pointer;
@@ -4245,19 +4246,20 @@ a.card:focus-visible {
 }
 
 a.pricing-stat:hover {
-  background: rgba(255, 255, 255, 0.17);
-  border-color: rgba(255, 255, 255, 0.28);
+  background: #fff;
+  border-color: #d8d8dc;
   transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(15, 23, 42, 0.12);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
 }
 
 a.pricing-stat:active {
   transform: translateY(0);
-  background: rgba(255, 255, 255, 0.14);
+  background: var(--gray-50);
+  box-shadow: none;
 }
 
 a.pricing-stat:focus-visible {
-  outline: 2px solid rgba(255, 255, 255, 0.32);
+  outline: 2px solid #1a1a1a;
   outline-offset: 2px;
 }
 
@@ -4265,7 +4267,7 @@ a.pricing-stat:focus-visible {
   display: block;
   font-size: 1.0625rem;
   font-weight: 800;
-  color: var(--ink-on-dark);
+  color: var(--text-primary);
   letter-spacing: -0.02em;
   margin-bottom: 2px;
 }
@@ -4276,7 +4278,8 @@ a.pricing-stat:focus-visible {
   font-weight: 600;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: var(--ink-on-dark-faint);
+  color: var(--text-secondary);
+  white-space: nowrap;
 }
 
 .page-pricing .pricing-hero-nav {
@@ -4598,13 +4601,25 @@ a.pricing-addon-card:hover h4 {
 
 [data-theme="dark"] .pricing-stat {
   background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .pricing-stat strong {
+  color: #f0f0f0;
+}
+
+[data-theme="dark"] .pricing-stat span {
+  color: rgba(240, 240, 240, 0.6);
 }
 
 [data-theme="dark"] a.pricing-stat:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.18);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.22);
+}
+
+[data-theme="dark"] a.pricing-stat:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.45);
 }
 
 [data-theme="dark"] .pricing-core-includes {
