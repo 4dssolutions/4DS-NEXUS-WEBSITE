@@ -451,7 +451,6 @@ function renderHeader() {
             <a href="/#product-security">Security control panel</a>
             <a href="/#product-property">Property management app</a>
             <a href="/#product-ecommerce">E-commerce apps</a>
-            <a href="/industries#security">Client portals &amp; panic</a>
           </div>
           <a href="/#products" class="mega-view-all">View all products →</a>
         </div>
