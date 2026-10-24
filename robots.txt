@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://4dsnexus.co.za/sitemap.xml
+Sitemap: https://www.4dsnexus.co.za/sitemap.xml
 
-# Social preview image: /assets/og-share.png (1200x630)
+# Social preview image: /assets/og-card.png (1200x630)

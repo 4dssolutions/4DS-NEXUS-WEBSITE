@@ -3,8 +3,8 @@
   var path = location.pathname;
   var suffix = location.search + location.hash;
 
-  if (location.hostname === 'www.4dsnexus.co.za') {
-    location.replace('https://4dsnexus.co.za' + path + suffix);
+  if (location.hostname === '4dsnexus.co.za') {
+    location.replace('https://www.4dsnexus.co.za' + path + suffix);
     return;
   }
 

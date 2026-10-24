@@ -1,9 +1,9 @@
 /* 4DS Nexus — SEO: canonical, Open Graph, JSON-LD */
 (function initSeo() {
-  const SITE_URL = 'https://4dsnexus.co.za';
+  const SITE_URL = 'https://www.4dsnexus.co.za';
   const SITE_NAME = '4DS Nexus';
   const COMPANY = '4DS Solutions (Pty) Ltd';
-  const DEFAULT_IMAGE = `${SITE_URL}/assets/og-share.png`;
+  const DEFAULT_IMAGE = `${SITE_URL}/assets/og-card.png`;
   const LOGO_IMAGE = `${SITE_URL}/assets/4ds-og.png`;
   const PHONE = '+27646552995';
   const EMAIL = window.CONTACT_EMAIL || '4dssolutions@gmail.com';

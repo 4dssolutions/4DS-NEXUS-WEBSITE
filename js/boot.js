@@ -44,8 +44,8 @@
     headLink('icon', asset('assets/favicon-32.png'), { type: 'image/png', sizes: '32x32' });
   }
 
-  headLink('dns-prefetch', 'https://4dsnexus.co.za');
-  headLink('preconnect', 'https://4dsnexus.co.za');
+  headLink('dns-prefetch', 'https://www.4dsnexus.co.za');
+  headLink('preconnect', 'https://www.4dsnexus.co.za');
   headLink('preconnect', 'https://fonts.googleapis.com');
   headLink('preconnect', 'https://fonts.gstatic.com', { crossorigin: '' });
 

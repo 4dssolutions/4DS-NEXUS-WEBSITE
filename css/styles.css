@@ -9761,8 +9761,8 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   }
 
   .hero.hero--studio .hero-caption {
-    left: 16px;
-    right: 16px;
+    left: 20px;
+    right: 20px;
     width: auto;
     max-width: none;
     bottom: 24px;
@@ -9773,7 +9773,7 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
     width: 100%;
     max-width: 100%;
     white-space: normal;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
   }
 
   .hero.hero--studio .hero-arrow {
@@ -9788,11 +9788,12 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
 
   .hero.hero--studio .hero-viewport {
     border-radius: 0;
+    overflow: hidden;
   }
 
   .hero.hero--studio .hero-slide {
-    height: min(58vh, 440px);
-    min-height: 340px;
+    height: min(62vh, 460px);
+    min-height: 360px;
   }
 
   .hero.hero--studio .hero-photo {
@@ -9801,16 +9802,17 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
 
   .hero.hero--studio .hero-slide::after {
     background:
-      linear-gradient(90deg, rgba(8, 10, 14, 0.55) 0%, rgba(8, 10, 14, 0.28) 55%, rgba(8, 10, 14, 0.12) 100%),
-      linear-gradient(180deg, transparent 40%, rgba(8, 10, 14, 0.45) 100%);
+      linear-gradient(90deg, rgba(8, 10, 14, 0.62) 0%, rgba(8, 10, 14, 0.32) 55%, rgba(8, 10, 14, 0.14) 100%),
+      linear-gradient(180deg, transparent 32%, rgba(8, 10, 14, 0.55) 100%);
   }
 
   .hero.hero--studio .hero-caption {
     left: 16px;
     right: 16px;
-    bottom: 20px;
+    bottom: 18px;
     width: auto;
     max-width: none;
+    padding-right: 4px;
   }
 
   .hero.hero--studio .hero-kicker {
@@ -9818,26 +9820,28 @@ html.is-page-ready #footer-placeholder { transition-delay: 300ms; }
   }
 
   .hero.hero--studio .hero-caption h2 {
-    font-size: clamp(1.35rem, 6.2vw, 1.7rem);
-    line-height: 1.2;
+    font-size: clamp(1.3rem, 5.8vw, 1.65rem);
+    line-height: 1.18;
     max-width: 100%;
     width: 100%;
     margin-bottom: 8px;
     white-space: normal;
-    overflow-wrap: break-word;
+    overflow-wrap: anywhere;
     word-break: normal;
   }
 
   .hero.hero--studio .hero-caption p {
-    display: block;
-    font-size: 0.875rem;
-    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    font-size: 0.86rem;
+    line-height: 1.38;
     max-width: 100%;
     width: 100%;
-    margin-bottom: 14px;
+    margin-bottom: 12px;
     white-space: normal;
-    overflow: visible;
-    -webkit-line-clamp: unset;
+    overflow: hidden;
+    overflow-wrap: anywhere;
   }
 
   .hero.hero--studio .hero-photo-cta {
